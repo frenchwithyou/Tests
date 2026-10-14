@@ -1,0 +1,78 @@
+{
+ "exams": [
+  {
+   "id": "tcf",
+   "name": "TCF Canada",
+   "mocks": [
+    {
+     "n": 1,
+     "sections": {
+      "co": {
+       "ready": false,
+       "count": 39,
+       "duration": 2100,
+       "scale": "699",
+       "max": 699
+      },
+      "ce": {
+       "ready": true,
+       "count": 39,
+       "duration": 3600,
+       "scale": "699",
+       "max": 699
+      },
+      "ee": {
+       "ready": true,
+       "count": 3,
+       "duration": 3600,
+       "scale": "20"
+      },
+      "eo": {
+       "ready": true,
+       "count": 3,
+       "duration": 720,
+       "scale": "20"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "tef",
+   "name": "TEF Canada",
+   "mocks": [
+    {
+     "n": 1,
+     "sections": {
+      "co": {
+       "ready": false,
+       "count": 40,
+       "duration": 2400,
+       "scale": "699",
+       "max": 40
+      },
+      "ce": {
+       "ready": true,
+       "count": 40,
+       "duration": 3600,
+       "scale": "699",
+       "max": 40
+      },
+      "ee": {
+       "ready": true,
+       "count": 2,
+       "duration": 3600,
+       "scale": "699"
+      },
+      "eo": {
+       "ready": true,
+       "count": 2,
+       "duration": 900,
+       "scale": "699"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

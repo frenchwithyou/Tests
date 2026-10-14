@@ -1,0 +1,64 @@
+{
+ "exam": "tcf",
+ "mock": 1,
+ "section": "eo",
+ "duration": 720,
+ "scale": "20",
+ "tasks": [
+  {
+   "n": 1,
+   "title": "Tâche 1 — Entretien dirigé",
+   "level": "A1–A2",
+   "prompt": "L'examinateur vous pose des questions sur vous. Répondez en parlant de vous, de votre famille, de votre travail ou de vos études, de vos loisirs et de vos projets.\n\nLes questions de l'examinateur apparaissent à l'écran pendant l'enregistrement.\n",
+   "prep": 0,
+   "speak": 120,
+   "cues": [
+    {
+     "at": 0,
+     "text": "Bonjour ! Pouvez-vous vous présenter, s'il vous plaît ?"
+    },
+    {
+     "at": 30,
+     "text": "Parlez-moi de votre travail ou de vos études."
+    },
+    {
+     "at": 60,
+     "text": "Qu'est-ce que vous aimez faire pendant votre temps libre ?"
+    },
+    {
+     "at": 90,
+     "text": "Quels sont vos projets pour les prochaines années ?"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Tâche 2 — Exercice en interaction",
+   "level": "B1–B2",
+   "prompt": "Vous voulez vous inscrire dans un club de sport près de chez vous. Vous téléphonez au club pour obtenir des informations.\n\nPosez des questions variées et polies à l'employé(e) : activités proposées, horaires, prix, conditions d'inscription, équipements, cours d'essai…\n\nVous avez **2 minutes pour vous préparer**, puis **3 minutes 30** pour poser vos questions. Vous pouvez imaginer les réponses de l'employé(e) et réagir.\n",
+   "prep": 120,
+   "speak": 210,
+   "cues": [
+    {
+     "at": 0,
+     "text": "Employé(e) : « Club Énergie, bonjour ! Comment puis-je vous aider ? »"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Tâche 3 — Expression d'un point de vue",
+   "level": "B2–C2",
+   "prompt": "**« Selon vous, vaut-il mieux vivre en ville ou à la campagne ? »**\n\nDonnez votre opinion et justifiez-la avec des arguments et des exemples précis. Pensez à présenter aussi l'autre point de vue.\n",
+   "prep": 0,
+   "speak": 270,
+   "cues": [
+    {
+     "at": 0,
+     "text": "Selon vous, vaut-il mieux vivre en ville ou à la campagne ?"
+    }
+   ]
+  }
+ ],
+ "count": 3
+}

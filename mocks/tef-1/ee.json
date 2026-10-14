@@ -1,0 +1,38 @@
+{
+ "exam": "tef",
+ "mock": 1,
+ "section": "ee",
+ "duration": 3600,
+ "scale": "699",
+ "tasks": [
+  {
+   "n": 1,
+   "title": "Section A — Écrire la suite d'un article",
+   "level": "Section A",
+   "prompt": "Lisez le début de cet article, puis **écrivez la suite** (80 mots minimum).\n\nRacontez comment l'oiseau a retrouvé sa propriétaire. Respectez le style d'un article de journal : faits, lieux, témoignages.\n",
+   "words": [
+    80,
+    null
+   ],
+   "advice_minutes": 25,
+   "docs": [
+    {
+     "title": "Un perroquet retrouve sa propriétaire grâce aux réseaux sociaux",
+     "body": "MONTRÉAL — Mardi matin, une employée d'un café du Mile End a eu une drôle de surprise en ouvrant le commerce : un perroquet vert était perché sur la terrasse et répétait sans arrêt « Bonjour Martine ! ». L'oiseau, visiblement fatigué, a accepté de se poser sur son bras…\n"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Section B — Exprimer et défendre une opinion",
+   "level": "Section B",
+   "prompt": "Vous lisez cette affirmation sur un forum :\n\n**« Le télétravail devrait devenir un droit pour tous les employés qui peuvent travailler à distance. »**\n\nVous écrivez un message sur ce forum pour réagir. Donnez votre opinion et justifiez-la avec **au moins trois arguments**, illustrés d'exemples (200 mots minimum).\n",
+   "words": [
+    200,
+    null
+   ],
+   "advice_minutes": 35
+  }
+ ],
+ "count": 2
+}

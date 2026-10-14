@@ -1,0 +1,840 @@
+{
+ "exam": "tcf",
+ "mock": 1,
+ "section": "ce",
+ "duration": 3600,
+ "scale": "699",
+ "screens": [
+  {
+   "id": "ce-01",
+   "kind": "doc",
+   "doc": {
+    "kind": "sign",
+    "title": "Boulangerie Dupont",
+    "body": "**Fermé le lundi**\n\nOuvert du mardi au dimanche\nde 7 h à 19 h\n"
+   },
+   "questions": [
+    {
+     "n": 1,
+     "q": "Quel jour la boulangerie est-elle fermée ?",
+     "options": [
+      "Le lundi.",
+      "Le mardi.",
+      "Le samedi.",
+      "Le dimanche."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-02",
+   "kind": "doc",
+   "doc": {
+    "kind": "sms",
+    "title": "Léa",
+    "body": "Salut Tom ! Je suis au café en face de la gare. Tu arrives quand ? 😊\n"
+   },
+   "questions": [
+    {
+     "n": 2,
+     "q": "Où est Léa ?",
+     "options": [
+      "À la gare.",
+      "Au café.",
+      "Chez Tom.",
+      "Au cinéma."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-03",
+   "kind": "doc",
+   "doc": {
+    "kind": "notice",
+    "title": "Avis aux résidents",
+    "body": "**Ascenseur en panne.**\n\nMerci d'utiliser l'escalier.\nRéparation prévue jeudi.\n"
+   },
+   "questions": [
+    {
+     "n": 3,
+     "q": "Que doivent faire les résidents ?",
+     "options": [
+      "Prendre l'escalier.",
+      "Réparer l'ascenseur.",
+      "Attendre l'ascenseur.",
+      "Téléphoner jeudi."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-04",
+   "kind": "doc",
+   "doc": {
+    "kind": "menu",
+    "title": "Menu du jour — 15 $",
+    "body": "Soupe aux légumes\nPoulet rôti et frites\nGâteau au chocolat\n**Café inclus**\n"
+   },
+   "questions": [
+    {
+     "n": 4,
+     "q": "Qu'est-ce qui est compris dans le prix du menu ?",
+     "options": [
+      "Le vin.",
+      "Le café.",
+      "Le pain.",
+      "Le thé."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-05",
+   "kind": "doc",
+   "doc": {
+    "kind": "email",
+    "title": "Cours de français annulé",
+    "meta": "De : Mme Roy · À : Groupe du jeudi",
+    "body": "Bonjour à tous,\n\nLe cours de français du jeudi 12 mars est annulé. Il est remplacé par un cours le samedi 14 mars à 10 h, dans la salle 3.\n\nCordialement,\nMme Roy\n"
+   },
+   "questions": [
+    {
+     "n": 5,
+     "q": "Quand aura lieu le cours de remplacement ?",
+     "options": [
+      "Le jeudi 12 mars.",
+      "Le jeudi 14 mars.",
+      "Le samedi 12 mars à 3 h.",
+      "Le samedi 14 mars à 10 h."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-06",
+   "kind": "doc",
+   "doc": {
+    "kind": "ad",
+    "title": "À vendre",
+    "body": "Vélo pour enfant (6-9 ans), très bon état, **avec casque**.\n60 $\nAppelez Marc le soir au 514 555-0182.\n"
+   },
+   "questions": [
+    {
+     "n": 6,
+     "q": "Qu'est-ce que Marc vend ?",
+     "options": [
+      "Un vélo pour adulte.",
+      "Un casque seulement.",
+      "Un vélo pour enfant avec un casque.",
+      "Une voiture d'occasion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-07",
+   "kind": "doc",
+   "doc": {
+    "kind": "rules",
+    "title": "Bibliothèque municipale — Prêts",
+    "body": "- Vous pouvez emprunter 10 documents pendant 3 semaines.\n- DVD : 1 semaine seulement.\n- Retour possible 24 h sur 24 dans la boîte extérieure.\n"
+   },
+   "questions": [
+    {
+     "n": 7,
+     "q": "Combien de temps peut-on garder un DVD ?",
+     "options": [
+      "Une semaine.",
+      "Trois semaines.",
+      "Vingt-quatre heures.",
+      "Dix jours."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-08",
+   "kind": "doc",
+   "doc": {
+    "kind": "notice",
+    "title": "Fête des voisins !",
+    "body": "Samedi 7 juin, à partir de 17 h, dans la cour de l'immeuble.\nChacun apporte un plat ou une boisson.\n\n**En cas de pluie :** salle commune, rez-de-chaussée.\n"
+   },
+   "questions": [
+    {
+     "n": 8,
+     "q": "Que se passe-t-il s'il pleut ?",
+     "options": [
+      "La fête est annulée.",
+      "La fête est reportée au dimanche.",
+      "La fête a lieu dans la salle commune.",
+      "Chacun reste chez soi."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-09",
+   "kind": "doc",
+   "doc": {
+    "kind": "label",
+    "title": "Sirop contre la toux",
+    "body": "**Adultes :** 1 cuillère 3 fois par jour.\n**Enfants de moins de 6 ans :** demandez l'avis d'un médecin.\nNe pas dépasser 5 jours de traitement.\n"
+   },
+   "questions": [
+    {
+     "n": 9,
+     "q": "Que faut-il faire pour un enfant de 4 ans ?",
+     "options": [
+      "Lui donner une cuillère par jour.",
+      "Demander l'avis d'un médecin.",
+      "Lui donner le sirop pendant 5 jours.",
+      "Lui donner la même dose qu'un adulte."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-10",
+   "kind": "doc",
+   "doc": {
+    "kind": "ad",
+    "title": "Restaurant Le Saint-Laurent recrute",
+    "body": "Serveur ou serveuse — temps partiel, soirs et fins de semaine.\nExpérience appréciée, mais non obligatoire.\n**Bilingue français-anglais.**\nPrésentez-vous avec votre CV du lundi au vendredi, entre 14 h et 16 h.\n"
+   },
+   "questions": [
+    {
+     "n": 10,
+     "q": "Quelle condition est obligatoire pour obtenir ce poste ?",
+     "options": [
+      "Avoir de l'expérience.",
+      "Travailler le matin.",
+      "Envoyer son CV par courriel.",
+      "Parler français et anglais."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-11",
+   "kind": "doc",
+   "doc": {
+    "kind": "letter",
+    "title": "Travaux de toiture",
+    "meta": "De : La gestion de l'immeuble · À : Tous les résidents",
+    "body": "Madame, Monsieur,\n\nNous vous informons que des travaux de rénovation de la toiture auront lieu du 3 au 7 octobre. Pendant cette période, l'accès au stationnement arrière sera interdit.\n\nNous vous prions de garer votre véhicule dans la rue ou au stationnement municipal, gratuit pour les résidents sur présentation de cette lettre.\n\nMerci de votre compréhension.\nLa gestion\n"
+   },
+   "questions": [
+    {
+     "n": 11,
+     "q": "Que permet cette lettre aux résidents ?",
+     "options": [
+      "D'utiliser le stationnement arrière pendant les travaux.",
+      "De stationner gratuitement au stationnement municipal.",
+      "D'obtenir une réduction de loyer.",
+      "D'aider aux travaux de la toiture."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-12",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Le musée ouvre ses portes gratuitement",
+    "body": "Le Musée des beaux-arts propose désormais l'entrée gratuite le premier dimanche de chaque mois. Cette initiative vise à attirer un public qui fréquente rarement les musées, en particulier les familles et les jeunes.\n\nLors du premier dimanche gratuit, plus de 4 000 personnes se sont présentées, soit trois fois plus qu'un dimanche ordinaire.\n"
+   },
+   "questions": [
+    {
+     "n": 12,
+     "q": "Quel est l'objectif de la gratuité ?",
+     "options": [
+      "Attirer des personnes qui vont rarement au musée.",
+      "Augmenter les recettes du musée.",
+      "Réduire le nombre de visiteurs.",
+      "Fermer le musée les autres dimanches."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-13",
+   "kind": "doc",
+   "doc": {
+    "kind": "forum",
+    "title": "Forum Nouveaux arrivants — Écoles à Sherbrooke ?",
+    "meta": "Message d'Ana",
+    "body": "Bonjour, je déménage à Sherbrooke en janvier avec ma famille. Mes enfants ont 8 et 12 ans et ne parlent pas encore français. Est-ce que les écoles proposent des classes d'accueil ? Merci pour vos conseils !\n"
+   },
+   "questions": [
+    {
+     "n": 13,
+     "q": "Qu'est-ce qu'Ana veut savoir ?",
+     "options": [
+      "Le prix des logements à Sherbrooke.",
+      "Les dates des vacances scolaires.",
+      "S'il existe des classes adaptées à ses enfants non francophones.",
+      "Comment trouver un emploi à Sherbrooke."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-14",
+   "kind": "doc",
+   "doc": {
+    "kind": "notice",
+    "title": "Centre sportif — Nouveau !",
+    "body": "Réservez votre cours en ligne jusqu'à 48 h à l'avance.\n\n**Attention :** toute réservation non annulée au moins 2 h avant le cours sera comptée comme une absence. Après trois absences, la réservation en ligne sera suspendue pendant un mois.\n"
+   },
+   "questions": [
+    {
+     "n": 14,
+     "q": "Que se passe-t-il après trois absences ?",
+     "options": [
+      "L'abonnement est annulé.",
+      "Le membre doit payer une amende.",
+      "Le membre reçoit un cours gratuit.",
+      "Le membre ne peut plus réserver en ligne pendant un mois."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-15",
+   "kind": "doc",
+   "doc": {
+    "kind": "review",
+    "title": "Hôtel du Vieux-Port ★★★☆☆",
+    "meta": "Avis publié par Martine G.",
+    "body": "L'emplacement est idéal et le personnel est très accueillant. En revanche, notre chambre donnait sur la rue et le bruit des bars nous a empêchés de dormir avant 2 h du matin. Je conseille de demander une chambre côté cour.\n"
+   },
+   "questions": [
+    {
+     "n": 15,
+     "q": "Quel conseil donne l'autrice de l'avis ?",
+     "options": [
+      "Choisir un autre hôtel.",
+      "Demander une chambre côté cour.",
+      "Profiter des bars du quartier.",
+      "Réserver plusieurs mois à l'avance."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-16",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "La sieste au travail, une bonne idée ?",
+    "body": "Une étude menée auprès de 2 000 travailleurs montre qu'une sieste de 20 minutes en début d'après-midi améliore la concentration et réduit les erreurs. Pourtant, très peu d'entreprises prévoient un espace pour se reposer.\n\nLes chercheurs y voient un frein culturel : la sieste reste associée à la paresse.\n"
+   },
+   "questions": [
+    {
+     "n": 16,
+     "q": "Pourquoi, selon les chercheurs, les entreprises ne favorisent-elles pas la sieste ?",
+     "options": [
+      "Elle coûte trop cher.",
+      "Elle diminue la concentration.",
+      "Elle est mal vue : on l'associe à la paresse.",
+      "Les employés n'en veulent pas."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-17",
+   "kind": "doc",
+   "doc": {
+    "kind": "letter",
+    "title": "Votre demande de carte d'assurance maladie",
+    "meta": "Régie de l'assurance maladie",
+    "body": "Votre demande de carte d'assurance maladie a bien été reçue.\n\nPour finaliser votre dossier, nous devons recevoir une copie de votre preuve de résidence (bail ou facture récente). Sans ce document dans les 30 jours, votre demande sera fermée.\n"
+   },
+   "questions": [
+    {
+     "n": 17,
+     "q": "Que doit faire la personne qui reçoit cette lettre ?",
+     "options": [
+      "Envoyer une preuve de résidence dans les 30 jours.",
+      "Renouveler sa carte d'assurance maladie.",
+      "Se présenter au bureau en personne.",
+      "Payer des frais de dossier."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-18",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Le covoiturage séduit les étudiants",
+    "body": "Le covoiturage connaît un regain de popularité chez les étudiants. Une application lancée par l'université met en relation les étudiants qui habitent dans les mêmes secteurs.\n\nEn plus de partager les frais d'essence, les participants obtiennent une place de stationnement réservée près des bâtiments.\n"
+   },
+   "questions": [
+    {
+     "n": 18,
+     "q": "Quel avantage supplémentaire l'université offre-t-elle aux personnes qui font du covoiturage ?",
+     "options": [
+      "De l'essence gratuite.",
+      "Des réductions sur les livres.",
+      "Un abonnement d'autobus.",
+      "Une place de stationnement réservée."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-19",
+   "kind": "doc",
+   "doc": {
+    "kind": "email",
+    "title": "Réunion de vendredi",
+    "meta": "De : Julien · À : Nadia",
+    "body": "Salut Nadia,\n\nJe ne pourrai pas présenter le rapport à la réunion de vendredi : je serai en formation à Ottawa. Pourrais-tu le présenter à ma place ? Les diapositives sont dans le dossier partagé.\n\nJe te dois un café !\nJulien\n"
+   },
+   "questions": [
+    {
+     "n": 19,
+     "q": "Pourquoi Julien écrit-il à Nadia ?",
+     "options": [
+      "Pour l'inviter à prendre un café.",
+      "Pour lui demander de le remplacer à la réunion.",
+      "Pour annuler la réunion de vendredi.",
+      "Pour l'inscrire à une formation."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-20",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Les jardins communautaires, bien plus que des légumes",
+    "body": "Les jardins communautaires se multiplient dans les grandes villes canadiennes. Si l'on y vient d'abord pour cultiver des tomates ou des fines herbes, les participants évoquent surtout autre chose : la possibilité de rencontrer des voisins qu'ils n'auraient jamais croisés autrement.\n\nPlusieurs municipalités l'ont compris et intègrent désormais ces jardins à leurs politiques de lutte contre l'isolement des aînés. Le principal obstacle reste l'espace : à Montréal, l'attente pour obtenir un lot peut dépasser deux ans.\n"
+   },
+   "questions": [
+    {
+     "n": 20,
+     "q": "Quel bénéfice des jardins communautaires le texte met-il surtout en avant ?",
+     "options": [
+      "La production de légumes bon marché.",
+      "L'embellissement des villes.",
+      "La création de liens entre les habitants.",
+      "La formation de futurs agriculteurs."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-21",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Francisation : apprendre en ligne, pratiquer en vrai",
+    "body": "Les cours de francisation en ligne ont permis à de nombreux nouveaux arrivants de commencer à apprendre le français avant même leur arrivée au Québec.\n\nLes enseignants constatent toutefois que ces apprenants progressent vite à l'écrit, mais restent souvent mal à l'aise à l'oral, faute de situations d'échange réelles. Certains centres proposent donc désormais des « jumelages linguistiques » avec des bénévoles francophones.\n"
+   },
+   "questions": [
+    {
+     "n": 21,
+     "q": "Pourquoi certains centres proposent-ils des jumelages linguistiques ?",
+     "options": [
+      "Pour donner aux apprenants de vraies occasions de parler.",
+      "Pour améliorer l'écrit des apprenants.",
+      "Pour remplacer complètement les cours en ligne.",
+      "Pour former des enseignants bénévoles."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-22",
+   "kind": "doc",
+   "doc": {
+    "kind": "letter",
+    "title": "Courrier des lecteurs",
+    "meta": "Lettre à la rédactrice du journal régional",
+    "body": "Madame la rédactrice,\n\nVotre article sur la fermeture du bureau de poste de notre village présente cette décision comme « inévitable ». Permettez-moi d'en douter.\n\nPour les personnes âgées sans internet, ce bureau est le seul lieu où l'on peut payer une facture, envoyer un colis ou simplement parler à quelqu'un. Avant de parler d'économies, il faudrait évaluer ce que coûtera l'isolement de ces citoyens.\n\nGérard Lemieux, Saint-Ambroise\n"
+   },
+   "questions": [
+    {
+     "n": 22,
+     "q": "Quel est l'objectif de l'auteur de la lettre ?",
+     "options": [
+      "Remercier la journaliste pour son article.",
+      "Demander l'ouverture d'un nouveau bureau de poste.",
+      "Expliquer aux aînés comment utiliser internet.",
+      "Contester l'idée que la fermeture est « inévitable »."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-23",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "« Meilleur avant » : une date mal comprise",
+    "body": "Au Canada, près de la moitié des aliments gaspillés le sont à la maison. Les experts pointent un coupable inattendu : la date « meilleur avant ».\n\nBeaucoup de consommateurs la confondent avec une date limite de sécurité, alors qu'elle indique seulement la période pendant laquelle le produit conserve sa qualité optimale. Un yogourt dont la date est dépassée de quelques jours est souvent parfaitement consommable.\n"
+   },
+   "questions": [
+    {
+     "n": 23,
+     "q": "Selon les experts, quelle erreur font beaucoup de consommateurs ?",
+     "options": [
+      "Ils achètent trop de produits laitiers.",
+      "Ils prennent la date « meilleur avant » pour une date de sécurité.",
+      "Ils ne lisent jamais les étiquettes.",
+      "Ils mangent des produits dangereux."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-24",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Horaires libres : le pari d'une PME",
+    "body": "Pour attirer de jeunes employés, une PME de Trois-Rivières a supprimé les horaires fixes : chacun organise sa semaine, à condition d'être présent le mardi pour la réunion d'équipe.\n\nUn an plus tard, la direction se félicite d'un taux de roulement divisé par deux. Seul bémol : certains clients se plaignent de ne pas toujours joindre leur interlocuteur habituel.\n"
+   },
+   "questions": [
+    {
+     "n": 24,
+     "q": "Quel problème cette nouvelle organisation a-t-elle créé ?",
+     "options": [
+      "Les employés quittent l'entreprise plus souvent.",
+      "Les réunions du mardi ont été supprimées.",
+      "Les clients ne réussissent pas toujours à joindre la personne voulue.",
+      "La productivité a diminué de moitié."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-25",
+   "kind": "doc",
+   "doc": {
+    "kind": "blog",
+    "title": "Mon voyage en Gaspésie",
+    "meta": "Blogue « Carnets de route »",
+    "body": "J'avais prévu de visiter la Gaspésie en dix jours, tout réservé à l'avance. Au troisième jour, une tempête a fermé la route principale.\n\nPlutôt que de m'acharner, j'ai accepté l'invitation d'un pêcheur rencontré au port. Ces trois jours imprévus restent le meilleur souvenir de mon voyage. Depuis, je laisse toujours quelques journées sans programme.\n"
+   },
+   "questions": [
+    {
+     "n": 25,
+     "q": "Quelle leçon l'auteur a-t-il tirée de ce voyage ?",
+     "options": [
+      "Il faut tout réserver longtemps à l'avance.",
+      "Il faut éviter la Gaspésie pendant les tempêtes.",
+      "Il ne faut pas accepter l'invitation d'inconnus.",
+      "Il est bon de garder du temps libre pour l'imprévu."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-26",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Le bénévolat, nouvel avantage social",
+    "body": "De plus en plus d'employeurs accordent à leurs salariés une ou deux journées payées par an pour faire du bénévolat. Officiellement, il s'agit de soutenir la communauté.\n\nMais les directions des ressources humaines reconnaissent aussi un intérêt plus direct : ces journées renforcent le sentiment d'appartenance et constituent un argument de recrutement auprès des jeunes diplômés.\n"
+   },
+   "questions": [
+    {
+     "n": 26,
+     "q": "Quel intérêt « plus direct » ces journées présentent-elles pour les entreprises ?",
+     "options": [
+      "Elles renforcent l'attachement des employés et aident à recruter.",
+      "Elles permettent de payer moins d'impôts.",
+      "Elles remplacent une partie des vacances.",
+      "Elles servent à former les bénévoles."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-27",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Les aînés et le numérique : un fossé qui n'est pas celui qu'on croit",
+    "body": "Contrairement aux clichés, les personnes de plus de 65 ans sont de plus en plus connectées : elles utilisent les appels vidéo pour garder le contact avec leurs petits-enfants et effectuent leurs opérations bancaires en ligne.\n\nLe véritable fossé numérique ne se situe pas entre les générations, mais entre les revenus : les aînés à faible revenu, souvent isolés, restent largement exclus de ces usages.\n"
+   },
+   "questions": [
+    {
+     "n": 27,
+     "q": "Selon le texte, où se situe surtout le fossé numérique ?",
+     "options": [
+      "Entre les jeunes et les aînés.",
+      "Entre les personnes qui ont des revenus différents.",
+      "Entre les villes et les campagnes.",
+      "Entre les hommes et les femmes."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-28",
+   "kind": "doc",
+   "doc": {
+    "kind": "rules",
+    "title": "Règlement municipal — Animaux de compagnie",
+    "body": "- Les chiens doivent être tenus en laisse dans tous les parcs municipaux, à l'exception des aires d'exercice canin clôturées.\n- Les propriétaires sont tenus de ramasser les excréments de leur animal.\n- Toute infraction est passible d'une amende de 100 $ à 300 $.\n"
+   },
+   "questions": [
+    {
+     "n": 28,
+     "q": "Où un chien peut-il être libre, sans laisse ?",
+     "options": [
+      "Dans tous les parcs municipaux.",
+      "Sur les trottoirs.",
+      "Dans les aires d'exercice canin clôturées.",
+      "Nulle part dans la ville."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-29",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Trottinettes électriques : la fin du désordre ?",
+    "body": "Les trottinettes électriques en libre-service ont fait leur apparition dans plusieurs villes l'été dernier. Si les usagers apprécient leur côté pratique, les piétons dénoncent les engins abandonnés en travers des trottoirs.\n\nCertaines villes imposent désormais des zones de stationnement obligatoires, sous peine de frais facturés à l'usager.\n"
+   },
+   "questions": [
+    {
+     "n": 29,
+     "q": "Quelle solution certaines villes ont-elles adoptée ?",
+     "options": [
+      "Interdire complètement les trottinettes.",
+      "Réserver les trottinettes aux piétons.",
+      "Rendre les trottinettes gratuites.",
+      "Obliger les usagers à garer les trottinettes dans des zones précises."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-30",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Faut-il aimer son travail ?",
+    "body": "On a longtemps opposé le travail « alimentaire », que l'on exerce pour vivre, et le travail « passion », dans lequel on s'accomplit. Cette distinction séduisante a un revers : elle laisse entendre que ceux qui n'aiment pas leur emploi auraient échoué à trouver leur voie.\n\nOr, pour une majorité de travailleurs, le sens ne se trouve pas dans la tâche elle-même, mais dans ce qu'elle rend possible : nourrir une famille, financer un projet, garder du temps pour autre chose. Exiger de chacun qu'il soit passionné par son travail, c'est ajouter une injonction à une contrainte.\n"
+   },
+   "questions": [
+    {
+     "n": 30,
+     "q": "Que reproche l'auteur à l'opposition entre travail « alimentaire » et travail « passion » ?",
+     "options": [
+      "Elle culpabilise ceux qui ne trouvent pas de passion dans leur emploi.",
+      "Elle accorde trop d'importance au salaire.",
+      "Elle ignore les métiers artistiques.",
+      "Elle pousse les gens à changer d'emploi."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-31",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "La science participative, entre enthousiasme et prudence",
+    "body": "Compter les oiseaux de son jardin, photographier des papillons, signaler l'arrivée du printemps : des milliers de volontaires alimentent aujourd'hui les bases de données des chercheurs.\n\nCes programmes de « science participative » ne se contentent pas de fournir une main-d'œuvre gratuite ; ils modifient aussi le rapport des citoyens à la science, en montrant concrètement comment se construit un savoir. Certains scientifiques restent néanmoins réservés quant à la fiabilité de données recueillies par des non-spécialistes, ce qui impose des protocoles de vérification rigoureux.\n"
+   },
+   "questions": [
+    {
+     "n": 31,
+     "q": "Quelle réserve certains scientifiques expriment-ils ?",
+     "options": [
+      "Les volontaires coûtent trop cher aux laboratoires.",
+      "Les citoyens ne s'intéressent pas vraiment à la science.",
+      "Les données recueillies par des amateurs pourraient manquer de fiabilité.",
+      "Ces programmes dérangent les animaux observés."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-32",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Le droit à la déconnexion, une promesse inachevée",
+    "body": "Le droit à la déconnexion, inscrit dans la loi de plusieurs pays, reste largement théorique. Car le problème n'est pas tant le courriel envoyé à 22 h que la culture qui le rend normal.\n\nTant que la disponibilité permanente sera perçue comme une preuve d'engagement, les salariés continueront de répondre, loi ou pas. Une réforme efficace devrait donc viser les pratiques managériales plutôt que les seuls horaires d'envoi des messages.\n"
+   },
+   "questions": [
+    {
+     "n": 32,
+     "q": "Selon l'auteur, sur quoi une réforme efficace devrait-elle porter ?",
+     "options": [
+      "Sur l'interdiction totale des courriels professionnels.",
+      "Sur les pratiques et la culture de gestion.",
+      "Uniquement sur les heures d'envoi des messages.",
+      "Sur des sanctions contre les salariés qui répondent le soir."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-33",
+   "kind": "doc",
+   "doc": {
+    "kind": "literary",
+    "title": "Lire le monde",
+    "meta": "Extrait d'un récit",
+    "body": "Ma grand-mère n'a jamais appris à lire. Elle reconnaissait pourtant chaque bocal de sa cuisine, chaque lettre de la banque, à la couleur du papier, à la forme du logo.\n\nEnfant, je croyais qu'elle lisait ; adolescente, j'ai compris qu'elle devinait, et j'en ai eu honte. Il m'a fallu des années pour mesurer l'intelligence qu'exigeait cette vie entière à déchiffrer le monde sans l'alphabet.\n"
+   },
+   "questions": [
+    {
+     "n": 33,
+     "q": "Comment le regard de la narratrice sur sa grand-mère évolue-t-il ?",
+     "options": [
+      "De l'admiration à un mépris définitif.",
+      "De l'indifférence à la colère.",
+      "De la pitié à la jalousie.",
+      "De la honte à la reconnaissance de son intelligence."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-34",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Au-delà du PIB",
+    "body": "Le produit intérieur brut mesure la richesse produite, non le bien-être. Une catastrophe naturelle peut ainsi faire grimper le PIB, en raison des dépenses de reconstruction.\n\nConscients de ces limites, plusieurs gouvernements expérimentent des indicateurs complémentaires : santé, qualité de l'environnement, temps libre. Reste à savoir si ces nouveaux tableaux de bord influenceront réellement les décisions budgétaires, ou s'ils serviront surtout d'ornement aux discours.\n"
+   },
+   "questions": [
+    {
+     "n": 34,
+     "q": "Quel doute l'auteur exprime-t-il à propos des nouveaux indicateurs ?",
+     "options": [
+      "Ils risquent de n'avoir aucun effet réel sur les décisions politiques.",
+      "Ils sont trop difficiles à calculer.",
+      "Ils font augmenter artificiellement le PIB.",
+      "Ils ne tiennent pas compte de la santé."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-35",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "La « ville du quart d'heure », un concept mal compris",
+    "body": "Le concept de « ville du quart d'heure », selon lequel chaque habitant devrait pouvoir accéder à pied ou à vélo, en un quart d'heure, aux services essentiels, séduit de nombreux élus.\n\nSes détracteurs y voient pourtant une forme d'assignation à résidence, comme si l'on voulait cantonner les habitants à leur quartier. Le malentendu est révélateur : le concept ne vise pas à limiter les déplacements, mais à rendre facultatifs ceux qui sont aujourd'hui contraints.\n"
+   },
+   "questions": [
+    {
+     "n": 35,
+     "q": "Selon l'auteur, quel est le véritable objectif de la « ville du quart d'heure » ?",
+     "options": [
+      "Interdire les déplacements en dehors du quartier.",
+      "Rendre moins nécessaires les déplacements obligés.",
+      "Supprimer toutes les voitures en ville.",
+      "Réduire le nombre d'élus municipaux."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-36",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Qu'est-ce que tolérer ?",
+    "body": "On croit souvent que la tolérance consiste à n'avoir aucune conviction, comme si l'absence d'opinion garantissait le respect de celle des autres. C'est l'inverse.\n\nOn ne tolère, au sens propre, que ce que l'on désapprouve : tolérer, c'est accepter l'existence d'une pensée que l'on juge fausse, sans chercher à la faire taire. Une société indifférente n'est donc pas tolérante ; elle est simplement désintéressée. La tolérance suppose des convictions fortes et la discipline de ne pas les imposer.\n"
+   },
+   "questions": [
+    {
+     "n": 36,
+     "q": "Quelle définition de la tolérance l'auteur propose-t-il ?",
+     "options": [
+      "L'absence de convictions personnelles.",
+      "L'indifférence envers les opinions des autres.",
+      "L'acceptation de ce que l'on désapprouve, sans chercher à le faire taire.",
+      "L'obligation de partager l'opinion de la majorité."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-37",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Musique en ligne : l'abondance et l'habitude",
+    "body": "Les plateformes de diffusion musicale se défendent de toute uniformisation : jamais, rappellent-elles, l'offre n'a été aussi vaste. L'argument est imparable sur le plan quantitatif, mais il élude l'essentiel.\n\nUne bibliothèque infinie ne garantit pas la diversité de ce qui est effectivement écouté ; or les algorithmes de recommandation, conçus pour retenir l'auditeur, privilégient la familiarité. Le paradoxe est là : l'abondance des possibles coexiste avec un rétrécissement des usages.\n"
+   },
+   "questions": [
+    {
+     "n": 37,
+     "q": "Quel paradoxe l'auteur met-il en évidence ?",
+     "options": [
+      "Les plateformes offrent peu de titres, mais attirent beaucoup d'auditeurs.",
+      "Les algorithmes favorisent les découvertes surprenantes.",
+      "Les auditeurs refusent d'écouter de la musique familière.",
+      "L'offre est immense, alors que les écoutes réelles tendent à se resserrer."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-38",
+   "kind": "doc",
+   "doc": {
+    "kind": "review",
+    "title": "Critique — Le roman du silence",
+    "meta": "Chronique littéraire",
+    "body": "Ce qui frappe, à la relecture de ce roman, c'est moins l'intrigue, somme toute convenue, que la façon dont l'autrice fait du silence un personnage à part entière. Les dialogues tournent court, les phrases s'interrompent, et le lecteur finit par comprendre que l'essentiel se joue précisément dans ce qui n'est pas dit.\n\nCertains critiques y ont vu une maladresse ; c'est méconnaître l'audace d'un livre qui ose confier au lecteur la tâche de combler les vides.\n"
+   },
+   "questions": [
+    {
+     "n": 38,
+     "q": "Comment le critique juge-t-il l'usage du silence dans ce roman ?",
+     "options": [
+      "Comme un choix audacieux qui fait travailler le lecteur.",
+      "Comme une maladresse de l'autrice.",
+      "Comme un défaut de l'intrigue.",
+      "Comme une imitation d'autres romans."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-39",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "La défiance envers les experts",
+    "body": "La défiance envers les experts est souvent présentée comme une maladie de l'opinion, qu'il suffirait de soigner par davantage de pédagogie. Ce diagnostic est commode, car il dispense les experts de s'interroger sur leur propre rôle.\n\nLorsque des recommandations présentées comme certaines sont contredites quelques mois plus tard, sans que l'incertitude initiale ait été reconnue, ce n'est pas l'ignorance du public qui alimente la défiance, mais l'excès d'assurance de ceux qui parlent en son nom. Restaurer la confiance exigerait donc moins d'explications que d'humilité.\n"
+   },
+   "questions": [
+    {
+     "n": 39,
+     "q": "Selon l'auteur, que faudrait-il pour restaurer la confiance envers les experts ?",
+     "options": [
+      "Davantage de pédagogie auprès du public.",
+      "Que les experts reconnaissent davantage leurs incertitudes.",
+      "Que le public cesse de s'informer.",
+      "Que les recommandations ne changent jamais."
+     ]
+    }
+   ]
+  }
+ ],
+ "count": 39,
+ "max": 699
+}

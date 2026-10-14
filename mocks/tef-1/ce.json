@@ -1,0 +1,729 @@
+{
+ "exam": "tef",
+ "mock": 1,
+ "section": "ce",
+ "duration": 3600,
+ "scale": "699",
+ "screens": [
+  {
+   "id": "ce-01",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "sign",
+    "title": "Piscine municipale",
+    "body": "- Bonnet de bain obligatoire\n- **Douche obligatoire avant la baignade**\n- Interdit de courir autour du bassin\n"
+   },
+   "questions": [
+    {
+     "n": 1,
+     "q": "Que doit-on faire avant de se baigner ?",
+     "options": [
+      "Prendre une douche.",
+      "Courir autour du bassin.",
+      "Acheter un bonnet.",
+      "Réserver sa place."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-02",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "ad",
+    "title": "Cherche colocataire",
+    "body": "Grand 5 ½ près de l'Université Laval.\nChambre meublée, **550 $/mois, tout inclus** (chauffage, électricité, internet).\nNon-fumeur. Libre le 1er juillet.\nÉcrire à Mathieu : m.roy@courriel.ca\n"
+   },
+   "questions": [
+    {
+     "n": 2,
+     "q": "Qu'est-ce qui est compris dans le prix de la chambre ?",
+     "options": [
+      "Le stationnement.",
+      "Les repas.",
+      "Le chauffage, l'électricité et internet.",
+      "Le ménage."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-03",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "poster",
+    "title": "Festival des lanternes",
+    "meta": "Jardin botanique",
+    "body": "Du 5 septembre au 31 octobre\nTous les soirs, de 19 h à 23 h\n\n**Billets en vente en ligne uniquement.**\nGratuit pour les enfants de moins de 5 ans.\n"
+   },
+   "questions": [
+    {
+     "n": 3,
+     "q": "Comment peut-on acheter des billets ?",
+     "options": [
+      "Seulement sur internet.",
+      "À l'entrée du jardin.",
+      "Par téléphone.",
+      "Dans les écoles."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-04",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "notice",
+    "title": "Ligne 45 — Horaire des fêtes",
+    "body": "Du 24 décembre au 2 janvier, l'autobus 45 passe **toutes les 30 minutes** au lieu de toutes les 15 minutes.\nService normal dès le 3 janvier.\n"
+   },
+   "questions": [
+    {
+     "n": 4,
+     "q": "Qu'est-ce qui change pendant les fêtes ?",
+     "options": [
+      "La ligne 45 est supprimée.",
+      "Le prix du billet augmente.",
+      "Le trajet de la ligne change.",
+      "Les autobus passent moins souvent."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-05",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "label",
+    "title": "Pull 100 % laine — Entretien",
+    "body": "Lavage à la main, à l'eau froide.\nNe pas mettre au sèche-linge.\n**Sécher à plat.**\n"
+   },
+   "questions": [
+    {
+     "n": 5,
+     "q": "Comment faut-il sécher ce pull ?",
+     "options": [
+      "Au sèche-linge.",
+      "Suspendu au soleil.",
+      "Avec un fer à repasser.",
+      "À plat."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-06",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "email",
+    "title": "Votre réservation est arrivée",
+    "meta": "De : Bibliothèque Marc-Favreau",
+    "body": "Bonjour,\n\nLe livre que vous avez réservé, « Les Saisons du fleuve », est arrivé. Il vous sera gardé au comptoir de prêt pendant 5 jours. Passé ce délai, il sera remis en circulation.\n"
+   },
+   "questions": [
+    {
+     "n": 6,
+     "q": "Que doit faire la personne qui reçoit ce courriel ?",
+     "options": [
+      "Rendre le livre dans 5 jours.",
+      "Payer une amende.",
+      "Venir chercher le livre dans les 5 jours.",
+      "Réserver un autre livre."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-07",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "notice",
+    "title": "Chers clients",
+    "body": "Notre cuisine ferme à 21 h 30.\n**Les commandes à emporter sont acceptées jusqu'à 21 h.**\nMerci de votre compréhension !\n"
+   },
+   "questions": [
+    {
+     "n": 7,
+     "q": "Jusqu'à quelle heure peut-on commander un repas à emporter ?",
+     "options": [
+      "21 h.",
+      "21 h 30.",
+      "22 h.",
+      "20 h 30."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-08",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Nous avons dû annuler le pique-nique ______ la pluie.",
+   "questions": [
+    {
+     "n": 8,
+     "q": "Choisissez le mot ou l'expression qui complète la phrase.",
+     "options": [
+      "grâce à",
+      "malgré",
+      "pour",
+      "à cause de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-09",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Si j'______ plus de temps, je ferais du bénévolat.",
+   "questions": [
+    {
+     "n": 9,
+     "q": "Choisissez la forme qui complète la phrase.",
+     "options": [
+      "ai",
+      "aurais",
+      "avais",
+      "aurai"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-10",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "C'est le collègue ______ je t'ai parlé hier.",
+   "questions": [
+    {
+     "n": 10,
+     "q": "Choisissez le pronom qui complète la phrase.",
+     "options": [
+      "dont",
+      "que",
+      "qui",
+      "où"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-11",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Il faut que vous ______ ce formulaire avant vendredi.",
+   "questions": [
+    {
+     "n": 11,
+     "q": "Choisissez la forme qui complète la phrase.",
+     "options": [
+      "remplissiez",
+      "remplissez",
+      "remplirez",
+      "rempliriez"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-12",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Je n'ai reçu ______ réponse à ma candidature.",
+   "questions": [
+    {
+     "n": 12,
+     "q": "Choisissez le mot qui complète la phrase.",
+     "options": [
+      "pas",
+      "jamais",
+      "rien",
+      "aucune"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-13",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "______ il fasse très froid, les enfants jouent dehors.",
+   "questions": [
+    {
+     "n": 13,
+     "q": "Choisissez le mot qui complète la phrase.",
+     "options": [
+      "Parce qu'",
+      "Bien qu'",
+      "Puisqu'",
+      "Pour qu'"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-14",
+   "kind": "doc",
+   "part": "C — Textes à compléter",
+   "doc": {
+    "kind": "letter",
+    "title": "Sortie au musée",
+    "meta": "De : École primaire des Pionniers · À : Parents de 4e année",
+    "body": "Chers parents,\n\nLa sortie au musée prévue le 12 mai est confirmée. Les élèves devront arriver à l'école à 8 h, [14] le départ de l'autobus est fixé à 8 h 15. N'oubliez pas de [15] un lunch et une bouteille d'eau pour votre enfant.\n\nMerci de votre collaboration !\n"
+   },
+   "questions": [
+    {
+     "n": 14,
+     "q": "Quel mot convient pour l'espace [14] ?",
+     "options": [
+      "car",
+      "donc",
+      "mais",
+      "pourtant"
+     ]
+    },
+    {
+     "n": 15,
+     "q": "Quel mot convient pour l'espace [15] ?",
+     "options": [
+      "prêter",
+      "prévoir",
+      "prévenir",
+      "promettre"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-16",
+   "kind": "doc",
+   "part": "C — Textes à compléter",
+   "doc": {
+    "kind": "ad",
+    "title": "Offre d'emploi — Adjoint(e) administratif(ve)",
+    "body": "Nous recherchons un(e) adjoint(e) administratif(ve).\n[16] principales : accueil des clients, gestion des rendez-vous et classement des dossiers.\nLe poste est à temps plein, [17] possibilité de télétravail un jour par semaine.\n"
+   },
+   "questions": [
+    {
+     "n": 16,
+     "q": "Quel mot convient pour l'espace [16] ?",
+     "options": [
+      "Salaires",
+      "Tâches",
+      "Diplômes",
+      "Horaires"
+     ]
+    },
+    {
+     "n": 17,
+     "q": "Quel mot convient pour l'espace [17] ?",
+     "options": [
+      "sans",
+      "contre",
+      "sous",
+      "avec"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-18",
+   "kind": "doc",
+   "part": "D — Lecture rapide",
+   "doc": {
+    "kind": "multi",
+    "title": "Activités du centre communautaire",
+    "items": [
+     {
+      "label": "Texte 1",
+      "title": "Atelier de cuisine du monde",
+      "body": "Chaque mardi soir, découvrez les recettes de nos membres venus de partout. Ingrédients fournis. 10 $ par séance."
+     },
+     {
+      "label": "Texte 2",
+      "title": "Club de lecture",
+      "body": "Un jeudi par mois, on discute d'un roman québécois. Gratuit. Inscription obligatoire : places limitées à 12."
+     },
+     {
+      "label": "Texte 3",
+      "title": "Yoga doux",
+      "body": "Lundi et mercredi matin. Idéal pour les aînés et les personnes qui reprennent une activité physique. Apportez votre tapis."
+     },
+     {
+      "label": "Texte 4",
+      "title": "Aide aux devoirs",
+      "body": "Du lundi au jeudi, de 16 h à 18 h, des bénévoles aident les élèves du primaire. Gratuit pour les familles du quartier."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 18,
+     "q": "Dans quel texte l'activité s'adresse-t-elle aux enfants ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    },
+    {
+     "n": 19,
+     "q": "Dans quel texte faut-il payer chaque fois que l'on participe ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    },
+    {
+     "n": 20,
+     "q": "Dans quel texte le nombre de participants est-il limité ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    },
+    {
+     "n": 21,
+     "q": "Dans quel texte demande-t-on d'apporter son propre matériel ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-22",
+   "kind": "doc",
+   "part": "E — Lire un graphique",
+   "statement": "Le nombre de passagers a fortement augmenté au début de l'année, puis il est resté stable jusqu'à la fin de l'année.",
+   "optionImages": [
+    "img/ce-22-a.svg",
+    "img/ce-22-b.svg",
+    "img/ce-22-c.svg",
+    "img/ce-22-d.svg"
+   ],
+   "optionAlts": [
+    "Stable, puis en forte hausse à la fin",
+    "En baisse régulière",
+    "Forte hausse au début, puis stable",
+    "Hausse régulière toute l'année"
+   ],
+   "questions": [
+    {
+     "n": 22,
+     "q": "Quel graphique correspond à la phrase ?"
+    }
+   ]
+  },
+  {
+   "id": "ce-23",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "letter",
+    "title": "Avis de renouvellement de bail",
+    "meta": "De : Gestion immobilière Laurier · À : Mme Aminata Diallo",
+    "body": "Madame Diallo,\n\nVotre bail se termine le 30 juin. Nous vous proposons de le renouveler pour un an, avec une augmentation de loyer de 3,5 %, soit un nouveau loyer de 1 035 $ par mois.\n\nVous disposez d'un mois à compter de la réception de cet avis pour nous faire connaître votre réponse. Si vous refusez l'augmentation, vous pouvez demander au Tribunal administratif du logement de fixer le loyer.\n\nSans réponse de votre part dans ce délai, vous serez réputée avoir accepté les nouvelles conditions.\n"
+   },
+   "questions": [
+    {
+     "n": 23,
+     "q": "Que se passe-t-il si Mme Diallo ne répond pas dans le délai d'un mois ?",
+     "options": [
+      "Son bail est annulé.",
+      "Elle doit quitter le logement.",
+      "Elle est considérée comme ayant accepté l'augmentation.",
+      "Son loyer reste le même."
+     ]
+    },
+    {
+     "n": 24,
+     "q": "Que peut faire Mme Diallo si elle refuse l'augmentation ?",
+     "options": [
+      "Demander au Tribunal administratif du logement de fixer le loyer.",
+      "Continuer à payer l'ancien loyer sans répondre.",
+      "Déménager obligatoirement avant le 30 juin.",
+      "Écrire au maire de la ville."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-25",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "memo",
+    "title": "Note de service",
+    "meta": "À : Tout le personnel · De : Service des finances · Objet : Frais de déplacement",
+    "body": "À compter du 1er mars, les demandes de remboursement des frais de déplacement devront être soumises dans un délai de 30 jours suivant le déplacement, accompagnées des reçus originaux.\n\nLes repas seront remboursés jusqu'à concurrence de 60 $ par jour.\n\nLes demandes incomplètes seront retournées à l'employé.\n"
+   },
+   "questions": [
+    {
+     "n": 25,
+     "q": "Quel est l'objet de cette note ?",
+     "options": [
+      "Préciser les nouvelles règles de remboursement des frais de déplacement.",
+      "Annoncer une hausse des salaires.",
+      "Organiser un voyage d'équipe.",
+      "Supprimer tous les remboursements."
+     ]
+    },
+    {
+     "n": 26,
+     "q": "Que se passe-t-il si une demande est incomplète ?",
+     "options": [
+      "Elle est refusée définitivement.",
+      "Elle est remboursée à moitié.",
+      "Elle est renvoyée à l'employé.",
+      "Elle est traitée en priorité."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-27",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "ad",
+    "title": "Agent(e) d'accueil bilingue",
+    "meta": "Centre de services aux nouveaux arrivants",
+    "body": "**Fonctions :** accueillir et orienter la clientèle, en personne et au téléphone ; prendre les rendez-vous ; tenir les dossiers à jour.\n\n**Exigences :** diplôme d'études secondaires ; maîtrise du français et de l'anglais, à l'oral comme à l'écrit. La connaissance d'une troisième langue est un atout.\n\n**Conditions :** poste permanent, 35 h par semaine, du lundi au vendredi.\nDate limite : 15 novembre.\n"
+   },
+   "questions": [
+    {
+     "n": 27,
+     "q": "Quelle exigence ce poste comporte-t-il ?",
+     "options": [
+      "Un diplôme universitaire.",
+      "Une expérience de dix ans.",
+      "La maîtrise d'une troisième langue.",
+      "La maîtrise du français et de l'anglais, à l'oral et à l'écrit."
+     ]
+    },
+    {
+     "n": 28,
+     "q": "Que dit l'offre à propos d'une troisième langue ?",
+     "options": [
+      "Elle est obligatoire.",
+      "C'est un avantage, mais pas une obligation.",
+      "Elle est interdite au travail.",
+      "Elle donne droit à un meilleur salaire."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-29",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "letter",
+    "title": "Confirmation de rendez-vous",
+    "meta": "Clinique médicale du Plateau",
+    "body": "Votre rendez-vous de prise de sang est fixé au mercredi 9 avril à 7 h 30.\n\nVous devez être à jeun depuis au moins 12 heures : ne mangez rien et ne buvez que de l'eau. Présentez-vous avec votre carte d'assurance maladie et la requête signée par votre médecin.\n\nEn cas d'empêchement, prévenez-nous au moins 24 heures à l'avance, faute de quoi des frais de 50 $ pourront vous être facturés.\n"
+   },
+   "questions": [
+    {
+     "n": 29,
+     "q": "Que doit faire le patient avant le rendez-vous ?",
+     "options": [
+      "Boire un café sucré.",
+      "Prendre tous ses médicaments.",
+      "Faire du sport.",
+      "Ne rien manger pendant au moins 12 heures."
+     ]
+    },
+    {
+     "n": 30,
+     "q": "Dans quel cas des frais peuvent-ils être demandés ?",
+     "options": [
+      "Si le patient arrive en avance.",
+      "Si le patient oublie sa carte.",
+      "Si le patient annule moins de 24 heures avant.",
+      "Si la prise de sang dure longtemps."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-31",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "notice",
+    "title": "Ville de Gatineau — Déneigement",
+    "body": "Lorsque les **panneaux orange clignotants** sont allumés, il est interdit de stationner dans la rue entre 19 h et 7 h. Les véhicules en infraction seront remorqués aux frais de leur propriétaire.\n\nPour être averti par texto ou par courriel, abonnez-vous gratuitement au service **Info-Neige** sur le site de la Ville.\n"
+   },
+   "questions": [
+    {
+     "n": 31,
+     "q": "Que risque une voiture stationnée dans la rue quand les panneaux clignotent ?",
+     "options": [
+      "Un simple avertissement.",
+      "D'être remorquée aux frais de son propriétaire.",
+      "D'être déneigée gratuitement.",
+      "D'être déplacée le lendemain matin par la Ville, sans frais."
+     ]
+    },
+    {
+     "n": 32,
+     "q": "À quoi sert le service Info-Neige ?",
+     "options": [
+      "À recevoir des alertes de déneigement.",
+      "À payer ses contraventions.",
+      "À réserver une place de stationnement.",
+      "À signaler une rue mal déneigée."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-33",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "Les bibliothèques, nouveaux lieux de vie",
+    "body": "Longtemps associées au silence et aux rayonnages, les bibliothèques se transforment. À Montréal comme à Québec, on y trouve désormais des studios d'enregistrement, des imprimantes 3D, des cuisines collectives et même des instruments de musique à emprunter.\n\nCe virage répond à une baisse des prêts de livres papier, mais pas seulement : les responsables y voient l'occasion d'offrir un espace gratuit et ouvert à tous, à une époque où les lieux de rencontre non commerciaux se font rares.\n\nCertains usagers regrettent toutefois la perte de calme, et plusieurs établissements ont dû aménager des « zones silencieuses » pour satisfaire tout le monde.\n"
+   },
+   "questions": [
+    {
+     "n": 33,
+     "q": "Pourquoi les bibliothèques se transforment-elles ?",
+     "options": [
+      "Parce qu'elles manquent de livres.",
+      "Pour répondre à la baisse des prêts et offrir un lieu de rencontre gratuit.",
+      "Pour devenir des commerces rentables.",
+      "Parce que les usagers réclament plus de silence."
+     ]
+    },
+    {
+     "n": 34,
+     "q": "Comment certaines bibliothèques ont-elles répondu aux usagers qui regrettent le calme ?",
+     "options": [
+      "En supprimant les studios d'enregistrement.",
+      "En fermant plus tôt le soir.",
+      "En créant des espaces réservés au silence.",
+      "En interdisant les instruments de musique."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-35",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "Le vrac, une mode durable ?",
+    "body": "Il y a cinq ans, les épiceries zéro déchet se comptaient sur les doigts d'une main. Aujourd'hui, la plupart des grandes chaînes proposent un rayon de produits en vrac.\n\nMais derrière l'enthousiasme, les chiffres sont plus nuancés : les ventes stagnent depuis deux ans, freinées par l'inflation. Car si le vrac permet d'acheter la quantité exacte dont on a besoin, il n'est pas toujours moins cher, et il demande du temps : il faut penser à apporter ses contenants.\n\nPour les experts, le vrac ne disparaîtra pas, mais il restera une pratique minoritaire tant que l'achat en vrac ne sera pas aussi simple que l'achat d'un produit emballé.\n"
+   },
+   "questions": [
+    {
+     "n": 35,
+     "q": "Qu'est-ce qui freine les ventes de produits en vrac ?",
+     "options": [
+      "L'inflation, et le fait que ce soit moins pratique.",
+      "L'interdiction des contenants personnels.",
+      "La mauvaise qualité des produits.",
+      "La fermeture des grandes chaînes."
+     ]
+    },
+    {
+     "n": 36,
+     "q": "Quelle est la prévision des experts ?",
+     "options": [
+      "Le vrac va bientôt disparaître.",
+      "Le vrac deviendra majoritaire d'ici cinq ans.",
+      "Le vrac restera minoritaire tant qu'il ne sera pas plus simple.",
+      "Le vrac deviendra obligatoire."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-37",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "Pénurie de main-d'œuvre : les retraités à la rescousse",
+    "body": "Face à la pénurie de main-d'œuvre, de plus en plus d'entreprises tentent de retenir, voire de réembaucher, des travailleurs à la retraite. Horaires réduits, postes de mentorat, travail saisonnier : les formules se multiplient.\n\nPour les retraités, l'argument financier n'est pas toujours décisif ; beaucoup évoquent plutôt le besoin de rester actifs et de transmettre leur savoir-faire.\n\nLes spécialistes mettent cependant en garde : sans adaptation des postes, notamment pour les métiers physiques, ces retours risquent d'être de courte durée.\n"
+   },
+   "questions": [
+    {
+     "n": 37,
+     "q": "Pourquoi beaucoup de retraités reprennent-ils un travail ?",
+     "options": [
+      "Surtout pour l'argent.",
+      "Pour rester actifs et transmettre leurs compétences.",
+      "Parce que la loi les y oblige.",
+      "Pour obtenir une promotion."
+     ]
+    },
+    {
+     "n": 38,
+     "q": "Quelle mise en garde les spécialistes font-ils ?",
+     "options": [
+      "Les retraités coûtent trop cher aux entreprises.",
+      "Les jeunes vont perdre leur emploi.",
+      "Les entreprises vont devoir fermer.",
+      "Sans adaptation des postes, ces retours risquent d'être de courte durée."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-39",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "L'intelligence artificielle à l'école : interdire ou apprendre ?",
+    "body": "L'arrivée des outils d'intelligence artificielle capables de rédiger une dissertation en quelques secondes a provoqué un vent de panique dans les établissements scolaires. Certains ont réagi en interdisant purement et simplement ces outils.\n\nD'autres enseignants font un pari différent : plutôt que de traquer la triche, ils transforment leurs évaluations, en privilégiant l'oral, le travail en classe et l'analyse critique des réponses produites par la machine. Pour eux, l'enjeu n'est pas d'empêcher les élèves d'utiliser l'IA, mais de leur apprendre à en discerner les limites.\n\nReste une inquiétude partagée : celle d'un écart croissant entre les élèves qui sauront se servir de ces outils pour apprendre et ceux qui s'en serviront pour éviter d'apprendre.\n"
+   },
+   "questions": [
+    {
+     "n": 39,
+     "q": "Quelle stratégie certains enseignants adoptent-ils ?",
+     "options": [
+      "Interdire totalement l'IA en classe.",
+      "Transformer leurs évaluations et apprendre aux élèves à juger l'IA de façon critique.",
+      "Laisser les élèves faire tous leurs devoirs avec l'IA.",
+      "Supprimer les examens oraux."
+     ]
+    },
+    {
+     "n": 40,
+     "q": "Quelle inquiétude est partagée ?",
+     "options": [
+      "L'IA va remplacer les enseignants.",
+      "Les élèves n'aiment pas l'IA.",
+      "Les outils d'IA coûtent trop cher aux écoles.",
+      "Un écart entre les élèves qui utilisent l'IA pour apprendre et ceux qui l'utilisent pour éviter d'apprendre."
+     ]
+    }
+   ]
+  }
+ ],
+ "count": 40,
+ "max": 40
+}

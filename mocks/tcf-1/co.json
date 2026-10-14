@@ -1,0 +1,612 @@
+{
+ "exam": "tcf",
+ "mock": 1,
+ "section": "co",
+ "duration": 2100,
+ "scale": "699",
+ "screens": [
+  {
+   "id": "co-01",
+   "kind": "picture",
+   "audio": "audio/co-01.mp3",
+   "image": "img/co-01.svg",
+   "alt": "Une femme au comptoir d'une boulangerie ; le boulanger lui tend une baguette.",
+   "questions": [
+    {
+     "n": 1
+    }
+   ]
+  },
+  {
+   "id": "co-02",
+   "kind": "picture",
+   "audio": "audio/co-02.mp3",
+   "image": "img/co-02.svg",
+   "alt": "Un homme debout sur un quai de gare regarde sa montre ; un train arrive.",
+   "questions": [
+    {
+     "n": 2
+    }
+   ]
+  },
+  {
+   "id": "co-03",
+   "kind": "picture",
+   "audio": "audio/co-03.mp3",
+   "image": "img/co-03.svg",
+   "alt": "Deux enfants en manteau d'hiver font un bonhomme de neige.",
+   "questions": [
+    {
+     "n": 3
+    }
+   ]
+  },
+  {
+   "id": "co-04",
+   "kind": "picture",
+   "audio": "audio/co-04.mp3",
+   "image": "img/co-04.svg",
+   "alt": "Un homme cuisine dans une cuisine : une poêle sur la cuisinière.",
+   "questions": [
+    {
+     "n": 4
+    }
+   ]
+  },
+  {
+   "id": "co-05",
+   "kind": "audio-options",
+   "audio": "audio/co-05.mp3",
+   "questions": [
+    {
+     "n": 5
+    }
+   ]
+  },
+  {
+   "id": "co-06",
+   "kind": "audio-options",
+   "audio": "audio/co-06.mp3",
+   "questions": [
+    {
+     "n": 6
+    }
+   ]
+  },
+  {
+   "id": "co-07",
+   "kind": "audio-options",
+   "audio": "audio/co-07.mp3",
+   "questions": [
+    {
+     "n": 7
+    }
+   ]
+  },
+  {
+   "id": "co-08",
+   "kind": "audio-options",
+   "audio": "audio/co-08.mp3",
+   "questions": [
+    {
+     "n": 8
+    }
+   ]
+  },
+  {
+   "id": "co-09",
+   "kind": "audio-options",
+   "audio": "audio/co-09.mp3",
+   "questions": [
+    {
+     "n": 9
+    }
+   ]
+  },
+  {
+   "id": "co-10",
+   "kind": "audio-options",
+   "audio": "audio/co-10.mp3",
+   "questions": [
+    {
+     "n": 10
+    }
+   ]
+  },
+  {
+   "id": "co-11",
+   "kind": "mcq",
+   "audio": "audio/co-11.mp3",
+   "questions": [
+    {
+     "n": 11,
+     "q": "Que propose le centre communautaire ?",
+     "options": [
+      "Des cours de natation pour enfants.",
+      "Un emploi d'animateur pour l'été.",
+      "Une formation payante en avril.",
+      "Un camp de vacances pour adultes."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-12",
+   "kind": "mcq",
+   "audio": "audio/co-12.mp3",
+   "questions": [
+    {
+     "n": 12,
+     "q": "Quel est le problème du nouvel appartement de Samir ?",
+     "options": [
+      "Il est trop cher.",
+      "Il est sombre.",
+      "Il est mal situé pour les transports.",
+      "Il est trop petit."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-13",
+   "kind": "mcq",
+   "audio": "audio/co-13.mp3",
+   "questions": [
+    {
+     "n": 13,
+     "q": "Pourquoi l'école appelle-t-elle ?",
+     "options": [
+      "Lucas est malade.",
+      "Lucas s'est battu avec un camarade.",
+      "Lucas a oublié ses affaires.",
+      "Lucas a eu une très bonne note."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-14",
+   "kind": "mcq",
+   "audio": "audio/co-14.mp3",
+   "questions": [
+    {
+     "n": 14,
+     "q": "Pourquoi cette femme continue-t-elle à faire du bénévolat aujourd'hui ?",
+     "options": [
+      "Pour améliorer son français.",
+      "Pour trouver un emploi.",
+      "Pour les relations humaines qu'elle y a créées.",
+      "Parce que c'est obligatoire pour les nouveaux arrivants."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-15",
+   "kind": "mcq",
+   "audio": "audio/co-15.mp3",
+   "questions": [
+    {
+     "n": 15,
+     "q": "Que doivent faire les passagers pour obtenir un repas ?",
+     "options": [
+      "Aller au comptoir de la compagnie près de la porte 54.",
+      "Monter tout de suite dans l'avion.",
+      "Téléphoner à la compagnie.",
+      "Attendre deux heures devant la porte d'embarquement."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-16",
+   "kind": "mcq",
+   "audio": "audio/co-16.mp3",
+   "questions": [
+    {
+     "n": 16,
+     "q": "Que doit faire le client s'il oublie de prendre son médicament ?",
+     "options": [
+      "Prendre une double dose la fois suivante.",
+      "Continuer le traitement normalement.",
+      "Arrêter le traitement.",
+      "Rappeler le pharmacien."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-17",
+   "kind": "mcq",
+   "audio": "audio/co-17.mp3",
+   "questions": [
+    {
+     "n": 17,
+     "q": "Quel est l'objectif de ce nouveau service ?",
+     "options": [
+      "Faire faire des économies à la ville.",
+      "Attirer davantage de touristes.",
+      "Remplacer les autobus.",
+      "Diminuer le nombre de voitures au centre-ville."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-18",
+   "kind": "mcq",
+   "audio": "audio/co-18.mp3",
+   "questions": [
+    {
+     "n": 18,
+     "q": "Pourquoi la recruteuse veut-elle faire passer un test au candidat ?",
+     "options": [
+      "Pour vérifier son anglais.",
+      "Pour évaluer son niveau de français.",
+      "Pour tester ses connaissances en informatique.",
+      "Pour vérifier son expérience en centre d'appels."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-19",
+   "kind": "mcq",
+   "audio": "audio/co-19.mp3",
+   "questions": [
+    {
+     "n": 19,
+     "q": "Que pense cet homme de l'évolution de son quartier ?",
+     "options": [
+      "Il en est entièrement satisfait.",
+      "Il regrette que rien n'ait changé.",
+      "Il y voit des avantages, mais aussi un inconvénient important.",
+      "Il veut quitter le quartier au plus vite."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-20",
+   "kind": "mcq",
+   "audio": "audio/co-20.mp3",
+   "questions": [
+    {
+     "n": 20,
+     "q": "Que recommandent les chercheurs ?",
+     "options": [
+      "Un retour complet au bureau.",
+      "Le télétravail à cent pour cent.",
+      "Une alternance entre le bureau et le domicile.",
+      "Une réduction du temps de travail."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-21",
+   "kind": "mcq",
+   "audio": "audio/co-21.mp3",
+   "questions": [
+    {
+     "n": 21,
+     "q": "Pourquoi le menu de ce restaurant change-t-il souvent ?",
+     "options": [
+      "Le chef s'ennuie facilement.",
+      "Il dépend des produits disponibles chez les producteurs locaux.",
+      "Les clients l'ont exigé dès l'ouverture.",
+      "Les prix des aliments changent chaque semaine."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-22",
+   "kind": "mcq",
+   "audio": "audio/co-22.mp3",
+   "questions": [
+    {
+     "n": 22,
+     "q": "Qu'est-ce qui fait hésiter Claire ?",
+     "options": [
+      "Le coût de la formation.",
+      "Le contenu du programme.",
+      "L'horaire de la formation.",
+      "L'avis de sa patronne."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-23",
+   "kind": "mcq",
+   "audio": "audio/co-23.mp3",
+   "questions": [
+    {
+     "n": 23,
+     "q": "Qu'est-ce qui changera le 1er janvier ?",
+     "options": [
+      "Les commerces ne pourront plus distribuer de sacs de plastique jetables.",
+      "Les sacs réutilisables deviendront payants.",
+      "Les consommateurs qui oublient leur sac recevront une amende.",
+      "Les commerces devront vendre des sacs en papier."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-24",
+   "kind": "mcq",
+   "audio": "audio/co-24.mp3",
+   "questions": [
+    {
+     "n": 24,
+     "q": "Comment l'infirmière juge-t-elle aujourd'hui la reconnaissance de son diplôme ?",
+     "options": [
+      "Comme une démarche inutile et injuste.",
+      "Comme une démarche rapide et facile.",
+      "Comme une démarche trop coûteuse.",
+      "Comme une démarche difficile, mais justifiée."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-25",
+   "kind": "mcq",
+   "audio": "audio/co-25.mp3",
+   "questions": [
+    {
+     "n": 25,
+     "q": "Selon le chroniqueur, qu'est-ce qui a changé chez les jeunes lecteurs ?",
+     "options": [
+      "Ils découvrent les livres grâce aux réseaux sociaux.",
+      "Ils lisent beaucoup moins qu'avant.",
+      "Ils préfèrent les livres numériques.",
+      "Ils font davantage confiance aux libraires."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-26",
+   "kind": "mcq",
+   "audio": "audio/co-26.mp3",
+   "questions": [
+    {
+     "n": 26,
+     "q": "Comment la cliente réagit-elle à la proposition de l'agent ?",
+     "options": [
+      "Elle l'accepte avec enthousiasme.",
+      "Elle la juge insuffisante.",
+      "Elle exige la visite d'un deuxième technicien.",
+      "Elle annule son abonnement."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-27",
+   "kind": "mcq",
+   "audio": "audio/co-27.mp3",
+   "questions": [
+    {
+     "n": 27,
+     "q": "Quelle tendance l'urbaniste décrit-il ?",
+     "options": [
+      "Les villes réduisent leurs activités en hiver.",
+      "Les habitants partent davantage au soleil.",
+      "Les terrasses restent fermées toute l'année.",
+      "Les villes cherchent à profiter de l'hiver plutôt qu'à le subir."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-28",
+   "kind": "mcq",
+   "audio": "audio/co-28.mp3",
+   "questions": [
+    {
+     "n": 28,
+     "q": "Quelle réserve les syndicats expriment-ils ?",
+     "options": [
+      "Les salaires risquent de baisser.",
+      "Les journées de travail peuvent devenir beaucoup plus longues.",
+      "L'absentéisme risque d'augmenter.",
+      "Les entreprises risquent de fermer le vendredi."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-29",
+   "kind": "mcq",
+   "audio": "audio/co-29.mp3",
+   "questions": [
+    {
+     "n": 29,
+     "q": "Qu'est-ce qui surprend cette mère ?",
+     "options": [
+      "Ses enfants font maintenant respecter la règle à leurs parents.",
+      "Ses enfants refusent toujours la règle.",
+      "Ses enfants n'utilisent plus du tout d'écrans.",
+      "La règle a été abandonnée."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-30",
+   "kind": "mcq",
+   "audio": "audio/co-30.mp3",
+   "questions": [
+    {
+     "n": 30,
+     "q": "Selon la chroniqueuse, quel est le geste le plus utile pour réduire l'impact du numérique ?",
+     "options": [
+      "Effacer régulièrement ses vieux courriels.",
+      "Utiliser moins souvent les centres de données.",
+      "Prolonger la durée de vie de ses appareils.",
+      "Acheter des appareils récents qui consomment moins."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-31",
+   "kind": "mcq",
+   "audio": "audio/co-31.mp3",
+   "questions": [
+    {
+     "n": 31,
+     "q": "Quel est l'argument principal de l'économiste ?",
+     "options": [
+      "La gratuité coûte beaucoup trop cher aux villes.",
+      "La gratuité ne fait pas vraiment reculer l'usage de la voiture.",
+      "Les ménages modestes n'utilisent pas les transports en commun.",
+      "Les cyclistes devraient payer davantage."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-32",
+   "kind": "mcq",
+   "audio": "audio/co-32.mp3",
+   "questions": [
+    {
+     "n": 32,
+     "q": "Quelle est la position du traducteur sur la traduction automatique ?",
+     "options": [
+      "Elle va bientôt remplacer complètement les traducteurs.",
+      "Elle est inutile pour les professionnels.",
+      "Elle est dangereuse pour les textes juridiques.",
+      "C'est un outil utile, qui ne remplace pas l'expertise humaine."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-33",
+   "kind": "mcq",
+   "audio": "audio/co-33.mp3",
+   "questions": [
+    {
+     "n": 33,
+     "q": "D'après les spécialistes, quel est le véritable enjeu ?",
+     "options": [
+      "La place du français dans les situations professionnelles décisives.",
+      "Le nombre de personnes qui parlent français.",
+      "L'enseignement de l'anglais à l'école.",
+      "La croissance du secteur technologique."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-34",
+   "kind": "mcq",
+   "audio": "audio/co-34.mp3",
+   "questions": [
+    {
+     "n": 34,
+     "q": "Quelle idée la chroniqueuse défend-elle ?",
+     "options": [
+      "L'ennui est dangereux pour la santé mentale.",
+      "Le téléphone stimule la créativité.",
+      "L'ennui peut favoriser la créativité.",
+      "Il faudrait interdire les téléphones dans les transports."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-35",
+   "kind": "mcq",
+   "audio": "audio/co-35.mp3",
+   "questions": [
+    {
+     "n": 35,
+     "q": "Quelle nuance l'économiste apporte-t-elle ?",
+     "options": [
+      "Construire de nouveaux logements ne sert à rien.",
+      "Les loyers vont baisser très rapidement.",
+      "Les condos de luxe sont la meilleure solution.",
+      "Il faut construire des logements adaptés aux besoins réels des ménages."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-36",
+   "kind": "mcq",
+   "audio": "audio/co-36.mp3",
+   "questions": [
+    {
+     "n": 36,
+     "q": "Quelle conclusion le conférencier tire-t-il des recherches sur la mémoire ?",
+     "options": [
+      "Les souvenirs sont conservés intacts dans le cerveau.",
+      "Un souvenir souvent rappelé est forcément exact.",
+      "Il faut être prudent quant à la fiabilité des témoignages.",
+      "Les témoins mentent volontairement devant les tribunaux."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-37",
+   "kind": "mcq",
+   "audio": "audio/co-37.mp3",
+   "questions": [
+    {
+     "n": 37,
+     "q": "Quelle position l'élue défend-elle ?",
+     "options": [
+      "Interdire le tourisme dans les centres-villes.",
+      "Une régulation du tourisme accompagnée de mesures d'équité.",
+      "Laisser le marché décider librement.",
+      "Augmenter les prix pour tous les visiteurs."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-38",
+   "kind": "mcq",
+   "audio": "audio/co-38.mp3",
+   "questions": [
+    {
+     "n": 38,
+     "q": "Quel est le ton de la chroniqueuse, et que dénonce-t-elle ?",
+     "options": [
+      "Ironique : elle dénonce un langage qui masque la réalité.",
+      "Admiratif : elle salue la créativité des dirigeants.",
+      "Neutre : elle décrit l'évolution du vocabulaire.",
+      "Inquiet : elle annonce une hausse des licenciements."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-39",
+   "kind": "mcq",
+   "audio": "audio/co-39.mp3",
+   "questions": [
+    {
+     "n": 39,
+     "q": "Quelle est la conclusion des chercheurs ?",
+     "options": [
+      "Le bilinguisme retarde l'apprentissage du langage.",
+      "Les enfants bilingues ont un vocabulaire plus pauvre.",
+      "Le bilinguisme rend tous les enfants plus intelligents.",
+      "Le bilinguisme présente certains bénéfices, sans avantage cognitif général démontré."
+     ]
+    }
+   ]
+  }
+ ],
+ "count": 39,
+ "max": 699
+}

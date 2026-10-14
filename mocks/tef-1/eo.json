@@ -1,0 +1,78 @@
+{
+ "exam": "tef",
+ "mock": 1,
+ "section": "eo",
+ "duration": 900,
+ "scale": "699",
+ "tasks": [
+  {
+   "n": 1,
+   "title": "Section A — Obtenir des informations",
+   "level": "Section A",
+   "prompt": "Vous avez vu cette annonce et elle vous intéresse. Vous téléphonez pour obtenir **plus d'informations**.\n\nPosez une **dizaine de questions** variées à votre interlocuteur (vouvoiement). Vous pouvez imaginer ses réponses et réagir.\n",
+   "prep": 0,
+   "speak": 300,
+   "cues": [
+    {
+     "at": 0,
+     "text": "Employé(e) : « Atelier Saveurs du monde, bonjour ! Que puis-je faire pour vous ? »"
+    }
+   ],
+   "poster": {
+    "title": "Atelier Saveurs du monde",
+    "subtitle": "Cours de cuisine pour adultes",
+    "lines": [
+     "Cuisine italienne · libanaise · mexicaine · japonaise",
+     "Petits groupes : 8 personnes maximum",
+     "Soirs et fins de semaine",
+     "Inscription en ligne ou par téléphone"
+    ],
+    "footer": "514 555-0147 · Montréal",
+    "color": "#B4462B"
+   }
+  },
+  {
+   "n": 2,
+   "title": "Section B — Présenter et convaincre",
+   "level": "Section B",
+   "prompt": "Vous avez vu cette annonce. Vous voulez **convaincre un(e) ami(e)** de partir avec vous (tutoiement).\n\nPrésentez l'offre, puis répondez à ses objections : elles apparaîtront à l'écran pendant l'enregistrement. Votre ami(e) n'est pas convaincu(e) au début !\n",
+   "prep": 0,
+   "speak": 600,
+   "cues": [
+    {
+     "at": 0,
+     "text": "Ton ami(e) : « Une offre de voyage ? Vas-y, raconte ! »"
+    },
+    {
+     "at": 120,
+     "text": "Ton ami(e) : « 699 $… c'est quand même cher, non ? »"
+    },
+    {
+     "at": 240,
+     "text": "Ton ami(e) : « Quatre jours en autocar avec des inconnus ? Je vais m'ennuyer ! »"
+    },
+    {
+     "at": 360,
+     "text": "Ton ami(e) : « Et puis, je n'ai pas beaucoup de vacances cet été… »"
+    },
+    {
+     "at": 480,
+     "text": "Ton ami(e) : « Bon… donne-moi une dernière bonne raison ! »"
+    }
+   ],
+   "poster": {
+    "title": "Escapade en Gaspésie",
+    "subtitle": "4 jours / 3 nuits",
+    "lines": [
+     "Transport en autocar depuis Montréal",
+     "Hébergement en auberge",
+     "Rocher Percé et île Bonaventure",
+     "Excursion d'observation des baleines"
+    ],
+    "footer": "699 $ par personne, tout compris · Départs en juillet et août",
+    "color": "#2A6099"
+   }
+  }
+ ],
+ "count": 2
+}

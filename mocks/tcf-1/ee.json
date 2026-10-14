@@ -1,0 +1,53 @@
+{
+ "exam": "tcf",
+ "mock": 1,
+ "section": "ee",
+ "duration": 3600,
+ "scale": "20",
+ "tasks": [
+  {
+   "n": 1,
+   "title": "Tâche 1 — Un message",
+   "level": "A1–A2",
+   "prompt": "Vous venez d'emménager dans un nouvel appartement. Vous écrivez un message à vos voisins pour vous présenter et les inviter à prendre un café chez vous samedi.\n\nPrécisez l'heure, votre adresse (numéro de l'appartement) et ce que vous proposez.\n",
+   "words": [
+    60,
+    120
+   ],
+   "advice_minutes": 10
+  },
+  {
+   "n": 2,
+   "title": "Tâche 2 — Un article de blogue",
+   "level": "B1–B2",
+   "prompt": "Vous avez participé à une activité de bénévolat dans votre ville (banque alimentaire, fête de quartier, aide aux devoirs…).\n\nVous écrivez un article pour le blogue de votre quartier : vous racontez cette expérience et vous expliquez ce qu'elle vous a apporté.\n",
+   "words": [
+    120,
+    150
+   ],
+   "advice_minutes": 20
+  },
+  {
+   "n": 3,
+   "title": "Tâche 3 — Comparer deux points de vue",
+   "level": "B2–C2",
+   "prompt": "Sujet : **Faut-il interdire les téléphones portables à l'école ?**\n\nLisez les deux documents ci-dessous.\n\n1. Dans une première partie (40 à 60 mots), présentez les deux points de vue.\n2. Dans une deuxième partie (80 à 120 mots), donnez votre opinion, avec des arguments et des exemples.\n",
+   "words": [
+    120,
+    180
+   ],
+   "advice_minutes": 30,
+   "docs": [
+    {
+     "title": "Document 1 — Pour l'interdiction",
+     "body": "« Depuis que notre école a interdit les téléphones, même pendant la récréation, les élèves se parlent de nouveau. En classe, ils sont plus concentrés, et nous avons beaucoup moins de cas de harcèlement en ligne entre élèves. Le téléphone n'est pas un outil d'apprentissage : c'est une source permanente de distraction. »\n— Hélène B., directrice d'école secondaire\n"
+    },
+    {
+     "title": "Document 2 — Contre l'interdiction",
+     "body": "« Interdire, c'est la solution facile. Le téléphone permet de faire des recherches, de traduire un mot, de joindre ses parents en cas de problème. Plutôt que de le confisquer, l'école devrait apprendre aux jeunes à l'utiliser de façon responsable : c'est justement son rôle. »\n— Karim D., parent d'élève\n"
+    }
+   ]
+  }
+ ],
+ "count": 3
+}
