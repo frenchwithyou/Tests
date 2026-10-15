@@ -9,6 +9,7 @@
   var API = (params.get("api") || CFG.apiUrl || "").trim();
   var PREVIEW = !API || params.has("preview");
   var SECS = ["co", "ce", "ee", "eo"];
+  var AUDIO_V = "2"; // change when recordings are replaced, so browsers fetch the new files
   var ICONS = {
     co: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2.5" y="14" width="5" height="7" rx="2"/><rect x="16.5" y="14" width="5" height="7" rx="2"/></svg>',
     ce: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg>',
@@ -799,7 +800,7 @@
     }
     var a = new Audio();
     a.preload = "auto";
-    a.src = "mocks/" + session.exam + "-" + session.mock + "/" + s.audio;
+    a.src = audioUrl(s);
     session.audio = a; session.listenFor = s.id; session.listenState = "loading";
     var mine = function () { return session && session.audio === a; };
     a.addEventListener("playing", function () {
@@ -822,11 +823,20 @@
     preloadNext();
   }
 
+  function audioUrl(s) { return "mocks/" + session.exam + "-" + session.mock + "/" + s.audio + "?v=" + AUDIO_V; }
+
+  /* download the next recordings in the background, so they start at once (phones ignore the preload hint) */
+  var fetched = {};
   function preloadNext() {
-    var nx = session.data.screens[session.idx + 1];
-    if (!nx || !nx.audio) return;
-    var pre = new Audio(); pre.preload = "auto"; pre.src = "mocks/" + session.exam + "-" + session.mock + "/" + nx.audio;
-    session.preload = pre;
+    [1, 2].forEach(function (k) {
+      var nx = session.data.screens[session.idx + k];
+      if (!nx || !nx.audio) return;
+      var url = audioUrl(nx);
+      if (fetched[url]) return;
+      fetched[url] = true;
+      if (window.fetch) fetch(url).catch(function () { fetched[url] = false; });
+      if (k === 1) { var pre = new Audio(); pre.preload = "auto"; pre.src = url; session.preload = pre; }
+    });
   }
 
   function askFinish() {

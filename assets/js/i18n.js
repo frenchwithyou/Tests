@@ -199,7 +199,7 @@ window.FWY_I18N = {
     tip_tcf_ce: "Les questions deviennent plus difficiles et rapportent plus de points. Gardez du temps pour les derniers textes.",
     tip_tcf_ee: "Environ 10 minutes pour la tâche 1, 20 pour la tâche 2, 30 pour la tâche 3. Relisez-vous à la fin.",
     tip_tcf_eo: "Parlez de façon naturelle, avec des phrases complètes. À la tâche 3, donnez des exemples précis.",
-    tip_tef_co: "Pendant les premières secondes de chaque enregistrement, lisez vite les réponses proposées.",
+    tip_tef_co: "Dès que la question s'affiche, lisez vite les réponses proposées : l'enregistrement commence presque tout de suite.",
     tip_tef_ce: "Commencez par les documents courts. Pour les phrases à compléter, lisez toute la phrase avant de choisir.",
     tip_tef_ee: "Section A : 25 minutes, ton journalistique. Section B : 35 minutes, au moins trois arguments avec des exemples.",
     tip_tef_eo: "Section A : vouvoiement et questions variées. Section B : tutoiement, et répondez à chaque objection de votre ami."
@@ -403,7 +403,7 @@ window.FWY_I18N = {
     tip_tcf_ce: "Questions get harder and are worth more points. Keep time for the last texts.",
     tip_tcf_ee: "About 10 minutes for task 1, 20 for task 2, 30 for task 3. Reread at the end.",
     tip_tcf_eo: "Speak naturally, in full sentences. In task 3, give precise examples.",
-    tip_tef_co: "In the first seconds of each recording, quickly read the answers on screen.",
+    tip_tef_co: "As soon as the question appears, quickly read the answers: the recording starts almost at once.",
     tip_tef_ce: "Start with the short documents. For the sentences to complete, read the whole sentence before choosing.",
     tip_tef_ee: "Section A: 25 minutes, news-article tone. Section B: 35 minutes, at least three arguments with examples.",
     tip_tef_eo: "Section A: use vous and varied questions. Section B: use tu, and answer each of your friend's objections."
