@@ -8,7 +8,7 @@
      "n": 1,
      "sections": {
       "co": {
-       "ready": false,
+       "ready": true,
        "count": 39,
        "duration": 2100,
        "scale": "699",
@@ -45,7 +45,7 @@
      "n": 1,
      "sections": {
       "co": {
-       "ready": false,
+       "ready": true,
        "count": 40,
        "duration": 2400,
        "scale": "699",
