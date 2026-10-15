@@ -11,10 +11,10 @@
    "audio": "audio/co-01.mp3",
    "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
    "optionImages": [
-    "img/co-01-a.svg",
-    "img/co-01-b.svg",
-    "img/co-01-c.svg",
-    "img/co-01-d.svg"
+    "img/co-01-a.jpg",
+    "img/co-01-b.jpg",
+    "img/co-01-c.jpg",
+    "img/co-01-d.jpg"
    ],
    "optionAlts": [
     "Un café et une part de gâteau",
@@ -34,10 +34,10 @@
    "audio": "audio/co-02.mp3",
    "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
    "optionImages": [
-    "img/co-02-a.svg",
-    "img/co-02-b.svg",
-    "img/co-02-c.svg",
-    "img/co-02-d.svg"
+    "img/co-02-a.jpg",
+    "img/co-02-b.jpg",
+    "img/co-02-c.jpg",
+    "img/co-02-d.jpg"
    ],
    "optionAlts": [
     "Un soleil et des lunettes de soleil",
@@ -57,10 +57,10 @@
    "audio": "audio/co-03.mp3",
    "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
    "optionImages": [
-    "img/co-03-a.svg",
-    "img/co-03-b.svg",
-    "img/co-03-c.svg",
-    "img/co-03-d.svg"
+    "img/co-03-a.jpg",
+    "img/co-03-b.jpg",
+    "img/co-03-c.jpg",
+    "img/co-03-d.jpg"
    ],
    "optionAlts": [
     "Un avion",
@@ -80,10 +80,10 @@
    "audio": "audio/co-04.mp3",
    "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
    "optionImages": [
-    "img/co-04-a.svg",
-    "img/co-04-b.svg",
-    "img/co-04-c.svg",
-    "img/co-04-d.svg"
+    "img/co-04-a.jpg",
+    "img/co-04-b.jpg",
+    "img/co-04-c.jpg",
+    "img/co-04-d.jpg"
    ],
    "optionAlts": [
     "Un immeuble avec balcon, à côté d'une station de métro",

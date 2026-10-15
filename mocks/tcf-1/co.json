@@ -9,7 +9,7 @@
    "id": "co-01",
    "kind": "picture",
    "audio": "audio/co-01.mp3",
-   "image": "img/co-01.svg",
+   "image": "img/co-01.jpg",
    "alt": "Une femme au comptoir d'une boulangerie ; le boulanger lui tend une baguette.",
    "questions": [
     {
@@ -21,7 +21,7 @@
    "id": "co-02",
    "kind": "picture",
    "audio": "audio/co-02.mp3",
-   "image": "img/co-02.svg",
+   "image": "img/co-02.jpg",
    "alt": "Un homme debout sur un quai de gare regarde sa montre ; un train arrive.",
    "questions": [
     {
@@ -33,7 +33,7 @@
    "id": "co-03",
    "kind": "picture",
    "audio": "audio/co-03.mp3",
-   "image": "img/co-03.svg",
+   "image": "img/co-03.jpg",
    "alt": "Deux enfants en manteau d'hiver font un bonhomme de neige.",
    "questions": [
     {
@@ -45,7 +45,7 @@
    "id": "co-04",
    "kind": "picture",
    "audio": "audio/co-04.mp3",
-   "image": "img/co-04.svg",
+   "image": "img/co-04.jpg",
    "alt": "Un homme cuisine dans une cuisine : une poêle sur la cuisinière.",
    "questions": [
     {

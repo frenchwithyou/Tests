@@ -20,7 +20,8 @@ A listening test opens to students only when every recording is in its `audio/` 
 
 ## Tools
 
-- `tools/drawings.py`: the original pictures used in the mocks.
+- `tools/pictures.py`: turns an illustration (or a 2x2 collage) into the black-and-white exam pictures, 4:3, light JPEG.
+- `tools/drawings.py`: the graphs of TEF reading Q22.
 - `tools/audio_scripts_pdf.py`: the teacher's recording sheet.
 - `tools/dev/server.js`: runs the site with `backend/Code.gs` on a fake sheet, for testing.
 
