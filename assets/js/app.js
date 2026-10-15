@@ -9,12 +9,15 @@
   var API = (params.get("api") || CFG.apiUrl || "").trim();
   var PREVIEW = !API || params.has("preview");
   var SECS = ["co", "ce", "ee", "eo"];
-  var SEC_COLOR = { co: "var(--co)", ce: "var(--ce)", ee: "var(--ee)", eo: "var(--eo)" };
   var ICONS = {
     co: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2.5" y="14" width="5" height="7" rx="2"/><rect x="16.5" y="14" width="5" height="7" rx="2"/></svg>',
     ce: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg>',
     ee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
-    eo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg>'
+    eo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+    out: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
   };
 
   /* ------------------------------------------------------------------ helpers */
@@ -25,6 +28,26 @@
   };
 
   var lang = store.get("fwy.lang") || ((navigator.language || "fr").toLowerCase().indexOf("en") === 0 ? "en" : "fr");
+  var scaleMode = store.get("fwy.scale", "nclc") === "cefr" ? "cefr" : "nclc"; // which level scale leads: NCLC or CECR
+
+  /* light / dark theme: follows the device until the student picks one */
+  var darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  function currentTheme() {
+    var a = document.documentElement.getAttribute("data-theme");
+    if (a === "dark" || a === "light") return a;
+    return darkQuery && darkQuery.matches ? "dark" : "light";
+  }
+  function syncThemeColor() {
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute("content", currentTheme() === "dark" ? "#0A1222" : "#F3F6FB");
+  }
+  function toggleTheme() {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    store.set("fwy.theme", next);
+    syncThemeColor(); renderChrome();
+  }
+  if (darkQuery && darkQuery.addEventListener) darkQuery.addEventListener("change", function () { syncThemeColor(); renderChrome(); });
 
   function t(key, vars) {
     var s = I18N[lang][key];
@@ -188,12 +211,15 @@
     acts.replaceChildren();
     if (user) {
       acts.append(h("span", { class: "who", text: user.name || user.code }));
-      acts.append(h("a", { href: "#/results", text: t("myResults") }));
-      acts.append(h("button", { type: "button", text: t("signOut"), onclick: function () { signOut(); } }));
+      acts.append(h("a", { class: "tb", href: "#/results", text: t("myResults") }));
+      acts.append(h("button", { class: "tb icon", type: "button", title: t("signOut"), "aria-label": t("signOut"), svg: ICONS.out, onclick: function () { signOut(); } }));
     } else {
-      acts.append(h("button", { type: "button", text: t("enterCode"), onclick: function () { askCode(function () { route(); }); } }));
+      acts.append(h("button", { class: "tb primary", type: "button", text: t("enterCode"), onclick: function () { askCode(function () { route(); }); } }));
     }
-    acts.append(h("button", { type: "button", text: lang === "fr" ? "EN" : "FR", title: t("langSwitch"), "aria-label": t("langSwitch"), lang: lang === "fr" ? "en" : "fr", onclick: function () {
+    var dark = currentTheme() === "dark";
+    acts.append(h("button", { class: "tb icon", type: "button", "aria-pressed": String(dark), title: dark ? t("themeLight") : t("themeDark"),
+      "aria-label": t("themeDark"), svg: dark ? ICONS.sun : ICONS.moon, onclick: toggleTheme }));
+    acts.append(h("button", { class: "tb icon", type: "button", text: lang === "fr" ? "EN" : "FR", title: t("langSwitch"), "aria-label": t("langSwitch"), lang: lang === "fr" ? "en" : "fr", onclick: function () {
       lang = lang === "fr" ? "en" : "fr"; store.set("fwy.lang", lang); renderChrome(); route(true);
     } }));
     var banner = $("#previewBanner");
@@ -201,7 +227,7 @@
     banner.textContent = t("previewBanner");
     var c = CFG.contact || {};
     $("#foot").replaceChildren(h("div", { class: "wrap" },
-      h("div", null, h("strong", { style: "color:#fff", text: "FrenchWithYou" }), " — ", t("footerFree")),
+      h("div", null, h("strong", { text: "FrenchWithYou" }), "\u2002", t("footerFree")),
       h("div", { class: "contacts" },
         c.whatsapp ? h("a", { href: "https://wa.me/" + c.whatsapp.replace(/\D/g, ""), text: "WhatsApp " + c.whatsapp }) : null,
         c.email ? h("a", { href: "mailto:" + c.email, text: c.email }) : null,
@@ -281,54 +307,115 @@
   function crumbs(items) {
     var out = [];
     items.forEach(function (it, i) {
-      if (i) out.push(" / ");
+      if (i) out.push(h("span", { class: "sep", "aria-hidden": "true", text: "/" }));
       out.push(it.href ? h("a", { href: it.href, text: it.text }) : h("span", { text: it.text }));
     });
     return h("nav", { class: "crumbs", "aria-label": "Fil d'Ariane" }, out);
   }
 
-  /* ------------------------------------------------------------------ home */
-  function homeRibbon() {
-    var colors = ["#8FA6CF", "#7393CA", "#5A80C4", "#3A6BC0", "#2D58A4", "#22447F", "#16305C"];
-    var bands = [4, 5, 6, 7, 8, 9, 10].map(function (n, i) {
-      return h("div", { class: "band" + (n === 7 ? " target" : ""), style: "background:" + colors[i] }, h("div", null, h("small", { text: t("nclc") }), h("span", { text: n })));
-    });
-    return h("div", { class: "ribbon-box" },
-      h("div", { class: "ribbon", role: "img", "aria-label": "NCLC 4 – 10" }, bands),
-      h("div", { class: "ribbon-legend" }, h("span", { text: t("ribbonCaption") }), h("span", null, t("ribbonTarget") + (lang === "fr" ? "\u00a0: " : ": "), h("b", { text: "NCLC 7" }))));
+  /* ------------------------------------------------------------------ levels: NCLC and CECR */
+  var CEFR_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  var NCLC_TO_CEFR = { 4: "A2", 5: "B1", 6: "B1", 7: "B2", 8: "B2", 9: "C1", 10: "C1" };
+  var CEFR_TO_NCLC = { A1: "< 4", A2: "4", B1: "5–6", B2: "7–8", C1: "9–10", C2: "10+" };
+
+  function scaleSwitch(onChange) {
+    var make = function (mode, label) {
+      return h("button", { type: "button", "aria-pressed": String(scaleMode === mode), text: label, onclick: function () {
+        if (scaleMode === mode) return;
+        scaleMode = mode; store.set("fwy.scale", mode); onChange();
+      } });
+    };
+    return h("div", { class: "seg", role: "group", "aria-label": t("scaleLabel") }, make("nclc", "NCLC"), make("cefr", t("cefrShort")));
   }
 
-  function statusPill(exam, mock, sec, info) {
+  /* the level staircase on the home page */
+  var stairsAnimated = false;
+  function levelStairs() {
+    var card = h("div", { class: "stairs-card" });
+    var selected = null;
+    function draw(animate) {
+      var isN = scaleMode === "nclc";
+      var levels = isN ? [4, 5, 6, 7, 8, 9, 10] : CEFR_ORDER;
+      var target = isN ? 7 : "B2";
+      if (selected == null || levels.indexOf(selected) < 0) selected = target;
+      var n = levels.length;
+      var cap = h("div", { class: "stairs-cap", "aria-live": "polite" });
+      var showCaption = function (lv) {
+        var cefr = isN ? NCLC_TO_CEFR[lv] : lv;
+        var eq = isN ? t("approx", { l: cefr }) : t("approx", { l: "NCLC " + CEFR_TO_NCLC[lv] });
+        cap.replaceChildren(h("div", { class: "lv" }, h("b", { text: (isN ? "NCLC " : "") + lv }), h("span", { text: eq + ", " + t("cefrName_" + cefr).toLowerCase() })),
+          h("p", { text: t("cefrDesc_" + cefr) }));
+      };
+      var stairs = h("div", { class: "stairs" + (animate ? " rise" : ""), style: "--n:" + n, role: "group", "aria-label": isN ? "NCLC 4–10" : "A1–C2", onmouseleave: function () { showCaption(selected); } });
+      levels.forEach(function (lv, i) {
+        var k = Math.round(16 + i * 84 / (n - 1));
+        var step = h("button", { type: "button", class: "step" + (k > 50 ? " on-dark" : "") + (lv === target ? " target" : ""),
+          style: "--h:" + Math.round(22 + i * 78 / (n - 1)) + "%;--k:" + k + "%;--i:" + i,
+          "aria-pressed": String(lv === selected), "aria-label": (isN ? "NCLC " : t("cefrShort") + " ") + lv,
+          onmouseenter: function () { showCaption(lv); },
+          onclick: function () {
+            selected = lv;
+            Array.prototype.forEach.call(stairs.children, function (b) { b.setAttribute("aria-pressed", String(b === step)); });
+            showCaption(lv);
+          } }, h("b", { text: String(lv) }));
+        stairs.append(step);
+      });
+      showCaption(selected);
+      card.replaceChildren(
+        h("div", { class: "stairs-top" }, h("h2", { text: t("stairsTitle") }), scaleSwitch(function () { draw(false); })),
+        stairs, cap,
+        h("div", { class: "stairs-foot" },
+          h("span", { class: "tgt" }, t("ribbonTarget") + (lang === "fr" ? " : " : ": "), h("b", { text: isN ? "NCLC 7" : "B2" }), isN ? "" : " (" + t("approx", { l: "NCLC 7" }) + ")"),
+          h("span", { text: t("stairsHint") })));
+    }
+    draw(!stairsAnimated);
+    stairsAnimated = true;
+    return card;
+  }
+
+  function finished(a) { return a && (a.status === "submitted" || a.status === "marked" || a.status === "pending"); }
+
+  function statusBits(exam, mock, sec, info) {
     var a = attemptOf(exam, mock, sec);
     if (!info.ready && !PREVIEW) return h("span", { class: "pill pill-soon", text: t("status_soon") });
     if (!a) return h("span", { class: "pill pill-todo", text: t("status_todo") });
     if (a.status === "started") return h("span", { class: "pill pill-started", text: t("status_started") });
     if (a.status === "pending") return h("span", { class: "pill pill-pending", text: t("status_pending") });
-    var txt = t("status_done");
-    if (a.score != null) txt += " · " + a.score + (a.scale === 20 ? "/20" : "");
-    return h("span", { class: "pill pill-done", text: txt });
+    if (a.score == null) return h("span", { class: "pill pill-done", svg: ICONS.check }, t("status_done"));
+    var done = h("span", { class: "pill pill-done", title: t("status_done") });
+    done.innerHTML = ICONS.check; done.append(String(a.score) + (a.scale === 20 ? "/20" : ""));
+    return [done,
+      h("span", { class: "chip" }, h("small", { text: "NCLC" }), a.nclc ? String(a.nclc) : "< 4"),
+      a.cefr ? h("span", { class: "chip", text: a.cefr }) : null];
   }
 
   function viewHome() {
-    var hero = h("section", { class: "hero" }, h("div", { class: "wrap" },
-      h("h1", { text: t("heroTitle") }), h("p", { text: t("heroText") }), homeRibbon()));
+    var hero = h("section", { class: "hero" }, h("div", { class: "wrap hero-grid" },
+      h("div", null, h("h1", { text: t("heroTitle") }), h("p", { text: t("heroText") }),
+        !user ? h("div", { class: "btn-row" }, h("button", { class: "btn btn-primary", type: "button", text: t("enterCode"), onclick: function () { askCode(function () { route(); }); } })) : null),
+      levelStairs()));
     var panels = catalog.exams.map(function (ex) {
       var total = 0, mocks = ex.mocks;
       if (mocks[0]) SECS.forEach(function (s) { total += mocks[0].sections[s].duration; });
       return h("section", { class: "exam", "aria-labelledby": "h-" + ex.id },
         h("div", { class: "exam-head" }, h("h2", { id: "h-" + ex.id, text: ex.name }), h("span", { class: "meta", text: t("examTotal", { n: 4, t: fmtTotal(total) }) })),
         mocks.map(function (m) {
-          return h("div", { class: "mock" }, h("h3", { text: t("mockTitle", { n: m.n }) }),
-            SECS.map(function (s) {
+          var done = SECS.filter(function (s) { return finished(attemptOf(ex.id, m.n, s)); }).length;
+          return h("div", { class: "mock" },
+            h("div", { class: "mock-head" }, h("h3", { text: t("mockTitle", { n: m.n }) }),
+              h("span", { class: "mock-prog", text: t("mockProgress", { d: done, n: SECS.length }) }),
+              h("span", { class: "mini-bar", "aria-hidden": "true" }, h("i", { style: "width:" + (done / SECS.length * 100) + "%" }))),
+            h("div", { class: "tiles" }, SECS.map(function (s) {
               var info = m.sections[s];
               var metaKey = s === "co" || s === "ce" ? "secMetaQ" : ex.id === "tcf" ? "secMetaT" : "secMetaS";
-              return h("a", { class: "sec-row", href: "#/m/" + ex.id + "-" + m.n + "/" + s },
-                h("span", { class: "ico c-" + s, svg: ICONS[s] }),
-                h("span", null, h("div", { class: "name", text: secName(s) }), h("div", { class: "sub", text: t(metaKey, { q: info.count, m: Math.round(info.duration / 60) }) })),
-                statusPill(ex.id, m.n, s, info));
-            }));
+              return h("a", { class: "tile acc-" + s, href: "#/m/" + ex.id + "-" + m.n + "/" + s },
+                h("span", { class: "ico", svg: ICONS[s] }),
+                h("span", { class: "tile-name", text: secName(s) }),
+                h("span", { class: "tile-sub", text: t(metaKey, { q: info.count, m: Math.round(info.duration / 60) }) }),
+                h("span", { class: "tile-foot" }, statusBits(ex.id, m.n, s, info)));
+            })));
         }),
-        h("div", { class: "more-soon", text: t("moreSoon") }));
+        h("p", { class: "more-soon", text: t("moreSoon") }));
     });
     show([hero, h("div", { class: "wrap" }, h("div", { class: "exams" }, panels))]);
   }
@@ -368,24 +455,25 @@
         h("div", { class: "btn-row" }, startBtn));
     }
 
-    show(h("div", { class: "wrap page narrow" },
-      crumbs([{ href: "#/", text: t("home") }, { text: examName(exam) + " — " + t("mockTitle", { n: mock }) }]),
-      h("div", { class: "sec-band", style: "background:" + SEC_COLOR[sec] },
-        h("div", { class: "exam-name", text: examName(exam) + " — " + t("mockTitle", { n: mock }) }),
-        h("h1", { text: secName(sec) })),
-      h("div", { class: "facts" },
-        h("div", { class: "fact" }, h("b", { text: info.count }), h("span", { text: countLabel })),
-        h("div", { class: "fact" }, h("b", { text: minutes }), h("span", { text: t("factMinutes") })),
-        h("div", { class: "fact" }, h("b", { text: scaleFact[0] }), h("span", { text: scaleFact[1] }))),
+    show(h("div", { class: "wrap page narrow acc-" + sec },
+      crumbs([{ href: "#/", text: t("home") }, { text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }]),
+      h("div", { class: "sec-band" },
+        h("span", { class: "ico", svg: ICONS[sec] }),
+        h("div", { class: "exam-name", text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }),
+        h("h1", { text: secName(sec) }),
+        h("div", { class: "facts" },
+          h("div", { class: "fact" }, h("b", { text: info.count }), h("span", { text: countLabel })),
+          h("div", { class: "fact" }, h("b", { text: minutes }), h("span", { text: t("factMinutes") })),
+          h("div", { class: "fact" }, h("b", { text: scaleFact[0] }), h("span", { text: scaleFact[1] })))),
       h("div", { class: "intro-body" },
         h("h2", { text: t("howItWorks") }), h("ul", { class: "rules" }, rules),
-        h("div", { class: "tip" }, h("b", { text: t("advice") }), t("tip_" + exam + "_" + sec)),
+        h("div", { class: "tip" }, h("b", { text: t("advice") }), h("span", { text: t("tip_" + exam + "_" + sec) })),
         action)));
   }
 
   function soundTestBlock() {
     var msg = h("p", { class: "muted", hidden: true, text: t("soundTestOk") });
-    return h("div", { class: "btn-row", style: "margin-bottom:6px" }, h("button", { class: "btn btn-ghost btn-small", type: "button", text: t("soundTest"), onclick: function () {
+    return h("div", { class: "btn-row device" }, h("button", { class: "btn btn-ghost btn-small", type: "button", text: t("soundTest"), onclick: function () {
       try {
         var Ctx = window.AudioContext || window.webkitAudioContext; var ctx = new Ctx();
         [0, 0.35, 0.7].forEach(function (d, i) {
@@ -427,7 +515,7 @@
         rec.start(); setTimeout(function () { rec.stop(); }, 3000);
       }, function () { msg.hidden = false; msg.textContent = t("micDenied"); btn.disabled = false; });
     } });
-    return h("div", { style: "margin-bottom:6px;display:grid;gap:8px" }, h("div", { class: "btn-row" }, btn), msg, audio);
+    return h("div", { class: "device" }, h("div", { class: "btn-row" }, btn), msg, audio);
   }
 
   /* ------------------------------------------------------------------ test: start/resume */
@@ -544,8 +632,8 @@
   }
 
   function railName() {
-    return h("div", { class: "rail-name", style: "background:" + SEC_COLOR[session.sec] },
-      h("b", { text: secName(session.sec) }), h("span", { text: examName(session.exam) + " — " + t("mockTitle", { n: session.mock }) }));
+    return h("div", { class: "rail-name" }, h("span", { class: "ico", svg: ICONS[session.sec] }),
+      h("div", null, h("b", { text: secName(session.sec) }), h("span", { text: examName(session.exam) + ", " + t("mockTitle", { n: session.mock }).toLowerCase() })));
   }
   function railClock() {
     return h("div", { class: "timer", id: "clock", role: "timer", "aria-live": "off" },
@@ -581,7 +669,7 @@
     // paper
     var ns = s.questions.map(function (q) { return q.n; });
     var head = h("div", { class: "qhead" },
-      h("div", { class: "qnum", text: ns.length > 1 ? t("question") + "s " + ns[0] + "–" + ns[ns.length - 1] + " / " + total : t("questionOf", { n: ns[0], t: total }) }),
+      h("div", { class: "qnum" }, (ns.length > 1 ? t("question") + "s " : t("question") + " "), h("b", { text: ns.length > 1 ? ns[0] + "–" + ns[ns.length - 1] : String(ns[0]) }), " " + t("ofTotal", { t: total })),
       s.part ? h("div", { class: "part-label", text: s.part }) : null);
     var paper = h("section", { class: "paper", "aria-label": secName(session.sec) }, head);
 
@@ -603,7 +691,7 @@
     paper.append(nav);
     if (!isCO && !last) paper.append(h("div", { style: "text-align:right" }, h("button", { class: "btn btn-ghost btn-small", type: "button", text: t("finish"), onclick: function () { askFinish(); } })));
 
-    show(h("div", { class: "wrap" }, h("div", { class: "test" }, rail, paper)));
+    show(h("div", { class: "wrap" }, h("div", { class: "test acc-" + session.sec }, rail, paper)));
     updateListen();
   }
 
@@ -695,8 +783,8 @@
     if (!box) return;
     box.classList.toggle("playing", st === "playing");
     box.classList.toggle("done", st === "done");
-    var text = { idle: t("listenTap"), loading: t("loading"), playing: t("listenPlaying"), done: t("listenDone"), tap: t("listenTap"),
-      paused: t("listenTap"), error: t("listenError"), missing: t("listenMissing") }[st] || "";
+    var text = { idle: t("listenReady"), loading: t("loading"), playing: t("listenPlaying"), done: t("listenDone"), tap: t("listenReady"),
+      paused: t("listenPaused"), error: t("listenError"), missing: t("listenMissing") }[st] || "";
     label.textContent = text;
     btn.hidden = !(st === "idle" || st === "tap" || st === "paused" || st === "error");
   }
@@ -798,8 +886,8 @@
     var cur = Math.min(session.idx || 0, tasks.length - 1);
     var task = tasks[cur];
 
-    var list = h("div", { class: "rail-grid" }, tasks.map(function (tk, i) {
-      return h("div", { style: "display:flex;justify-content:space-between;gap:8px;padding:6px 0;" + (i ? "border-top:1px solid var(--line-soft)" : "") },
+    var list = h("div", { class: "rail-grid" }, tasks.map(function (tk) {
+      return h("div", { class: "wc-row" },
         h("span", { text: t("task") + " " + tk.n }), h("b", { id: "wc-" + tk.n, text: t("words", { n: wordCount(session.texts[tk.n]) }) }));
     }));
     var rail = h("aside", { class: "rail" }, railName(), railClock(), list);
@@ -837,7 +925,7 @@
 
     var paper = h("section", { class: "paper" }, tabs, prompt, docs,
       h("div", null, box, h("div", { class: "counter" }, counter, h("span", { text: target }))), nav);
-    show(h("div", { class: "wrap" }, h("div", { class: "test" }, rail, paper)));
+    show(h("div", { class: "wrap" }, h("div", { class: "test acc-ee" }, rail, paper)));
   }
 
   /* ------------------------------------------------------------------ speaking (EO) */
@@ -863,7 +951,7 @@
       h("ul", null, task.poster.lines.map(function (l) { return h("li", { text: l }); })), h("div", { class: "pfoot", text: task.poster.footer })) : null;
 
     var paper = h("section", { class: "paper" }, h("p", { class: "hint", text: t("eoIntro") }), prompt, poster, stage);
-    show(h("div", { class: "wrap" }, h("div", { class: "test" }, rail, paper)));
+    show(h("div", { class: "wrap" }, h("div", { class: "test acc-eo" }, rail, paper)));
 
     if (allDone) { stageAllDone(stage); return; }
     if (session.recs[task.n]) { stageDone(stage, task); return; }
@@ -874,15 +962,18 @@
     var hasPrep = task.prep > 0;
     var flash = session.justUploaded ? h("div", { class: "notice ok", role: "status", text: t("uploaded") }) : null;
     session.justUploaded = false;
-    stage.replaceChildren(flash,
-      h("div", { class: "muted", text: hasPrep ? t("prepare") + " : " + fmtClock(task.prep * 1000) + " · " + t("recording") + " : " + fmtClock(task.speak * 1000) : t("recording") + " : " + fmtClock(task.speak * 1000) }),
+    stage.replaceChildren();
+    append(stage, [flash,
+      h("div", { class: "btn-row" },
+        hasPrep ? h("span", { class: "chip" }, h("small", { text: t("prepare") }), fmtClock(task.prep * 1000)) : null,
+        h("span", { class: "chip" }, h("small", { text: t("recording") }), fmtClock(task.speak * 1000))),
       h("div", { class: "btn-row" }, h("button", { class: "btn btn-primary", type: "button", text: hasPrep ? t("startPrep") : t("startSpeaking"), onclick: function (e) {
         e.currentTarget.disabled = true;
         getMic().then(function () { if (hasPrep) runPrep(stage, task); else runRec(stage, task); }, function (err) {
           stage.append(h("div", { class: "notice err", role: "alert", text: err === "unsupported" ? t("micUnsupported") : t("micDenied") }));
           e.target.disabled = false;
         });
-      } })));
+      } }))]);
   }
 
   function getMic() {
@@ -994,34 +1085,43 @@
   }
 
   /* ------------------------------------------------------------------ results */
-  var NCLC_COLORS = ["#566270", "#8FA6CF", "#7393CA", "#5A80C4", "#3A6BC0", "#2D58A4", "#22447F", "#16305C"];
+  /* contiguous score ranges for each level of the chosen scale */
+  function levelRuns(exam, sec, mode) {
+    var max = LV.scale(exam, sec), runs = [];
+    for (var sc = 0; sc <= max; sc++) {
+      var lab = mode === "cefr" ? LV.cefr(exam, sec, sc) : (LV.nclc(exam, sec, sc) || 0);
+      var last = runs[runs.length - 1];
+      if (last && last.lab === lab) last.to = sc; else runs.push({ lab: lab, from: sc, to: sc });
+    }
+    return runs;
+  }
 
   function resultRibbon(exam, sec, score) {
     var max = LV.scale(exam, sec);
-    var b = LV.NCLC[exam][sec];
-    var edges = [0].concat(b).concat([max + (max === 20 ? 1 : 1)]);
-    var bands = [];
-    for (var i = 0; i < edges.length - 1; i++) {
-      var w = (edges[i + 1] - edges[i]) / (max + 1) * 100;
-      bands.push(h("div", { class: "band", style: "flex:0 0 " + w + "%;background:" + NCLC_COLORS[i] },
-        h("div", null, h("small", { text: i === 0 ? "" : t("nclc") }), h("span", { text: i === 0 ? "<4" : String(3 + i) }))));
-    }
+    var runs = levelRuns(exam, sec, scaleMode);
+    var bands = runs.map(function (r, i) {
+      var k = Math.round(14 + i * 86 / Math.max(1, runs.length - 1));
+      var label = scaleMode === "cefr" ? r.lab : r.lab ? String(r.lab) : "< 4";
+      return h("div", { class: "band" + (k > 50 ? " on-dark" : ""), style: "flex:0 0 " + ((r.to - r.from + 1) / (max + 1) * 100) + "%;--k:" + k + "%",
+        title: (scaleMode === "cefr" ? "" : "NCLC ") + label + " : " + r.from + "–" + r.to }, h("span", { text: label }));
+    });
     var marker = h("div", { class: "marker", style: "left:0%", text: String(score) });
-    var wrap = h("div", { class: "res-ribbon" }, marker, h("div", { class: "ribbon" }, bands));
-    requestAnimationFrame(function () { requestAnimationFrame(function () { marker.style.left = Math.min(100, Math.max(0, score / max * 100)) + "%"; }); });
+    var wrap = h("div", { class: "res-ribbon" }, marker, h("div", { class: "ribbon", role: "img", "aria-label": t("score") + " " + score + " / " + max }, bands));
+    requestAnimationFrame(function () { requestAnimationFrame(function () { marker.style.left = Math.min(100, Math.max(0, (score + 0.5) / (max + 1) * 100)) + "%"; }); });
     return wrap;
   }
 
   function levelBoxes(r) {
-    var n = r.nclc;
-    return h("div", { class: "levels" },
-      h("div", { class: "lvl" }, h("small", { text: t("nclc") }), h("b", { text: n ? String(n) : t("belowFour") })),
-      h("div", { class: "lvl" }, h("small", { text: "CECR / CEFR" }), h("b", { text: r.exam === "tef" ? t("cefrApprox", { l: r.cefr }) : r.cefr })));
+    var nclcBox = h("div", { class: "lvl" + (scaleMode === "nclc" ? " main" : "") }, h("small", { text: "NCLC" }), h("b", { text: r.nclc ? String(r.nclc) : "< 4" }),
+      h("span", { text: t("nclcFull") }));
+    var cefrBox = h("div", { class: "lvl" + (scaleMode === "cefr" ? " main" : "") }, h("small", { text: t("cefrShort") }),
+      h("b", { text: (r.exam === "tef" ? "≈ " : "") + r.cefr }), h("span", { text: t("cefrName_" + r.cefr) }));
+    return h("div", { class: "levels" }, scaleMode === "cefr" ? [cefrBox, nclcBox] : [nclcBox, cefrBox]);
   }
 
   function viewResult(exam, mock, sec) {
     var k = key(exam, mock, sec);
-    var head = crumbs([{ href: "#/", text: t("home") }, { href: "#/m/" + exam + "-" + mock + "/" + sec, text: examName(exam) + " — " + t("mockTitle", { n: mock }) }, { text: secName(sec) }]);
+    var head = crumbs([{ href: "#/", text: t("home") }, { href: "#/m/" + exam + "-" + mock + "/" + sec, text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }, { text: secName(sec) }]);
     var r = lastResult[k];
     if (r) return drawResult(r);
     if (PREVIEW || !user) { location.hash = "#/m/" + exam + "-" + mock + "/" + sec; return; }
@@ -1034,38 +1134,47 @@
     });
 
     function drawResult(res) {
-      var body = [head, h("div", { class: "sec-band", style: "background:" + SEC_COLOR[sec] + ";border-radius:14px;margin-bottom:16px" },
-        h("div", { class: "exam-name", text: examName(exam) + " — " + t("mockTitle", { n: mock }) }), h("h1", { text: secName(sec) }))];
+      var band = h("div", { class: "sec-band res-band" }, h("span", { class: "ico", svg: ICONS[sec] }),
+        h("div", { class: "exam-name", text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }), h("h1", { text: secName(sec) }));
+      var body = [head, band];
       if (res.preview) {
         body.push(h("div", { class: "panel" }, h("p", { style: "margin-top:0", text: t("previewDone") }), h("p", { class: "muted", text: t("previewAnswered", { n: res.answered, t: res.total }) }),
           h("a", { class: "btn btn-ghost", href: "#/", text: t("home") })));
-        show(h("div", { class: "wrap page narrow" }, body)); return;
+        show(h("div", { class: "wrap page narrow acc-" + sec }, body)); return;
       }
       if (res.status === "pending") {
         body.push(h("div", { class: "panel" }, h("h2", { style: "margin-top:0", text: t("pendingTitle") }), h("p", { text: t("pendingText") }),
           h("div", { class: "btn-row" }, h("a", { class: "btn btn-primary", href: "#/results", text: t("myResults") }), h("a", { class: "btn btn-ghost", href: "#/", text: t("home") }))));
-        show(h("div", { class: "wrap page narrow" }, body)); return;
+        show(h("div", { class: "wrap page narrow acc-" + sec }, body)); return;
       }
+      res.exam = res.exam || exam;
       var scaleMax = LV.scale(exam, sec);
-      var hero = h("div", { class: "score-hero" },
-        h("div", { class: "score-top" }, h("div", null, h("div", { class: "muted", style: "color:#AEB8C3", text: res.status === "marked" ? t("teacherMark") : t("score") }),
-          h("div", { class: "score-num" }, String(res.score), h("small", { text: "/ " + scaleMax }))), levelBoxes(res)),
-        resultRibbon(exam, sec, res.score),
-        res.total ? h("div", { style: "color:#C4CDD6", text: t("correctAnswers", { c: res.correct, t: res.total }) }) : null,
-        h("div", { style: "color:#8C97A3;font-size:13px", text: t("estimated") }));
+      var hero = h("section", { class: "score-hero" });
+      var fill = function () {
+        hero.replaceChildren(
+          h("div", { class: "score-top" },
+            h("div", null, h("div", { class: "score-label", text: res.status === "marked" ? t("teacherMark") : t("score") }),
+              h("div", { class: "score-num" }, String(res.score), h("small", { text: "/ " + scaleMax })),
+              res.total ? h("div", { class: "score-sub", text: t("correctAnswers", { c: res.correct, t: res.total }) }) : null),
+            levelBoxes(res)),
+          h("div", { class: "res-scale" }, h("h3", { text: t("whereScore") }), scaleSwitch(fill)),
+          resultRibbon(exam, sec, res.score),
+          h("div", { class: "res-note", text: t("estimated") }));
+      };
+      fill();
       body.push(hero);
       if (res.comment) body.push(h("div", { class: "panel", style: "margin-top:16px" }, h("h2", { style: "margin-top:0;font-size:18px", text: t("teacherComment") }), h("p", { style: "margin:0;white-space:pre-wrap", text: res.comment })));
       if (res.review && res.review.length) {
         var reviewBox = h("div", { class: "review" });
-        body.push(h("h2", { style: "margin:28px 0 12px", text: t("correction") }), reviewBox);
+        body.push(h("h2", { style: "margin:32px 0 12px;font-size:24px;letter-spacing:-.02em", text: t("correction") }), reviewBox);
         loadSection(exam, mock, sec).then(function (data) {
           var qtext = {};
           data.screens.forEach(function (s) { s.questions.forEach(function (q) { qtext[q.n] = q.q || ""; }); });
           append(reviewBox, res.review.map(function (rv) { return reviewItem(rv, qtext[rv.n]); }));
         });
       }
-      body.push(h("div", { class: "btn-row", style: "margin-top:18px" }, h("a", { class: "btn btn-ghost", href: "#/results", text: t("myResults") }), h("a", { class: "btn btn-ghost", href: "#/", text: t("home") })));
-      show(h("div", { class: "wrap page narrow" }, body));
+      body.push(h("div", { class: "btn-row", style: "margin-top:20px" }, h("a", { class: "btn btn-ghost", href: "#/results", text: t("myResults") }), h("a", { class: "btn btn-ghost", href: "#/", text: t("home") })));
+      show(h("div", { class: "wrap page narrow acc-" + sec }, body));
     }
   }
 
@@ -1094,7 +1203,7 @@
     api("results", { code: user.code }).then(function (d) {
       var items = d.items || [];
       items.forEach(function (it) { setAttempt(it.exam, it.mock, it.section, attemptSummary(it)); });
-      var body = [h("h1", { style: "margin:0 0 16px", text: t("resultsTitle") })];
+      var body = [h("h1", { class: "page-title", text: t("resultsTitle") })];
       if (!items.length) body.push(h("div", { class: "panel" }, h("p", { style: "margin-top:0", text: t("resultsEmpty") }), h("a", { class: "btn btn-primary", href: "#/", text: t("home") })));
       var groups = {};
       items.forEach(function (it) { var g = it.exam + "-" + it.mock; (groups[g] = groups[g] || []).push(it); });
@@ -1108,15 +1217,16 @@
             h("td", null, status),
             h("td", { class: "num", text: it && it.score != null ? it.score + " / " + LV.scale(ex, s) : "—" }),
             h("td", { class: "num", text: it && it.score != null ? (it.nclc ? it.nclc : "<4") : "—" }),
-            h("td", { class: "num", text: it && it.score != null ? it.cefr : "—" }));
+            h("td", { class: "num", text: it && it.score != null ? (it.exam === "tef" ? "≈ " : "") + it.cefr : "—" }));
         });
-        var levels = list.filter(function (x) { return x.score != null; }).map(function (x) { return x.nclc || 0; });
+        var scored = list.filter(function (x) { return x.score != null; });
+        var lowest = scored.slice().sort(function (a, b) { return (a.nclc || 0) - (b.nclc || 0); })[0];
         body.push(h("div", { class: "panel" },
-          h("h2", { style: "margin-top:0", text: examName(ex) + " — " + t("mockTitle", { n: mk }) }),
+          h("h2", { style: "margin-top:0", text: examName(ex) + ", " + t("mockTitle", { n: mk }).toLowerCase() }),
           h("div", { style: "overflow-x:auto" }, h("table", { class: "res-table" },
-            h("thead", null, h("tr", null, h("th", { text: t("colTest") }), h("th", { text: t("colStatus") }), h("th", { text: t("score") }), h("th", { text: t("nclc") }), h("th", { text: "CECR" }))),
+            h("thead", null, h("tr", null, h("th", { text: t("colTest") }), h("th", { text: t("colStatus") }), h("th", { text: t("score") }), h("th", { text: "NCLC" }), h("th", { text: t("cefrShort") }))),
             h("tbody", null, rows))),
-          levels.length === 4 ? h("p", { style: "margin:12px 0 0;font-weight:650", text: t("lowestSkill", { l: "NCLC " + (Math.min.apply(null, levels) || "<4") }) }) : null));
+          scored.length === 4 ? h("p", { class: "res-sum", text: t("lowestSkill", { l: "NCLC " + (lowest.nclc || "< 4") + ", " + (lowest.exam === "tef" ? "≈ " : "") + lowest.cefr }) }) : null));
       });
       show(h("div", { class: "wrap page narrow" }, body));
     }, function () { errorView(t("netError"), function () { route(); }); });

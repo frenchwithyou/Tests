@@ -1,7 +1,7 @@
 # FWY mock exams
 
 TCF Canada and TEF Canada mock exams for FrenchWithYou students.
-Live site: https://frenchwithyou.github.io/tests/
+Live site: https://frenchwithyou.github.io/Tests/
 
 ## How it works
 
@@ -24,4 +24,5 @@ A listening test opens to students only when every recording is in its `audio/` 
 - `tools/audio_scripts_pdf.py`: the teacher's recording sheet.
 - `tools/dev/server.js`: runs the site with `backend/Code.gs` on a fake sheet, for testing.
 
-Fonts: Archivo and Literata (SIL Open Font License, see `assets/fonts/`).
+Fonts: Bricolage Grotesque and Literata (SIL Open Font License, see `assets/fonts/`).
+The site has a light and a dark theme (button in the top bar) and shows levels on the NCLC or the CECR scale.
