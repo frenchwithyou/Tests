@@ -240,22 +240,7 @@ button { cursor: pointer; }
 .mock + .mock { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
 .mock-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .mock-head h3 { margin: 0; font-size: 16px; font-weight: 700; }
-.mock-prog-wrap { margin-left: auto; display: inline-flex; align-items: center; gap: 12px; }
 .mock-prog { font-size: 13px; color: var(--muted); white-space: nowrap; }
-.mock-pick { flex-wrap: wrap; gap: 8px 12px; }
-.mock-pick label { flex-basis: 100%; font-size: 13px; font-weight: 650; color: var(--muted); }
-.select-wrap { position: relative; display: inline-flex; }
-.select-wrap select {
-  appearance: none; -webkit-appearance: none; font: inherit; font-size: 16px; font-weight: 700; color: var(--ink);
-  background: var(--surface-2); border: 1.5px solid var(--line-strong); border-radius: 12px;
-  padding: 9px 40px 9px 14px; min-height: 44px; cursor: pointer; max-width: 100%;
-  transition: border-color .18s, background-color .18s;
-}
-.select-wrap select:hover { border-color: var(--ink); background: var(--surface); }
-.select-wrap select:focus-visible { outline: none; box-shadow: var(--focus); }
-.select-wrap select option { background: var(--surface); color: var(--ink); font-weight: 600; }
-.select-wrap .chev { position: absolute; right: 12px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
-.select-wrap .chev svg { width: 18px; height: 18px; display: block; }
 .mini-bar { width: 64px; height: 6px; border-radius: 6px; background: var(--line); overflow: hidden; flex: none; }
 .mini-bar i { display: block; height: 100%; background: var(--green); border-radius: 6px; }
 .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -271,6 +256,23 @@ button { cursor: pointer; }
 .tile-sub { color: var(--muted); font-size: 13px; }
 .tile-foot { margin-top: auto; padding-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .more-soon { margin: 16px 0 0; color: var(--muted); font-size: 14px; }
+
+/* ---------- home: choosing the mock exam (tabs) ---------- */
+.mock-line { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin: 0 0 12px; }
+
+.mock-tabs { display: flex; gap: 4px; padding: 4px; margin-bottom: 14px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; overflow-x: auto; scrollbar-width: none; }
+.mock-tab {
+  flex: 1 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 8px 16px;
+  border: 0; border-radius: 10px; background: transparent; font: inherit; font-size: 15px; font-weight: 650; color: var(--muted); cursor: pointer;
+  transition: background-color .2s, color .2s, box-shadow .2s;
+}
+.mock-tab:hover { color: var(--ink); }
+.mock-tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(14, 26, 46, .12), inset 0 0 0 1px var(--line); }
+.tab-ok { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--green-soft); color: var(--green); }
+.tab-ok svg { width: 13px; height: 13px; }
+.tab-count { font-size: 12px; font-weight: 700; padding: 1px 7px; border-radius: 999px; background: var(--blue-soft); color: var(--blue-ink); }
+
+
 
 .pill { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; padding: 3px 10px; font-size: 13px; font-weight: 650; white-space: nowrap; line-height: 1.4; }
 .pill svg { width: 13px; height: 13px; }

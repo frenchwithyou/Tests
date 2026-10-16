@@ -472,56 +472,65 @@
     return open || mocks[mocks.length - 1];
   }
 
+  function mockDone(ex, m) { return SECS.filter(function (s) { return finished(attemptOf(ex.id, m.n, s)); }).length; }
+  function mockTiles(ex, m) {
+    return h("div", { class: "tiles" }, SECS.map(function (s) {
+      var info = m.sections[s];
+      var metaKey = s === "co" || s === "ce" ? "secMetaQ" : ex.id === "tcf" ? "secMetaT" : "secMetaS";
+      return h("a", { class: "tile acc-" + s, href: "#/m/" + ex.id + "-" + m.n + "/" + s },
+        h("span", { class: "ico", svg: ICONS[s] }),
+        h("span", { class: "tile-name", text: secName(s) }),
+        h("span", { class: "tile-sub", text: t(metaKey, { q: info.count, m: Math.round(info.duration / 60) }) }),
+        h("span", { class: "tile-foot" }, statusBits(ex.id, m.n, s, info)));
+    }));
+  }
+
   function viewHome() {
     var hero = h("section", { class: "hero" }, h("div", { class: "wrap hero-grid" },
       h("div", null, h("h1", { text: t("heroTitle") }), h("p", { text: t("heroText") }),
         !user ? h("div", { class: "btn-row" }, h("button", { class: "btn btn-primary", type: "button", text: t("enterCode"), onclick: function () { askCode(function () { route(); }); } })) : null),
       levelStairs()));
+    var CHECK = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 10.5 3.5 3.5 7.5-8"/></svg>';
     var panels = catalog.exams.map(function (ex) {
       var total = 0, mocks = ex.mocks;
       if (mocks[0]) SECS.forEach(function (s) { total += mocks[0].sections[s].duration; });
-      function doneCount(m) { return SECS.filter(function (s) { return finished(attemptOf(ex.id, m.n, s)); }).length; }
       var pick = pickedMock(ex);
       var body = h("div", { class: "mock" });
-      function tiles(m) {
-        return h("div", { class: "tiles" }, SECS.map(function (s) {
-          var info = m.sections[s];
-          var metaKey = s === "co" || s === "ce" ? "secMetaQ" : ex.id === "tcf" ? "secMetaT" : "secMetaS";
-          return h("a", { class: "tile acc-" + s, href: "#/m/" + ex.id + "-" + m.n + "/" + s },
-            h("span", { class: "ico", svg: ICONS[s] }),
-            h("span", { class: "tile-name", text: secName(s) }),
-            h("span", { class: "tile-sub", text: t(metaKey, { q: info.count, m: Math.round(info.duration / 60) }) }),
-            h("span", { class: "tile-foot" }, statusBits(ex.id, m.n, s, info)));
-        }));
-      }
       function progress(m) {
-        var done = doneCount(m);
-        return h("span", { class: "mock-prog-wrap" },
-          h("span", { class: "mock-prog", text: t("mockProgress", { d: done, n: SECS.length }) }),
-          h("span", { class: "mini-bar", "aria-hidden": "true" }, h("i", { style: "width:" + (done / SECS.length * 100) + "%" })));
+        var d = mockDone(ex, m);
+        return h("div", { class: "mock-line" },
+          h("span", { class: "mock-prog", text: t("mockProgress", { d: d, n: SECS.length }) }),
+          h("span", { class: "mini-bar", "aria-hidden": "true" }, h("i", { style: "width:" + (d / SECS.length * 100) + "%" })));
       }
-      function fill(m) {
+      function choose(m, focus) {
+        store.set("fwy.mock." + ex.id, m.n); pick = m; fill();
+        if (focus) { var b = $("#tab-" + ex.id + "-" + m.n); if (b) b.focus(); }
+      }
+      function fill() {
         body.textContent = "";
-        var head;
-        if (mocks.length > 1) {
-          var sel = h("select", { id: "pick-" + ex.id, onchange: function () {
-            var n = parseInt(sel.value, 10);
-            store.set("fwy.mock." + ex.id, n);
-            fill(mocks.filter(function (x) { return x.n === n; })[0]);
-          } }, mocks.map(function (x) {
-            var label = t("mockTitle", { n: x.n }) + (doneCount(x) === SECS.length ? " · " + t("mockDoneTag") : "");
-            return h("option", { value: String(x.n), selected: x.n === m.n, text: label });
-          }));
-          head = h("div", { class: "mock-head mock-pick" },
-            h("label", { for: "pick-" + ex.id, text: t("chooseMock") }),
-            h("span", { class: "select-wrap" }, sel, h("span", { class: "chev", "aria-hidden": "true", svg: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>' })),
-            progress(m));
-        } else {
-          head = h("div", { class: "mock-head" }, h("h3", { text: t("mockTitle", { n: m.n }) }), progress(m));
+        if (mocks.length < 2) {
+          append(body, [h("div", { class: "mock-head" }, h("h3", { text: t("mockTitle", { n: pick.n }) }), progress(pick)), mockTiles(ex, pick)]);
+          return;
         }
-        append(body, [head, tiles(m)]);
+        var tabs = h("div", { class: "mock-tabs", role: "tablist", "aria-label": t("chooseMock") }, mocks.map(function (m, i) {
+          var d = mockDone(ex, m), on = m.n === pick.n;
+          return h("button", {
+            type: "button", role: "tab", class: "mock-tab", id: "tab-" + ex.id + "-" + m.n,
+            "aria-selected": on ? "true" : "false", "aria-controls": "panel-" + ex.id, tabindex: on ? "0" : "-1",
+            onclick: function () { if (!on) choose(m); },
+            onkeydown: function (e) {
+              var k = e.key, j = k === "ArrowRight" ? i + 1 : k === "ArrowLeft" ? i - 1 : k === "Home" ? 0 : k === "End" ? mocks.length - 1 : null;
+              if (j == null) return;
+              e.preventDefault(); choose(mocks[(j + mocks.length) % mocks.length], true);
+            }
+          },
+            h("span", { text: t("mockTitle", { n: m.n }) }),
+            d === SECS.length ? h("span", { class: "tab-ok", svg: CHECK, role: "img", "aria-label": t("mockDoneTag") })
+              : d ? h("span", { class: "tab-count", text: d + "/" + SECS.length }) : null);
+        }));
+        append(body, [tabs, h("div", { id: "panel-" + ex.id, role: "tabpanel", "aria-labelledby": "tab-" + ex.id + "-" + pick.n }, progress(pick), mockTiles(ex, pick))]);
       }
-      if (pick) fill(pick);
+      if (pick) fill();
       return h("section", { class: "exam", "aria-labelledby": "h-" + ex.id },
         h("div", { class: "exam-head" }, h("h2", { id: "h-" + ex.id, text: ex.name }), h("span", { class: "meta", text: t("examTotal", { n: 4, t: fmtTotal(total) }) })),
         body,
