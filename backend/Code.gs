@@ -19,7 +19,7 @@ var CONFIG = {
 };
 
 var TABS = {
-  Students: ["Code", "Name", "Access", "Retakes", "Active", "Notes"],
+  Students: ["Code", "Name", "Access", "Retakes", "Active", "Notes", "Consent", "Consent date"],
   Keys: ["exam", "mock", "section", "q", "answer", "points", "explanation", "options", "question", "transcript"],
   Attempts: ["Attempt ID", "Code", "Name", "Exam", "Mock", "Section", "Started", "Deadline", "Status", "Saved", "Last save"],
   Results: ["Date", "Code", "Name", "Exam", "Mock", "Section", "Correct", "Total", "Points", "Score", "CEFR", "NCLC", "Status",
@@ -62,7 +62,7 @@ function doPost(e) {
   var out;
   try {
     var p = JSON.parse((e && e.postData && e.postData.contents) || "{}");
-    var actions = { ping: ping, login: login, start: start, save: save, upload: upload, submit: submit, result: result, results: results };
+    var actions = { ping: ping, login: login, consent: consent, start: start, save: save, upload: upload, submit: submit, result: result, results: results };
     var fn = actions[p.action];
     out = fn ? fn(p) : { ok: false, error: "bad_action" };
   } catch (err) {
@@ -131,7 +131,8 @@ function student(code) {
       if (!access || access.indexOf("tef") >= 0 || access === "both" || access === "all") list.push("tef");
       var activeCell = norm(cell(tbl, r, "Active"));
       return { code: code, name: norm(cell(tbl, r, "Name")) || code, access: list,
-               retakes: yes(cell(tbl, r, "Retakes")), active: activeCell === "" || yes(activeCell) };
+               retakes: yes(cell(tbl, r, "Retakes")), active: activeCell === "" || yes(activeCell),
+               consent: norm(cell(tbl, r, "Consent")), row: i };
     }
   }
   return null;
@@ -157,6 +158,39 @@ function validSection(p) {
   var secs = CONFIG.sections[p.exam];
   if (!secs || !secs[p.section] || !(Number(p.mock) > 0)) throw { code: "bad_request" };
 }
+
+/* ---------------------------------------------------------------- consent to the terms and privacy policy */
+function ensureColumns(name, headers) {
+  // adds missing columns at the end of the header row (sheets made before these columns existed)
+  var sh = sheet(name), lastCol = Math.max(1, sh.getLastColumn());
+  var have = sh.getRange(1, 1, 1, lastCol).getValues()[0].map(String);
+  headers.forEach(function (hd) {
+    if (have.indexOf(hd) < 0) { have.push(hd); sh.getRange(1, have.length).setValue(hd); }
+  });
+}
+
+function recordConsent(s, version) {
+  version = norm(version).slice(0, 20);
+  if (!version || version === s.consent) return s.consent;
+  return withLock(function () {
+    ensureColumns("Students", ["Consent", "Consent date"]);
+    var tbl = table("Students");
+    for (var i = 0; i < tbl.rows.length; i++) {
+      if (norm(cell(tbl, tbl.rows[i], "Code")).toUpperCase() === s.code) {
+        setCells("Students", i, tbl, { "Consent": version, "Consent date": new Date() });
+        s.consent = version;
+        break;
+      }
+    }
+    return s.consent;
+  });
+}
+
+var consent = guarded(function (p) {
+  var s = requireStudent(p);
+  if (!p.consent) return { ok: false, error: "bad_request" };
+  return { ok: true, consent: recordConsent(s, p.consent) };
+});
 
 /* ---------------------------------------------------------------- keys and grading */
 function loadKeys(exam, mock, section) {
@@ -255,6 +289,7 @@ function merge(a, b) { var o = {}; Object.keys(a).forEach(function (k) { o[k] = 
 /* ---------------------------------------------------------------- actions */
 var login = guarded(function (p) {
   var s = requireStudent(p);
+  if (p.consent) recordConsent(s, p.consent);
   var attempts = {};
   var rs = resultsFor(s.code);
   rs.list.forEach(function (x) {
@@ -267,7 +302,7 @@ var login = guarded(function (p) {
     var k = norm(cell(at, r, "Exam")) + "-" + Number(cell(at, r, "Mock")) + "-" + norm(cell(at, r, "Section"));
     attempts[k] = { status: "started" };
   });
-  return { ok: true, name: s.name, access: s.access, retakes: s.retakes, attempts: attempts };
+  return { ok: true, name: s.name, access: s.access, retakes: s.retakes, consent: s.consent, attempts: attempts };
 });
 
 function summary(r) {
@@ -443,12 +478,12 @@ function setup() {
     sh.getRange(1, 1, 1, TABS[name].length).setFontWeight("bold").setBackground("#10233B").setFontColor("#FFFFFF");
     sh.setFrozenRows(1);
   });
+  ensureColumns("Students", TABS.Students);
   var st = book.getSheetByName("Students");
   st.getRange(2, 1, 500, 1).setNumberFormat("@");
   if (st.getLastRow() === 1) {
     st.appendRow([makeCode("PROF-"), "Gelo (test)", "TCF+TEF", "Yes", "Yes", "Teacher test code: can retake every test"]);
-    st.appendRow([makeCode(""), "Jasleen Kaur", "TCF", "No", "Yes", ""]);
-    st.appendRow([makeCode(""), "Nitasha Bains", "TEF", "No", "Yes", ""]);
+    st.appendRow([makeCode(""), "Example student", "TCF", "No", "Yes", "Replace with a real student"]);
   }
   var rule = SpreadsheetApp.newDataValidation().requireValueInList(["TCF", "TEF", "TCF+TEF"], true).build();
   st.getRange(2, 3, 500, 1).setDataValidation(rule);

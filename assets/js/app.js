@@ -5,6 +5,7 @@
   var CFG = window.FWY_CONFIG || {};
   var I18N = window.FWY_I18N;
   var LV = window.FWY_LEVELS;
+  var LEGAL = window.FWY_LEGAL || { version: "" };
   var params = new URLSearchParams(location.search);
   var API = (params.get("api") || CFG.apiUrl || "").trim();
   var PREVIEW = !API || params.has("preview");
@@ -63,6 +64,8 @@
     if (typeof s !== "string") return s;
     return s.replace(/ ([:;!?»])/g, "\u00a0$1").replace(/« /g, "«\u00a0");
   }
+
+  function loc(s) { return lang === "fr" ? frTypo(s) : s; }
 
   function h(tag, attrs) {
     var el = document.createElement(tag);
@@ -195,8 +198,11 @@
   function refreshUser() {
     if (!user || PREVIEW) return Promise.resolve(user);
     return api("login", { code: user.code }).then(function (d) {
-      user = { code: user.code, name: d.name, access: d.access, attempts: d.attempts || {} };
+      var had = user.consent;
+      user = { code: user.code, name: d.name, access: d.access, retakes: !!d.retakes, attempts: d.attempts || {},
+               consent: d.consent === LEGAL.version || had === LEGAL.version ? LEGAL.version : (d.consent || had || null) };
       store.set("fwy.user", user);
+      if (had === LEGAL.version && d.consent !== LEGAL.version) sendConsent(); // accepted before the sheet could record it
       return user;
     }, function (e) {
       if (e.code === "unknown_code" || e.code === "inactive") { user = null; store.del("fwy.user"); }
@@ -226,13 +232,23 @@
     var banner = $("#previewBanner");
     banner.hidden = !PREVIEW;
     banner.textContent = t("previewBanner");
-    var c = CFG.contact || {};
     $("#foot").replaceChildren(h("div", { class: "wrap" },
       h("div", null, h("strong", { text: "FrenchWithYou" }), "\u2002", t("footerFree")),
-      h("div", { class: "contacts" },
-        c.whatsapp ? h("a", { href: "https://wa.me/" + c.whatsapp.replace(/\D/g, ""), text: "WhatsApp " + c.whatsapp }) : null,
-        c.email ? h("a", { href: "mailto:" + c.email, text: c.email }) : null,
-        c.telegram ? h("a", { href: "https://t.me/" + c.telegram.replace("@", ""), text: "Telegram " + c.telegram }) : null)));
+      h("div", { class: "contacts" }, contactLinks()),
+      h("div", { class: "legal-line" },
+        h("p", { text: t("footerIndependent") }),
+        h("p", { class: "legal-links" },
+          h("a", { href: "#/terms", text: t("linkTerms") }),
+          h("a", { href: "#/privacy", text: t("linkPrivacy") }),
+          h("span", { text: "© 2026 FrenchWithYou" })))));
+  }
+
+  function contactLinks() {
+    var c = CFG.contact || {};
+    return [
+      c.whatsapp ? h("a", { href: "https://wa.me/" + c.whatsapp.replace(/\D/g, ""), text: "WhatsApp " + c.whatsapp }) : null,
+      c.email ? h("a", { href: "mailto:" + c.email, text: c.email }) : null,
+      c.telegram ? h("a", { href: "https://t.me/" + c.telegram.replace("@", ""), text: "Telegram " + c.telegram }) : null];
   }
 
   function signOut() {
@@ -241,13 +257,13 @@
   }
 
   /* ------------------------------------------------------------------ dialogs */
-  function dialog(content, onClose) {
+  function dialog(content, onClose, locked) {
     var root = $("#dialog-root");
     var back = h("div", { class: "dlg-back", role: "presentation" });
     var box = h("div", { class: "dlg", role: "dialog", "aria-modal": "true" }, content);
     back.append(box);
     function close() { back.remove(); document.removeEventListener("keydown", esc); if (onClose) onClose(); }
-    function esc(e) { if (e.key === "Escape") close(); }
+    function esc(e) { if (e.key === "Escape" && !locked) close(); }
     document.addEventListener("keydown", esc);
     root.append(back);
     var f = box.querySelector("input, button");
@@ -268,29 +284,81 @@
   function askCode(after) {
     var input = h("input", { id: "codeIn", autocomplete: "off", autocapitalize: "characters", spellcheck: "false", maxlength: "20", inputmode: "text" });
     var err = h("div", { class: "err", hidden: true, role: "alert" });
-    var btn = h("button", { class: "btn btn-primary", type: "submit", text: t("codeContinue") });
+    var btn = h("button", { class: "btn btn-primary", type: "submit", text: t("codeContinue"), disabled: true });
+    var agree = h("input", { type: "checkbox", id: "codeConsent", onchange: function () { btn.disabled = !agree.checked; } });
     var form = h("form", { onsubmit: function (e) {
       e.preventDefault();
       var code = input.value.trim().toUpperCase().replace(/\s+/g, "");
-      if (!code) return;
+      if (!code || !agree.checked) return;
       btn.disabled = true; err.hidden = true;
       if (PREVIEW) { done({ name: code, access: ["tcf", "tef"], attempts: {} }); return; }
-      api("login", { code: code }).then(done, function (e2) {
+      api("login", { code: code, consent: LEGAL.version }).then(done, function (e2) {
         btn.disabled = false; err.hidden = false;
         err.textContent = e2.code === "unknown_code" ? t("codeUnknown") : e2.code === "inactive" ? t("codeInactive") : t("netError");
       });
       function done(d) {
-        user = { code: code, name: d.name, access: d.access, attempts: d.attempts || {} };
+        user = { code: code, name: d.name, access: d.access, retakes: !!d.retakes, attempts: d.attempts || {}, consent: LEGAL.version };
         store.set("fwy.user", user); close(); renderChrome(); if (after) after();
       }
     } },
       h("h2", { text: t("codeTitle") }),
       h("p", { text: t("codeText") }),
       h("div", { class: "field" }, h("label", { for: "codeIn", text: t("codeLabel") }), input),
+      consentLine(agree),
       err,
       h("div", { class: "btn-row" }, btn, h("button", { class: "btn btn-ghost", type: "button", text: t("codeCancel"), onclick: function () { close(); } })));
     var close = dialog(form);
     input.focus();
+  }
+
+  /* ------------------------------------------------------------------ consent to the terms and privacy policy */
+  function consentOk() { return !user || !LEGAL.version || user.consent === LEGAL.version; }
+
+  function consentLine(chk) {
+    var kids = t("consentLabel").split(/(\{terms\}|\{privacy\})/).map(function (part) {
+      if (part === "{terms}") return h("a", { href: "#/terms", target: "_blank", rel: "noopener", text: t("consentTermsLink") });
+      if (part === "{privacy}") return h("a", { href: "#/privacy", target: "_blank", rel: "noopener", text: t("consentPrivacyLink") });
+      return part;
+    });
+    return h("div", { class: "consent" },
+      h("label", { class: "check", for: chk.id }, chk, h("span", null, kids)),
+      h("p", { class: "small", text: t("consentMinor") }));
+  }
+
+  function sendConsent() {
+    if (!user || PREVIEW) return;
+    // an older results service doesn't know "consent": the agreement stays on this device and is sent again later
+    api("consent", { code: user.code, consent: LEGAL.version }).catch(function () {});
+  }
+
+  var consentWaiting = null; // callbacks waiting for the open consent dialog
+  function askConsent(after) {
+    if (consentWaiting) { if (after) consentWaiting.push(after); return; }
+    consentWaiting = after ? [after] : [];
+    var ok = h("button", { class: "btn btn-primary", type: "button", text: t("consentAccept"), disabled: true, onclick: function () {
+      user.consent = LEGAL.version; store.set("fwy.user", user); sendConsent();
+      var list = consentWaiting; close(); list.forEach(function (fn) { fn(); });
+    } });
+    var agree = h("input", { type: "checkbox", id: "consentChk", onchange: function () { ok.disabled = !agree.checked; } });
+    var close = dialog([h("h2", { text: t("consentTitle") }), h("p", { text: t("consentText") }), consentLine(agree),
+      h("div", { class: "btn-row" }, ok,
+        h("button", { class: "btn btn-ghost", type: "button", text: t("signOut"), onclick: function () { close(); signOut(); } }))],
+      function () { consentWaiting = null; }, true);
+  }
+
+  /* ------------------------------------------------------------------ views: terms of use and privacy policy */
+  function viewLegal(kind) {
+    var L = LEGAL[lang] || LEGAL.fr, doc = L && L[kind];
+    if (!doc) return viewHome();
+    var other = kind === "privacy" ? "terms" : "privacy";
+    show(h("div", { class: "wrap page narrow legal" },
+      crumbs([{ href: "#/", text: t("home") }, { text: loc(doc.title) }]),
+      h("h1", { class: "page-title", text: loc(doc.title) }),
+      h("p", { class: "updated", text: loc(L.updated) }),
+      h("p", { class: "lead", text: loc(doc.intro) }),
+      doc.sections.map(function (sct) { return h("section", null, h("h2", { text: loc(sct.h) }), blocks(loc(sct.body))); }),
+      h("section", null, h("h2", { text: t("legalContact") }), h("p", { class: "legal-contacts" }, contactLinks())),
+      h("p", { class: "legal-other" }, h("a", { href: "#/" + other, text: t(other === "terms" ? "linkTerms" : "linkPrivacy") }))));
   }
 
   /* ------------------------------------------------------------------ views: shell */
@@ -445,6 +513,7 @@
       if (!(a && a.status === "started")) { startBtn.disabled = true; chk.addEventListener("change", function () { startBtn.disabled = !chk.checked; }); }
       startBtn.addEventListener("click", function () {
         if (!user) { askCode(function () { location.hash = "#/m/" + exam + "-" + mock + "/" + sec + "/test"; }); return; }
+        if (!consentOk()) { askConsent(function () { location.hash = "#/m/" + exam + "-" + mock + "/" + sec + "/test"; }); return; }
         location.hash = "#/m/" + exam + "-" + mock + "/" + sec + "/test";
       });
       var device = null;
@@ -526,6 +595,7 @@
     var info = sectionInfo(exam, mock, sec);
     if (!info) { location.hash = "#/"; return; }
     if (!user) { askCode(function () { route(); }); show(h("div", { class: "wrap page" }, h("div", { class: "notice", text: t("needCode") }))); return; }
+    if (!consentOk()) { askConsent(function () { route(); }); show(h("div", { class: "wrap page" }, h("div", { class: "notice", text: t("consentText") }))); return; }
     if (!info.ready && !PREVIEW) { location.hash = "#/m/" + exam + "-" + mock + "/" + sec; return; }
     loadingView();
     loadSection(exam, mock, sec).then(function (data) {
@@ -1261,6 +1331,7 @@
     loadCatalog().then(function () {
       if (!parts.length) return viewHome();
       if (parts[0] === "results") return viewResults();
+      if (parts[0] === "privacy" || parts[0] === "terms") return viewLegal(parts[0]);
       if (parts[0] === "m" && parts[1]) {
         var em = parts[1].split("-"), exam = em[0], mock = parseInt(em[1], 10), sec = parts[2];
         if (SECS.indexOf(sec) < 0) return viewHome();
@@ -1295,5 +1366,8 @@
 
   /* ------------------------------------------------------------------ boot */
   renderChrome();
-  refreshUser().then(function () { renderChrome(); route(); });
+  refreshUser().then(function () {
+    renderChrome(); route();
+    if (user && !consentOk() && !/^#\/?(privacy|terms)/.test(location.hash)) askConsent();
+  });
 })();
