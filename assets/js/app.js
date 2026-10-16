@@ -458,6 +458,20 @@
       a.cefr ? h("span", { class: "chip", text: a.cefr }) : null];
   }
 
+  /* which mock exam the home page shows for an exam: the student's last choice,
+     else the first one not yet finished, else the newest */
+  function pickedMock(ex) {
+    var mocks = ex.mocks || [];
+    if (!mocks.length) return null;
+    var saved = store.get("fwy.mock." + ex.id);
+    var hit = mocks.filter(function (m) { return m.n === saved; })[0];
+    if (hit) return hit;
+    var open = mocks.filter(function (m) {
+      return SECS.some(function (s) { return !finished(attemptOf(ex.id, m.n, s)); });
+    })[0];
+    return open || mocks[mocks.length - 1];
+  }
+
   function viewHome() {
     var hero = h("section", { class: "hero" }, h("div", { class: "wrap hero-grid" },
       h("div", null, h("h1", { text: t("heroTitle") }), h("p", { text: t("heroText") }),
@@ -466,24 +480,51 @@
     var panels = catalog.exams.map(function (ex) {
       var total = 0, mocks = ex.mocks;
       if (mocks[0]) SECS.forEach(function (s) { total += mocks[0].sections[s].duration; });
+      function doneCount(m) { return SECS.filter(function (s) { return finished(attemptOf(ex.id, m.n, s)); }).length; }
+      var pick = pickedMock(ex);
+      var body = h("div", { class: "mock" });
+      function tiles(m) {
+        return h("div", { class: "tiles" }, SECS.map(function (s) {
+          var info = m.sections[s];
+          var metaKey = s === "co" || s === "ce" ? "secMetaQ" : ex.id === "tcf" ? "secMetaT" : "secMetaS";
+          return h("a", { class: "tile acc-" + s, href: "#/m/" + ex.id + "-" + m.n + "/" + s },
+            h("span", { class: "ico", svg: ICONS[s] }),
+            h("span", { class: "tile-name", text: secName(s) }),
+            h("span", { class: "tile-sub", text: t(metaKey, { q: info.count, m: Math.round(info.duration / 60) }) }),
+            h("span", { class: "tile-foot" }, statusBits(ex.id, m.n, s, info)));
+        }));
+      }
+      function progress(m) {
+        var done = doneCount(m);
+        return h("span", { class: "mock-prog-wrap" },
+          h("span", { class: "mock-prog", text: t("mockProgress", { d: done, n: SECS.length }) }),
+          h("span", { class: "mini-bar", "aria-hidden": "true" }, h("i", { style: "width:" + (done / SECS.length * 100) + "%" })));
+      }
+      function fill(m) {
+        body.textContent = "";
+        var head;
+        if (mocks.length > 1) {
+          var sel = h("select", { id: "pick-" + ex.id, onchange: function () {
+            var n = parseInt(sel.value, 10);
+            store.set("fwy.mock." + ex.id, n);
+            fill(mocks.filter(function (x) { return x.n === n; })[0]);
+          } }, mocks.map(function (x) {
+            var label = t("mockTitle", { n: x.n }) + (doneCount(x) === SECS.length ? " · " + t("mockDoneTag") : "");
+            return h("option", { value: String(x.n), selected: x.n === m.n, text: label });
+          }));
+          head = h("div", { class: "mock-head mock-pick" },
+            h("label", { for: "pick-" + ex.id, text: t("chooseMock") }),
+            h("span", { class: "select-wrap" }, sel, h("span", { class: "chev", "aria-hidden": "true", svg: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>' })),
+            progress(m));
+        } else {
+          head = h("div", { class: "mock-head" }, h("h3", { text: t("mockTitle", { n: m.n }) }), progress(m));
+        }
+        append(body, [head, tiles(m)]);
+      }
+      if (pick) fill(pick);
       return h("section", { class: "exam", "aria-labelledby": "h-" + ex.id },
         h("div", { class: "exam-head" }, h("h2", { id: "h-" + ex.id, text: ex.name }), h("span", { class: "meta", text: t("examTotal", { n: 4, t: fmtTotal(total) }) })),
-        mocks.map(function (m) {
-          var done = SECS.filter(function (s) { return finished(attemptOf(ex.id, m.n, s)); }).length;
-          return h("div", { class: "mock" },
-            h("div", { class: "mock-head" }, h("h3", { text: t("mockTitle", { n: m.n }) }),
-              h("span", { class: "mock-prog", text: t("mockProgress", { d: done, n: SECS.length }) }),
-              h("span", { class: "mini-bar", "aria-hidden": "true" }, h("i", { style: "width:" + (done / SECS.length * 100) + "%" }))),
-            h("div", { class: "tiles" }, SECS.map(function (s) {
-              var info = m.sections[s];
-              var metaKey = s === "co" || s === "ce" ? "secMetaQ" : ex.id === "tcf" ? "secMetaT" : "secMetaS";
-              return h("a", { class: "tile acc-" + s, href: "#/m/" + ex.id + "-" + m.n + "/" + s },
-                h("span", { class: "ico", svg: ICONS[s] }),
-                h("span", { class: "tile-name", text: secName(s) }),
-                h("span", { class: "tile-sub", text: t(metaKey, { q: info.count, m: Math.round(info.duration / 60) }) }),
-                h("span", { class: "tile-foot" }, statusBits(ex.id, m.n, s, info)));
-            })));
-        }),
+        body,
         h("p", { class: "more-soon", text: t("moreSoon") }));
     });
     show([hero, h("div", { class: "wrap" }, h("div", { class: "exams" }, panels))]);
@@ -1335,6 +1376,7 @@
       if (parts[0] === "m" && parts[1]) {
         var em = parts[1].split("-"), exam = em[0], mock = parseInt(em[1], 10), sec = parts[2];
         if (SECS.indexOf(sec) < 0) return viewHome();
+        if (mock > 0) store.set("fwy.mock." + exam, mock);
         if (parts[3] === "test") return viewTest(exam, mock, sec);
         if (parts[3] === "result") return viewResult(exam, mock, sec);
         return viewIntro(exam, mock, sec);
