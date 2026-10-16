@@ -1,0 +1,729 @@
+{
+ "exam": "tef",
+ "mock": 2,
+ "section": "ce",
+ "duration": 3600,
+ "scale": "699",
+ "screens": [
+  {
+   "id": "ce-01",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "sign",
+    "title": "Stationnement réservé à la clientèle",
+    "body": "**Maximum 2 heures**\n\nDu lundi au samedi, de 8 h à 18 h\n"
+   },
+   "questions": [
+    {
+     "n": 1,
+     "q": "Combien de temps peut-on stationner ?",
+     "options": [
+      "8 heures.",
+      "1 heure.",
+      "2 heures au maximum.",
+      "Toute la journée."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-02",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "ad",
+    "title": "À donner",
+    "body": "Canapé trois places, en bon état.\n**Gratuit** : à venir chercher avant samedi.\nTexto à Nathalie : 819 555-0164\n"
+   },
+   "questions": [
+    {
+     "n": 2,
+     "q": "Combien coûte le canapé ?",
+     "options": [
+      "Rien : il est gratuit.",
+      "Il faut faire une offre.",
+      "Le prix est donné par texto.",
+      "Il coûte trois cents dollars."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-03",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "poster",
+    "title": "Journée portes ouvertes",
+    "meta": "Caserne de pompiers n° 4",
+    "body": "Samedi 12 septembre, de 10 h à 15 h\nVisite des camions · Démonstrations · Maquillage pour les enfants\n\n**Entrée libre**\n"
+   },
+   "questions": [
+    {
+     "n": 3,
+     "q": "Combien coûte l'entrée ?",
+     "options": [
+      "4 $.",
+      "10 $.",
+      "15 $ pour les adultes.",
+      "Elle est gratuite."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-04",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "notice",
+    "title": "Ligne orange — Travaux",
+    "body": "Du lundi au jeudi, jusqu'au 30 novembre, le service se terminera à 23 h au lieu de 1 h.\n\n**Des autobus remplaceront le métro après 23 h.**\n"
+   },
+   "questions": [
+    {
+     "n": 4,
+     "q": "Que se passe-t-il après 23 h ?",
+     "options": [
+      "Le métro est gratuit.",
+      "Des autobus remplacent le métro.",
+      "Le métro passe moins souvent.",
+      "Les stations restent ouvertes, mais sans train."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-05",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "label",
+    "title": "Comprimés contre les allergies",
+    "body": "Peut causer de la somnolence.\n**Ne pas conduire** ni utiliser de machines après la prise.\nNe pas prendre avec de l'alcool.\n"
+   },
+   "questions": [
+    {
+     "n": 5,
+     "q": "Que ne faut-il pas faire après avoir pris ce médicament ?",
+     "options": [
+      "Boire de l'eau.",
+      "Manger.",
+      "Conduire une voiture.",
+      "Dormir."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-06",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "email",
+    "title": "Votre commande est expédiée",
+    "meta": "De : Boutique Plein Air",
+    "body": "Bonjour,\n\nVotre commande n° 48213 a été expédiée. La livraison est prévue entre le 12 et le 14 octobre. **Vous recevrez un texto la veille** avec l'heure de livraison.\n"
+   },
+   "questions": [
+    {
+     "n": 6,
+     "q": "Comment le client connaîtra-t-il l'heure de livraison ?",
+     "options": [
+      "Par la poste.",
+      "En appelant la boutique.",
+      "Sur le site internet.",
+      "Par un texto, la veille."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-07",
+   "kind": "doc",
+   "part": "A — Documents de la vie quotidienne",
+   "doc": {
+    "kind": "notice",
+    "title": "Restaurant Le Quai — Menu du midi",
+    "body": "Servi du lundi au vendredi, de 11 h 30 à 14 h.\nSoupe, plat et café : 18 $\n\n**Fins de semaine : menu à la carte seulement.**\n"
+   },
+   "questions": [
+    {
+     "n": 7,
+     "q": "Quand peut-on commander le menu du midi ?",
+     "options": [
+      "En semaine, de 11 h 30 à 14 h.",
+      "Tous les jours.",
+      "Le samedi et le dimanche.",
+      "Le soir seulement."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-08",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Je me suis inscrit ______ cours de dessin du samedi.",
+   "questions": [
+    {
+     "n": 8,
+     "q": "Choisissez le mot qui complète la phrase.",
+     "options": [
+      "au",
+      "à la",
+      "aux",
+      "du"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-09",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Quand il ______ à Québec, il cherchera un appartement.",
+   "questions": [
+    {
+     "n": 9,
+     "q": "Choisissez la forme qui complète la phrase.",
+     "options": [
+      "arrive",
+      "arrivera",
+      "arriverait",
+      "arrivait"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-10",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "C'est la ville ______ j'ai grandi.",
+   "questions": [
+    {
+     "n": 10,
+     "q": "Choisissez le pronom qui complète la phrase.",
+     "options": [
+      "que",
+      "dont",
+      "où",
+      "qui"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-11",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Je doute qu'il ______ venir à la réunion demain.",
+   "questions": [
+    {
+     "n": 11,
+     "q": "Choisissez la forme qui complète la phrase.",
+     "options": [
+      "peut",
+      "pourra",
+      "pourrait",
+      "puisse"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-12",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "Ma sœur parle anglais ______ que moi.",
+   "questions": [
+    {
+     "n": 12,
+     "q": "Choisissez le mot qui complète la phrase.",
+     "options": [
+      "meilleur",
+      "mieux",
+      "plus bon",
+      "plus bien"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-13",
+   "kind": "doc",
+   "part": "B — Phrases à compléter",
+   "gap": "______ avoir terminé son travail, elle est allée courir.",
+   "questions": [
+    {
+     "n": 13,
+     "q": "Choisissez le mot qui complète la phrase.",
+     "options": [
+      "Après",
+      "Avant",
+      "Pendant",
+      "Depuis"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-14",
+   "kind": "doc",
+   "part": "C — Textes à compléter",
+   "doc": {
+    "kind": "letter",
+    "title": "Fuite d'eau",
+    "meta": "De : Pierre Amrani · À : M. Gagnon, propriétaire",
+    "body": "Monsieur Gagnon,\n\nJe vous écris [14] vous signaler une fuite d'eau sous l'évier de la cuisine. Le problème a commencé il y a trois jours et il s'aggrave.\n\nPourriez-vous envoyer un plombier le plus [15] possible ? Je suis disponible tous les soirs après 17 h.\n\nMerci d'avance,\nPierre Amrani, appartement 6\n"
+   },
+   "questions": [
+    {
+     "n": 14,
+     "q": "Quel mot convient pour l'espace [14] ?",
+     "options": [
+      "parce que",
+      "car",
+      "pour",
+      "donc"
+     ]
+    },
+    {
+     "n": 15,
+     "q": "Quel mot convient pour l'espace [15] ?",
+     "options": [
+      "tard",
+      "souvent",
+      "longtemps",
+      "tôt"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-16",
+   "kind": "doc",
+   "part": "C — Textes à compléter",
+   "doc": {
+    "kind": "notice",
+    "title": "Jardin communautaire des Lilas — Inscriptions",
+    "body": "Les inscriptions pour la saison prochaine commencent le 1er mars. Chaque membre [16] un lot de 3 mètres sur 4, à cultiver de mai à octobre.\n\nLes membres doivent participer à deux corvées collectives par saison. Les places sont limitées : les inscriptions se font par ordre d'[17].\n\nCoût : 25 $ par saison.\n"
+   },
+   "questions": [
+    {
+     "n": 16,
+     "q": "Quel mot convient pour l'espace [16] ?",
+     "options": [
+      "reçoit",
+      "coupe",
+      "vend",
+      "perd"
+     ]
+    },
+    {
+     "n": 17,
+     "q": "Quel mot convient pour l'espace [17] ?",
+     "options": [
+      "importance",
+      "arrivée",
+      "heure",
+      "entrée"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-18",
+   "kind": "doc",
+   "part": "D — Lecture rapide",
+   "doc": {
+    "kind": "multi",
+    "title": "Petites annonces — Emplois",
+    "items": [
+     {
+      "label": "Texte 1",
+      "title": "Livreur à vélo",
+      "body": "Livraisons de repas dans le centre-ville, le soir, de 17 h à 22 h. Vélo fourni. Payé à la livraison."
+     },
+     {
+      "label": "Texte 2",
+      "title": "Aide-cuisinier",
+      "body": "Restaurant familial, fins de semaine. Aucune expérience nécessaire : nous vous formons sur place."
+     },
+     {
+      "label": "Texte 3",
+      "title": "Chauffeur-livreur",
+      "body": "Livraison de meubles en région, du lundi au vendredi. Permis de conduire et voiture personnelle exigés."
+     },
+     {
+      "label": "Texte 4",
+      "title": "Moniteur de camp de jour",
+      "body": "Juillet et août, de 8 h à 16 h. Réservé aux étudiants de 16 ans et plus."
+     }
+    ]
+   },
+   "questions": [
+    {
+     "n": 18,
+     "q": "Dans quel texte l'employeur offre-t-il une formation ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    },
+    {
+     "n": 19,
+     "q": "Dans quel texte l'emploi est-il réservé aux étudiants ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    },
+    {
+     "n": 20,
+     "q": "Dans quel texte travaille-t-on le soir ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    },
+    {
+     "n": 21,
+     "q": "Dans quel texte faut-il avoir sa propre voiture ?",
+     "options": [
+      "Texte 1",
+      "Texte 2",
+      "Texte 3",
+      "Texte 4"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-22",
+   "kind": "doc",
+   "part": "E — Lire un graphique",
+   "statement": "Les ventes ont baissé pendant l'été, puis elles ont fortement augmenté à la fin de l'année.",
+   "optionImages": [
+    "img/ce-22-a.svg",
+    "img/ce-22-b.svg",
+    "img/ce-22-c.svg",
+    "img/ce-22-d.svg"
+   ],
+   "optionAlts": [
+    "Hausse régulière toute l'année",
+    "Stable, puis forte baisse à la fin de l'année",
+    "Baisse régulière",
+    "Baisse pendant l'été, puis forte hausse à la fin de l'année"
+   ],
+   "questions": [
+    {
+     "n": 22,
+     "q": "Quel graphique correspond à la phrase ?"
+    }
+   ]
+  },
+  {
+   "id": "ce-23",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "letter",
+    "title": "Remplacement de votre carte de transport",
+    "meta": "De : Société de transport · À : Mme Fatou Ndiaye",
+    "body": "Madame,\n\nVotre carte de transport actuelle cessera de fonctionner le 1er mars. Pour continuer à utiliser l'autobus et le métro, vous devez la remplacer par la nouvelle carte.\n\nLe remplacement est **gratuit jusqu'au 28 février**, dans toutes les stations de métro. À partir du 1er mars, des frais de 6 $ seront demandés.\n\nLes titres de transport encore valides sur votre ancienne carte seront transférés automatiquement sur la nouvelle.\n"
+   },
+   "questions": [
+    {
+     "n": 23,
+     "q": "Que se passe-t-il le 1er mars ?",
+     "options": [
+      "L'ancienne carte ne fonctionnera plus.",
+      "Le prix des billets augmentera.",
+      "Les stations de métro fermeront.",
+      "Mme Ndiaye recevra sa nouvelle carte par la poste."
+     ]
+    },
+    {
+     "n": 24,
+     "q": "Que deviennent les titres de transport encore valides ?",
+     "options": [
+      "Ils sont perdus.",
+      "Ils sont remboursés.",
+      "Ils sont transférés sur la nouvelle carte.",
+      "Ils restent valides jusqu'au 28 février seulement."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-25",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "memo",
+    "title": "Note de service",
+    "meta": "À : Tout le personnel · De : Direction des ressources humaines · Objet : Vacances d'été",
+    "body": "Les demandes de vacances d'été doivent être soumises **au moins quatre semaines à l'avance**, au moyen du formulaire en ligne.\n\nPour assurer le service, pas plus de deux personnes d'une même équipe ne pourront être absentes en même temps.\n\nEn cas de demandes simultanées, la priorité sera accordée selon l'ancienneté.\n"
+   },
+   "questions": [
+    {
+     "n": 25,
+     "q": "Quel est l'objet de cette note ?",
+     "options": [
+      "Annoncer la fermeture de l'entreprise l'été.",
+      "Préciser les règles pour demander ses vacances d'été.",
+      "Supprimer les vacances d'été.",
+      "Organiser une fête d'équipe."
+     ]
+    },
+    {
+     "n": 26,
+     "q": "Que se passe-t-il si plusieurs employés demandent les mêmes dates ?",
+     "options": [
+      "Personne n'obtient de vacances.",
+      "Les dates sont tirées au sort.",
+      "La direction choisit les plus jeunes.",
+      "Les employés les plus anciens sont prioritaires."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-27",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "ad",
+    "title": "Préposé(e) aux bénéficiaires",
+    "meta": "Résidence pour aînés Les Jardins du Fleuve",
+    "body": "**Fonctions :** aider les résidents dans leurs activités quotidiennes (repas, hygiène, déplacements) ; signaler tout changement de leur état de santé à l'infirmière.\n\n**Exigences :** bonne condition physique ; capacité à communiquer en français avec les résidents et leurs familles. Aucune expérience exigée.\n\n**Nous offrons :** formation complète payée ; horaires de jour, de soir ou de nuit ; prime de 2 $ l'heure pour le travail de nuit.\n"
+   },
+   "questions": [
+    {
+     "n": 27,
+     "q": "Que doit faire la personne embauchée si l'état de santé d'un résident change ?",
+     "options": [
+      "Appeler la famille du résident.",
+      "Appeler un médecin.",
+      "Prévenir l'infirmière.",
+      "Donner un médicament au résident."
+     ]
+    },
+    {
+     "n": 28,
+     "q": "Qu'est-ce que l'employeur offre ?",
+     "options": [
+      "Une formation payée et une prime pour le travail de nuit.",
+      "Un logement dans la résidence.",
+      "Des horaires de jour seulement.",
+      "Un salaire plus élevé aux personnes expérimentées."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-29",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "letter",
+    "title": "Votre abonnement internet — Conditions",
+    "meta": "Fournisseur Connexion Plus",
+    "body": "Votre abonnement commence par une **période d'essai de 30 jours**. Pendant cette période, vous pouvez annuler votre abonnement sans frais : il suffit de rapporter le modem dans l'un de nos magasins.\n\nAprès la période d'essai, l'abonnement est valable pour un an. Toute annulation avant la fin de cette année entraînera des frais de 50 $.\n\nLe modem reste la propriété de Connexion Plus.\n"
+   },
+   "questions": [
+    {
+     "n": 29,
+     "q": "Comment annuler sans frais pendant la période d'essai ?",
+     "options": [
+      "En téléphonant au service à la clientèle.",
+      "En rapportant le modem dans un magasin.",
+      "En envoyant un courriel.",
+      "En payant 50 $."
+     ]
+    },
+    {
+     "n": 30,
+     "q": "Que se passe-t-il si le client annule après la période d'essai, mais avant la fin de l'année ?",
+     "options": [
+      "Il est remboursé.",
+      "Il garde le modem.",
+      "Rien : l'annulation est gratuite.",
+      "Il doit payer des frais de 50 $."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-31",
+   "kind": "doc",
+   "part": "F — Documents administratifs et professionnels",
+   "doc": {
+    "kind": "notice",
+    "title": "Collecte des gros objets",
+    "body": "La collecte des gros objets (meubles, matelas, barbecues) se fait **sur rendez-vous seulement**. Réservez votre collecte en ligne ou par téléphone, au moins 48 heures à l'avance. Maximum : trois objets par collecte.\n\nLes réfrigérateurs, congélateurs et climatiseurs ne sont pas ramassés, car ils contiennent des gaz dangereux : apportez-les à l'écocentre, où ils seront récupérés gratuitement.\n"
+   },
+   "questions": [
+    {
+     "n": 31,
+     "q": "Comment faire ramasser un vieux matelas ?",
+     "options": [
+      "Réserver une collecte au moins 48 heures à l'avance.",
+      "Le déposer dans la rue n'importe quand.",
+      "L'apporter obligatoirement à l'écocentre.",
+      "Le couper en morceaux."
+     ]
+    },
+    {
+     "n": 32,
+     "q": "Que faut-il faire avec un vieux réfrigérateur ?",
+     "options": [
+      "Le laisser dans la rue avec les gros objets.",
+      "Payer une collecte spéciale.",
+      "L'apporter à l'écocentre.",
+      "Le jeter avec les ordures."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-33",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "L'école… dehors !",
+    "body": "Dans plusieurs écoles primaires, les élèves passent désormais une demi-journée par semaine en forêt, même en hiver. On y fait des mathématiques avec des branches, des sciences en observant les traces d'animaux.\n\nLes enseignants observent des élèves plus calmes et plus concentrés à leur retour en classe, et de meilleures relations entre eux.\n\nCertains parents s'inquiétaient du froid. Les écoles ont répondu par des règles précises : liste de vêtements obligatoires, abri chauffé à proximité, et sorties annulées sous moins vingt degrés.\n"
+   },
+   "questions": [
+    {
+     "n": 33,
+     "q": "Quels effets les enseignants observent-ils ?",
+     "options": [
+      "Les élèves apprennent plus vite à lire.",
+      "Les élèves tombent moins souvent malades.",
+      "Les élèves veulent quitter l'école.",
+      "Les élèves sont plus calmes et concentrés, et s'entendent mieux."
+     ]
+    },
+    {
+     "n": 34,
+     "q": "Comment les écoles ont-elles répondu aux inquiétudes des parents ?",
+     "options": [
+      "En supprimant les sorties d'hiver.",
+      "En fixant des règles de sécurité précises.",
+      "En demandant aux parents d'accompagner les élèves.",
+      "En construisant une école en forêt."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-35",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "La seconde main a la cote",
+    "body": "Les friperies n'ont jamais été aussi populaires. Pour leurs clients, surtout les jeunes, l'attrait est double : des prix bas, et le sentiment de faire un geste pour l'environnement, puisque l'industrie du vêtement est l'une des plus polluantes.\n\nLes grandes chaînes l'ont bien compris et lancent leurs propres plateformes de revente.\n\nMais certains experts mettent en garde contre une « surconsommation d'occasion » : acheter quatre chandails usagés au lieu d'un neuf n'aide pas vraiment la planète. Le vêtement le plus écologique, rappellent-ils, reste celui qu'on n'achète pas.\n"
+   },
+   "questions": [
+    {
+     "n": 35,
+     "q": "Pourquoi les friperies attirent-elles les jeunes ?",
+     "options": [
+      "Pour les prix bas et pour l'environnement.",
+      "Pour les marques de luxe.",
+      "Parce que les vêtements neufs sont interdits.",
+      "Pour la livraison gratuite."
+     ]
+    },
+    {
+     "n": 36,
+     "q": "Contre quel risque les experts mettent-ils en garde ?",
+     "options": [
+      "La fermeture des friperies.",
+      "La mauvaise qualité des vêtements d'occasion.",
+      "Acheter beaucoup plus de vêtements, même d'occasion.",
+      "La concurrence des grandes chaînes."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-37",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "Travailler de la plage : les employeurs posent des limites",
+    "body": "Avec le télétravail, certains employés rêvent de travailler depuis l'étranger, quelques semaines ou quelques mois. La plupart des employeurs se montrent pourtant prudents.\n\nLa raison n'est pas la productivité, mais le droit : un employé qui travaille trop longtemps dans un autre pays peut y créer des obligations fiscales pour l'entreprise, sans parler des questions d'assurance.\n\nRésultat : de nombreuses entreprises autorisent désormais le travail à l'étranger, mais pour quatre semaines par an au maximum, et sur approbation.\n"
+   },
+   "questions": [
+    {
+     "n": 37,
+     "q": "Pourquoi les employeurs sont-ils prudents ?",
+     "options": [
+      "Parce que les employés travaillent moins bien à l'étranger.",
+      "Pour des raisons juridiques et fiscales.",
+      "Parce que les voyages coûtent cher.",
+      "Parce que les clients se plaignent."
+     ]
+    },
+    {
+     "n": 38,
+     "q": "Qu'autorisent maintenant beaucoup d'entreprises ?",
+     "options": [
+      "Le télétravail à l'étranger toute l'année.",
+      "Aucun travail depuis l'étranger.",
+      "Le travail à l'étranger seulement pour les cadres.",
+      "Quelques semaines par an à l'étranger, avec une autorisation."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-39",
+   "kind": "doc",
+   "part": "G — Articles de presse",
+   "doc": {
+    "kind": "article",
+    "title": "La reconnaissance faciale entre dans les commerces",
+    "body": "Pour lutter contre le vol à l'étalage, certaines chaînes de magasins testent des caméras capables de reconnaître le visage des clients déjà soupçonnés de vol. Les commerçants y voient un outil de sécurité, face à des pertes qui augmentent chaque année.\n\nLes défenseurs de la vie privée dénoncent une surveillance de masse : tous les clients sont filmés et analysés, pas seulement les voleurs.\n\nL'organisme chargé de la protection des renseignements personnels a tranché : sans le consentement clair des clients, cette pratique est illégale. Les magasins concernés ont suspendu leurs essais.\n"
+   },
+   "questions": [
+    {
+     "n": 39,
+     "q": "Comment les commerçants justifient-ils l'utilisation de ces caméras ?",
+     "options": [
+      "Pour mieux connaître les goûts des clients.",
+      "Pour remplacer les caissiers.",
+      "Pour lutter contre les vols, qui augmentent.",
+      "Pour faire de la publicité ciblée."
+     ]
+    },
+    {
+     "n": 40,
+     "q": "Quelle a été la décision de l'organisme de protection des renseignements personnels ?",
+     "options": [
+      "Sans le consentement clair des clients, la pratique est illégale.",
+      "La pratique est autorisée partout.",
+      "Seuls les voleurs peuvent être filmés.",
+      "Les magasins doivent payer une amende."
+     ]
+    }
+   ]
+  }
+ ],
+ "count": 40,
+ "max": 40
+}

@@ -1,0 +1,692 @@
+{
+ "exam": "tef",
+ "mock": 2,
+ "section": "co",
+ "duration": 2400,
+ "scale": "699",
+ "screens": [
+  {
+   "id": "co-01",
+   "kind": "pictures",
+   "audio": "audio/co-01.mp3",
+   "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
+   "optionImages": [
+    "img/co-01-a.jpg",
+    "img/co-01-b.jpg",
+    "img/co-01-c.jpg",
+    "img/co-01-d.jpg"
+   ],
+   "optionAlts": [
+    "Un marteau",
+    "Une ampoule",
+    "Une pelle à neige",
+    "Un pot de peinture"
+   ],
+   "questions": [
+    {
+     "n": 1
+    }
+   ]
+  },
+  {
+   "id": "co-02",
+   "kind": "pictures",
+   "audio": "audio/co-02.mp3",
+   "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
+   "optionImages": [
+    "img/co-02-a.jpg",
+    "img/co-02-b.jpg",
+    "img/co-02-c.jpg",
+    "img/co-02-d.jpg"
+   ],
+   "optionAlts": [
+    "Des gens qui patinent sur une patinoire",
+    "Des gens au cinéma",
+    "Des gens qui nagent à la piscine",
+    "Des gens qui marchent en forêt"
+   ],
+   "questions": [
+    {
+     "n": 2
+    }
+   ]
+  },
+  {
+   "id": "co-03",
+   "kind": "pictures",
+   "audio": "audio/co-03.mp3",
+   "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
+   "optionImages": [
+    "img/co-03-a.svg",
+    "img/co-03-b.svg",
+    "img/co-03-c.svg",
+    "img/co-03-d.svg"
+   ],
+   "optionAlts": [
+    "Une horloge qui indique trois heures",
+    "Une horloge qui indique deux heures et demie",
+    "Une horloge qui indique quatre heures et demie",
+    "Une horloge qui indique trois heures et demie"
+   ],
+   "questions": [
+    {
+     "n": 3
+    }
+   ]
+  },
+  {
+   "id": "co-04",
+   "kind": "pictures",
+   "audio": "audio/co-04.mp3",
+   "prompt": "Écoutez la conversation. Choisissez le dessin qui correspond.",
+   "optionImages": [
+    "img/co-04-a.jpg",
+    "img/co-04-b.jpg",
+    "img/co-04-c.jpg",
+    "img/co-04-d.jpg"
+   ],
+   "optionAlts": [
+    "Une femme qui a mal à la gorge",
+    "Une femme qui a mal à la tête",
+    "Une femme qui a mal aux dents",
+    "Une femme qui s'est blessée au genou"
+   ],
+   "questions": [
+    {
+     "n": 4
+    }
+   ]
+  },
+  {
+   "id": "co-05",
+   "kind": "mcq",
+   "audio": "audio/co-05.mp3",
+   "questions": [
+    {
+     "n": 5,
+     "q": "Que doivent faire les passagers qui voulaient descendre à l'arrêt Saint-Jean ?",
+     "options": [
+      "Rester dans l'autobus jusqu'au terminus.",
+      "Descendre à l'arrêt Belvédère.",
+      "Changer d'autobus rue Cartier.",
+      "Prendre un taxi gratuit."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-06",
+   "kind": "mcq",
+   "audio": "audio/co-06.mp3",
+   "questions": [
+    {
+     "n": 6,
+     "q": "Pourquoi Julie appelle-t-elle ?",
+     "options": [
+      "Pour annuler un rendez-vous.",
+      "Pour annoncer que le chien doit être opéré.",
+      "Pour demander un paiement.",
+      "Pour donner des résultats rassurants."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-07",
+   "kind": "mcq",
+   "audio": "audio/co-07.mp3",
+   "questions": [
+    {
+     "n": 7,
+     "q": "Que propose le magasin ?",
+     "options": [
+      "Les articles de jardin à moitié prix jusqu'à dimanche.",
+      "Un barbecue gratuit pour chaque client.",
+      "La livraison gratuite des meubles.",
+      "Une réduction sur tous les articles du magasin."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-08",
+   "kind": "mcq",
+   "audio": "audio/co-08.mp3",
+   "questions": [
+    {
+     "n": 8,
+     "q": "Qu'est-ce qui change pour la soirée ?",
+     "options": [
+      "L'heure du rendez-vous.",
+      "Le jour du rendez-vous.",
+      "Le restaurant.",
+      "Les personnes invitées."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-09",
+   "kind": "mcq",
+   "audio": "audio/co-09.mp3",
+   "questions": [
+    {
+     "n": 9,
+     "q": "Qu'est-ce qui est interdit sur le site ?",
+     "options": [
+      "Les bouteilles d'eau.",
+      "Les appareils photo.",
+      "Les téléphones.",
+      "Les sacs à dos."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-10",
+   "kind": "mcq",
+   "audio": "audio/co-10.mp3",
+   "questions": [
+    {
+     "n": 10,
+     "q": "Quel est l'objectif de ce message ?",
+     "options": [
+      "Annoncer une fête au bureau.",
+      "Rappeler une formation obligatoire en ligne.",
+      "Proposer un nouveau poste.",
+      "Annoncer la fermeture des bureaux."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-11",
+   "kind": "opinion",
+   "audio": "audio/co-11.mp3",
+   "topic": "Micro-trottoir — « Que pensez-vous des caisses libre-service dans les épiceries ? »",
+   "speaker": "Personne 1",
+   "questions": [
+    {
+     "n": 11,
+     "q": "Quelle est l'opinion de la personne 1 ?",
+     "options": [
+      "Totalement pour.",
+      "Pour, sous certaines conditions.",
+      "Totalement contre.",
+      "Sans opinion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-12",
+   "kind": "opinion",
+   "audio": "audio/co-12.mp3",
+   "topic": "Micro-trottoir — « Que pensez-vous des caisses libre-service dans les épiceries ? »",
+   "speaker": "Personne 2",
+   "questions": [
+    {
+     "n": 12,
+     "q": "Quelle est l'opinion de la personne 2 ?",
+     "options": [
+      "Totalement pour.",
+      "Pour, sous certaines conditions.",
+      "Totalement contre.",
+      "Sans opinion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-13",
+   "kind": "opinion",
+   "audio": "audio/co-13.mp3",
+   "topic": "Micro-trottoir — « Que pensez-vous des caisses libre-service dans les épiceries ? »",
+   "speaker": "Personne 3",
+   "questions": [
+    {
+     "n": 13,
+     "q": "Quelle est l'opinion de la personne 3 ?",
+     "options": [
+      "Totalement pour.",
+      "Pour, sous certaines conditions.",
+      "Totalement contre.",
+      "Sans opinion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-14",
+   "kind": "mcq",
+   "audio": "audio/co-14.mp3",
+   "questions": [
+    {
+     "n": 14,
+     "q": "Que doivent faire les citoyens avant de déposer leur sapin ?",
+     "options": [
+      "Le couper en morceaux.",
+      "L'apporter à l'écocentre.",
+      "Le mettre dans un sac de plastique.",
+      "Enlever les décorations."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-15",
+   "kind": "mcq",
+   "audio": "audio/co-15.mp3",
+   "questions": [
+    {
+     "n": 15,
+     "q": "Que doit faire Aïcha ?",
+     "options": [
+      "Arriver en avance avec son permis d'apprenti.",
+      "Payer son examen par téléphone.",
+      "Rappeler l'école pour choisir une date.",
+      "Apporter sa propre voiture."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-16",
+   "kind": "mcq",
+   "audio": "audio/co-16.mp3",
+   "questions": [
+    {
+     "n": 16,
+     "q": "Quelle est la nouveauté cette année ?",
+     "options": [
+      "Le stationnement gratuit jusqu'à midi.",
+      "L'ouverture du marché le dimanche.",
+      "Le paiement par carte chez tous les marchands.",
+      "La livraison à domicile des achats."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-17",
+   "kind": "mcq",
+   "audio": "audio/co-17.mp3",
+   "questions": [
+    {
+     "n": 17,
+     "q": "Qu'apprend-on dans ce message ?",
+     "options": [
+      "La réservation est annulée.",
+      "Le client recevra une voiture plus grande sans payer plus.",
+      "Le client doit payer un supplément.",
+      "La voiture sera prête seulement demain."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-18",
+   "kind": "opinion",
+   "audio": "audio/co-18.mp3",
+   "topic": "Micro-trottoir — « Faut-il abolir le changement d'heure ? »",
+   "speaker": "Personne 1",
+   "questions": [
+    {
+     "n": 18,
+     "q": "Quelle est l'opinion de la personne 1 ?",
+     "options": [
+      "Totalement pour.",
+      "Pour, sous certaines conditions.",
+      "Totalement contre.",
+      "Sans opinion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-19",
+   "kind": "opinion",
+   "audio": "audio/co-19.mp3",
+   "topic": "Micro-trottoir — « Faut-il abolir le changement d'heure ? »",
+   "speaker": "Personne 2",
+   "questions": [
+    {
+     "n": 19,
+     "q": "Quelle est l'opinion de la personne 2 ?",
+     "options": [
+      "Totalement pour.",
+      "Pour, sous certaines conditions.",
+      "Totalement contre.",
+      "Sans opinion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-20",
+   "kind": "opinion",
+   "audio": "audio/co-20.mp3",
+   "topic": "Micro-trottoir — « Faut-il abolir le changement d'heure ? »",
+   "speaker": "Personne 3",
+   "questions": [
+    {
+     "n": 20,
+     "q": "Quelle est l'opinion de la personne 3 ?",
+     "options": [
+      "Totalement pour.",
+      "Pour, sous certaines conditions.",
+      "Totalement contre.",
+      "Sans opinion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-21",
+   "kind": "mcq",
+   "audio": "audio/co-21.mp3",
+   "questions": [
+    {
+     "n": 21,
+     "q": "Quel conseil le chroniqueur donne-t-il ?",
+     "options": [
+      "Vérifier son relevé chaque mois et annuler les abonnements inutiles.",
+      "Payer tous ses abonnements en argent comptant.",
+      "Ne jamais s'abonner à plus de trois services.",
+      "Choisir des abonnements annuels plutôt que mensuels."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-22",
+   "kind": "mcq",
+   "audio": "audio/co-22.mp3",
+   "questions": [
+    {
+     "n": 22,
+     "q": "Quelle idée reçue la chroniqueuse corrige-t-elle ?",
+     "options": [
+      "Marcher est mauvais pour la santé.",
+      "Il faut faire au moins vingt mille pas par jour.",
+      "Les podomètres ne fonctionnent pas.",
+      "Il faut absolument faire dix mille pas par jour pour être en bonne santé."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-23",
+   "kind": "mcq",
+   "audio": "audio/co-23.mp3",
+   "questions": [
+    {
+     "n": 23,
+     "q": "Quel est le principe de ce club ?",
+     "options": [
+      "Préparer des compétitions de course.",
+      "Courir seul avec une application.",
+      "Courir ensemble en pratiquant le français.",
+      "Apprendre la course aux enfants."
+     ]
+    },
+    {
+     "n": 24,
+     "q": "Pourquoi la fondatrice a-t-elle créé ce club ?",
+     "options": [
+      "Elle s'était sentie très seule à son arrivée.",
+      "Elle voulait devenir championne.",
+      "Elle était entraîneuse professionnelle.",
+      "Elle voulait faire connaître la Tunisie."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-25",
+   "kind": "mcq",
+   "audio": "audio/co-25.mp3",
+   "questions": [
+    {
+     "n": 25,
+     "q": "Que signifie l'expression « avoir le cœur sur la main » ?",
+     "options": [
+      "Être malade du cœur.",
+      "Être très généreux.",
+      "Être amoureux.",
+      "Être très nerveux."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-26",
+   "kind": "mcq",
+   "audio": "audio/co-26.mp3",
+   "questions": [
+    {
+     "n": 26,
+     "q": "Selon l'apiculteur, pourquoi les abeilles vont-elles bien en ville ?",
+     "options": [
+      "Parce qu'il fait plus chaud.",
+      "Parce qu'il y a moins d'oiseaux.",
+      "Parce que les entreprises les nourrissent.",
+      "Parce qu'il y a peu de pesticides et beaucoup de fleurs."
+     ]
+    },
+    {
+     "n": 27,
+     "q": "Quel conseil donne-t-il aux personnes qui veulent aider les abeilles ?",
+     "options": [
+      "Installer une ruche sur leur toit.",
+      "Acheter du miel local.",
+      "Planter des fleurs locales.",
+      "Suivre une formation d'apiculteur."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-28",
+   "kind": "mcq",
+   "audio": "audio/co-28.mp3",
+   "questions": [
+    {
+     "n": 28,
+     "q": "Quel conseil donne le chroniqueur ?",
+     "options": [
+      "Charger son téléphone toute la nuit.",
+      "Garder la batterie entre vingt et quatre-vingts pour cent.",
+      "Laisser la batterie se vider complètement.",
+      "Changer de téléphone chaque année."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-29",
+   "kind": "mcq",
+   "audio": "audio/co-29.mp3",
+   "questions": [
+    {
+     "n": 29,
+     "q": "Pourquoi l'école compte-t-elle aujourd'hui plus d'élèves ?",
+     "options": [
+      "De jeunes familles sont venues s'installer, grâce au télétravail et aux maisons moins chères.",
+      "Une autre école du village a fermé.",
+      "L'école accepte maintenant les élèves du secondaire.",
+      "Le gouvernement a obligé les familles à déménager."
+     ]
+    },
+    {
+     "n": 30,
+     "q": "Quel est le principal défi, selon la directrice ?",
+     "options": [
+      "Le manque de logements.",
+      "Le transport scolaire.",
+      "Le recrutement des enseignants.",
+      "Le manque d'argent."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-31",
+   "kind": "mcq",
+   "audio": "audio/co-31.mp3",
+   "questions": [
+    {
+     "n": 31,
+     "q": "Que recommande-t-on aux clients ?",
+     "options": [
+      "D'appeler le service à la clientèle.",
+      "De jeter leurs aliments.",
+      "D'aller dormir à l'hôtel.",
+      "De ne pas ouvrir leur congélateur."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-32",
+   "kind": "mcq",
+   "audio": "audio/co-32.mp3",
+   "questions": [
+    {
+     "n": 32,
+     "q": "Que conseille la chroniqueuse ?",
+     "options": [
+      "Mettre les feuilles dans des sacs.",
+      "Laisser les feuilles sur place, en petits morceaux.",
+      "Brûler les feuilles mortes.",
+      "Acheter de l'engrais à l'automne."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-33",
+   "kind": "mcq",
+   "audio": "audio/co-33.mp3",
+   "questions": [
+    {
+     "n": 33,
+     "q": "Selon la chercheuse, pourquoi le chant aide-t-il à apprendre ?",
+     "options": [
+      "La mélodie et le rythme facilitent la mémorisation.",
+      "On apprend la grammaire plus vite.",
+      "Les chansons utilisent des mots simples.",
+      "On parle plus fort."
+     ]
+    },
+    {
+     "n": 34,
+     "q": "Comment répond-elle à l'objection du journaliste ?",
+     "options": [
+      "Elle dit que tout le monde doit chanter.",
+      "Elle reconnaît que le chant ne fonctionne pas.",
+      "Elle propose d'abandonner la méthode.",
+      "Elle propose une solution pour ceux qui n'aiment pas chanter."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-35",
+   "kind": "mcq",
+   "audio": "audio/co-35.mp3",
+   "questions": [
+    {
+     "n": 35,
+     "q": "Qu'est-ce qui est encore permis ?",
+     "options": [
+      "Arroser sa pelouse le soir.",
+      "Laver sa voiture.",
+      "Arroser son potager à la main, le soir.",
+      "Remplir sa piscine."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-36",
+   "kind": "mcq",
+   "audio": "audio/co-36.mp3",
+   "questions": [
+    {
+     "n": 36,
+     "q": "Selon le chroniqueur, quel est le problème des retours gratuits ?",
+     "options": [
+      "Ils sont interdits dans certains pays.",
+      "Ils ont un coût environnemental important.",
+      "Ils font augmenter le prix des vêtements.",
+      "Ils sont trop lents."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-37",
+   "kind": "mcq",
+   "audio": "audio/co-37.mp3",
+   "questions": [
+    {
+     "n": 37,
+     "q": "Quel argument le pédiatre avance-t-il ?",
+     "options": [
+      "Les écrans ne remplacent pas les échanges dont le cerveau de l'enfant a besoin.",
+      "Les écrans abîment les yeux.",
+      "Les dessins animés sont trop violents.",
+      "Les parents passent trop de temps au travail."
+     ]
+    },
+    {
+     "n": 38,
+     "q": "Que propose le père ?",
+     "options": [
+      "Interdire complètement les écrans avant trois ans.",
+      "Laisser les enfants regarder des dessins animés seuls.",
+      "Accorder plus de congés aux parents épuisés.",
+      "Donner aux parents des repères simples plutôt qu'une interdiction."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-39",
+   "kind": "mcq",
+   "audio": "audio/co-39.mp3",
+   "questions": [
+    {
+     "n": 39,
+     "q": "Quelle thèse la chroniqueuse soutient-elle ?",
+     "options": [
+      "Les élèves doivent toujours se taire en classe.",
+      "Le silence en classe n'est pas forcément un signe d'apprentissage.",
+      "Les élèves parlent trop en classe.",
+      "Les enseignants doivent parler moins."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-40",
+   "kind": "mcq",
+   "audio": "audio/co-40.mp3",
+   "questions": [
+    {
+     "n": 40,
+     "q": "Quelle solution plusieurs municipalités ont-elles choisie ?",
+     "options": [
+      "Éliminer les castors qui inondent les routes.",
+      "Détruire tous les barrages construits par les castors.",
+      "Installer des dispositifs qui contrôlent le niveau de l'eau.",
+      "Déplacer les routes loin des zones humides."
+     ]
+    }
+   ]
+  }
+ ],
+ "count": 40,
+ "max": 40
+}

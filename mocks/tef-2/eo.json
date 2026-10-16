@@ -1,0 +1,78 @@
+{
+ "exam": "tef",
+ "mock": 2,
+ "section": "eo",
+ "duration": 900,
+ "scale": "699",
+ "tasks": [
+  {
+   "n": 1,
+   "title": "Section A — Obtenir des informations",
+   "level": "Section A",
+   "prompt": "Vous avez vu cette annonce et elle vous intéresse. Vous téléphonez pour obtenir **plus d'informations**.\n\nPosez une **dizaine de questions** variées à votre interlocuteur (vouvoiement). Vous pouvez imaginer ses réponses et réagir.\n",
+   "prep": 0,
+   "speak": 300,
+   "cues": [
+    {
+     "at": 0,
+     "text": "Employé(e) : « Club Objectif Nature, bonjour ! En quoi puis-je vous aider ? »"
+    }
+   ],
+   "poster": {
+    "title": "Club de photo Objectif Nature",
+    "subtitle": "Pour débutants et photographes amateurs",
+    "lines": [
+     "Sorties photo en forêt et en ville",
+     "Cours le mardi soir",
+     "Prêt d'appareils photo",
+     "Exposition des membres en fin d'année"
+    ],
+    "footer": "450 555-0183 · Laval",
+    "color": "#2E7D6B"
+   }
+  },
+  {
+   "n": 2,
+   "title": "Section B — Présenter et convaincre",
+   "level": "Section B",
+   "prompt": "Vous avez vu cette annonce. Vous voulez **convaincre un(e) ami(e)** de s'abonner avec vous (tutoiement).\n\nPrésentez l'offre, puis répondez à ses objections : elles apparaîtront à l'écran pendant l'enregistrement. Votre ami(e) n'est pas convaincu(e) au début !\n",
+   "prep": 0,
+   "speak": 600,
+   "cues": [
+    {
+     "at": 0,
+     "text": "Ton ami(e) : « Des paniers de légumes ? Explique-moi ! »"
+    },
+    {
+     "at": 120,
+     "text": "Ton ami(e) : « 35 $ par semaine… c'est plus cher qu'à l'épicerie, non ? »"
+    },
+    {
+     "at": 240,
+     "text": "Ton ami(e) : « Et si je n'aime pas les légumes du panier ? Je ne peux même pas choisir ! »"
+    },
+    {
+     "at": 360,
+     "text": "Ton ami(e) : « Je n'ai pas le temps de cuisiner tous ces légumes. »"
+    },
+    {
+     "at": 480,
+     "text": "Ton ami(e) : « Bon… donne-moi une dernière bonne raison ! »"
+    }
+   ],
+   "poster": {
+    "title": "Paniers de la Ferme du Ruisseau",
+    "subtitle": "Légumes biologiques, de juin à octobre",
+    "lines": [
+     "Un panier de légumes frais chaque semaine",
+     "Cueillis la veille de la livraison",
+     "Livraison dans un point près de chez vous",
+     "Visite de la ferme offerte aux abonnés"
+    ],
+    "footer": "35 $ par semaine · Inscription avant le 1er mai",
+    "color": "#B4462B"
+   }
+  }
+ ],
+ "count": 2
+}

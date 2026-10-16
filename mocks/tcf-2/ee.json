@@ -1,0 +1,53 @@
+{
+ "exam": "tcf",
+ "mock": 2,
+ "section": "ee",
+ "duration": 3600,
+ "scale": "20",
+ "tasks": [
+  {
+   "n": 1,
+   "title": "Tâche 1 — Un message",
+   "level": "A1–A2",
+   "prompt": "Demain, vous devez vous absenter du travail pour un rendez-vous important. Vous écrivez un message à un(e) collègue pour lui demander de vous remplacer.\n\nExpliquez pourquoi vous serez absent(e) et dites-lui précisément ce qu'il ou elle devra faire à votre place.\n",
+   "words": [
+    60,
+    120
+   ],
+   "advice_minutes": 10
+  },
+  {
+   "n": 2,
+   "title": "Tâche 2 — Un article de blogue",
+   "level": "B1–B2",
+   "prompt": "Vous avez récemment changé une habitude de votre vie quotidienne : faire du sport, mieux manger, aller au travail à vélo, passer moins de temps sur votre téléphone…\n\nVous écrivez un article pour le blogue d'un magazine : vous racontez ce changement et vous expliquez ce qu'il vous a apporté.\n",
+   "words": [
+    120,
+    150
+   ],
+   "advice_minutes": 20
+  },
+  {
+   "n": 3,
+   "title": "Tâche 3 — Comparer deux points de vue",
+   "level": "B2–C2",
+   "prompt": "Sujet : **Faut-il supprimer les devoirs à l'école primaire ?**\n\nLisez les deux documents ci-dessous.\n\n1. Dans une première partie (40 à 60 mots), présentez les deux points de vue.\n2. Dans une deuxième partie (80 à 120 mots), donnez votre opinion, avec des arguments et des exemples.\n",
+   "words": [
+    120,
+    180
+   ],
+   "advice_minutes": 30,
+   "docs": [
+    {
+     "title": "Document 1 — Pour la suppression",
+     "body": "« Depuis que j'ai supprimé les devoirs dans ma classe, les soirées des familles sont plus calmes. Avant, les enfants qui avaient de l'aide à la maison avançaient, et les autres décrochaient : les devoirs creusaient les écarts. L'école, ça doit se faire à l'école. »\n— Mélanie R., enseignante de 3e année\n"
+    },
+    {
+     "title": "Document 2 — Contre la suppression",
+     "body": "« Les devoirs, c'est le seul moment où je vois ce que mes enfants apprennent. Quinze minutes de lecture le soir, ce n'est pas une punition : c'est une habitude qui leur servira toute leur vie. Il faut des devoirs courts, pas zéro devoir. »\n— Patrick L., père de deux enfants\n"
+    }
+   ]
+  }
+ ],
+ "count": 3
+}

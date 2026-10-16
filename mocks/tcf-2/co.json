@@ -1,0 +1,612 @@
+{
+ "exam": "tcf",
+ "mock": 2,
+ "section": "co",
+ "duration": 2100,
+ "scale": "699",
+ "screens": [
+  {
+   "id": "co-01",
+   "kind": "picture",
+   "audio": "audio/co-01.mp3",
+   "image": "img/co-01.jpg",
+   "alt": "Un homme au guichet d'un bureau de poste ; l'employée pèse son colis sur une balance.",
+   "questions": [
+    {
+     "n": 1
+    }
+   ]
+  },
+  {
+   "id": "co-02",
+   "kind": "picture",
+   "audio": "audio/co-02.mp3",
+   "image": "img/co-02.jpg",
+   "alt": "Une femme arrose les fleurs de son jardin avec un arrosoir.",
+   "questions": [
+    {
+     "n": 2
+    }
+   ]
+  },
+  {
+   "id": "co-03",
+   "kind": "picture",
+   "audio": "audio/co-03.mp3",
+   "image": "img/co-03.jpg",
+   "alt": "Une famille, deux parents et deux enfants, mange ensemble autour d'une table.",
+   "questions": [
+    {
+     "n": 3
+    }
+   ]
+  },
+  {
+   "id": "co-04",
+   "kind": "picture",
+   "audio": "audio/co-04.mp3",
+   "image": "img/co-04.jpg",
+   "alt": "Une médecin écoute le cœur d'un enfant avec un stéthoscope ; la mère est à côté.",
+   "questions": [
+    {
+     "n": 4
+    }
+   ]
+  },
+  {
+   "id": "co-05",
+   "kind": "audio-options",
+   "audio": "audio/co-05.mp3",
+   "questions": [
+    {
+     "n": 5
+    }
+   ]
+  },
+  {
+   "id": "co-06",
+   "kind": "audio-options",
+   "audio": "audio/co-06.mp3",
+   "questions": [
+    {
+     "n": 6
+    }
+   ]
+  },
+  {
+   "id": "co-07",
+   "kind": "audio-options",
+   "audio": "audio/co-07.mp3",
+   "questions": [
+    {
+     "n": 7
+    }
+   ]
+  },
+  {
+   "id": "co-08",
+   "kind": "audio-options",
+   "audio": "audio/co-08.mp3",
+   "questions": [
+    {
+     "n": 8
+    }
+   ]
+  },
+  {
+   "id": "co-09",
+   "kind": "audio-options",
+   "audio": "audio/co-09.mp3",
+   "questions": [
+    {
+     "n": 9
+    }
+   ]
+  },
+  {
+   "id": "co-10",
+   "kind": "audio-options",
+   "audio": "audio/co-10.mp3",
+   "questions": [
+    {
+     "n": 10
+    }
+   ]
+  },
+  {
+   "id": "co-11",
+   "kind": "mcq",
+   "audio": "audio/co-11.mp3",
+   "questions": [
+    {
+     "n": 11,
+     "q": "À qui s'adressent ces ateliers ?",
+     "options": [
+      "Aux enfants qui font leurs devoirs.",
+      "Aux employés de la bibliothèque.",
+      "Aux étudiants en informatique.",
+      "Aux personnes de soixante ans et plus."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-12",
+   "kind": "mcq",
+   "audio": "audio/co-12.mp3",
+   "questions": [
+    {
+     "n": 12,
+     "q": "Que vont-ils faire finalement ?",
+     "options": [
+      "Louer un chalet.",
+      "Camper sous la tente malgré les orages.",
+      "Rester en ville.",
+      "Partir la semaine suivante."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-13",
+   "kind": "mcq",
+   "audio": "audio/co-13.mp3",
+   "questions": [
+    {
+     "n": 13,
+     "q": "Que doit faire la personne qui reçoit ce message ?",
+     "options": [
+      "Rappeler le livreur pour fixer un rendez-vous.",
+      "Aller chercher son colis au dépanneur avant vendredi.",
+      "Attendre une deuxième livraison vendredi.",
+      "Envoyer une pièce d'identité par courriel."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-14",
+   "kind": "mcq",
+   "audio": "audio/co-14.mp3",
+   "questions": [
+    {
+     "n": 14,
+     "q": "Qu'est-ce qui motive cette femme aujourd'hui ?",
+     "options": [
+      "Les conseils de son médecin.",
+      "La compétition.",
+      "Les personnes avec qui elle court.",
+      "La perte de poids."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-15",
+   "kind": "mcq",
+   "audio": "audio/co-15.mp3",
+   "questions": [
+    {
+     "n": 15,
+     "q": "Que demande-t-on aux passagers ?",
+     "options": [
+      "De rester assis à l'intérieur.",
+      "De descendre du traversier.",
+      "D'aller sur le pont extérieur.",
+      "De prendre le traversier suivant."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-16",
+   "kind": "mcq",
+   "audio": "audio/co-16.mp3",
+   "questions": [
+    {
+     "n": 16,
+     "q": "Que peut obtenir la cliente sans reçu ?",
+     "options": [
+      "Un remboursement complet.",
+      "Un rabais sur un autre manteau.",
+      "La moitié du prix.",
+      "Un échange ou une carte-cadeau."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-17",
+   "kind": "mcq",
+   "audio": "audio/co-17.mp3",
+   "questions": [
+    {
+     "n": 17,
+     "q": "Qu'est-ce que la Ville va distribuer gratuitement ?",
+     "options": [
+      "Des sacs de plastique.",
+      "Un bac pour les restes de table.",
+      "Des arbres pour les jardins.",
+      "Un calendrier des collectes."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-18",
+   "kind": "mcq",
+   "audio": "audio/co-18.mp3",
+   "questions": [
+    {
+     "n": 18,
+     "q": "Pourquoi le candidat ne peut-il pas commencer lundi ?",
+     "options": [
+      "Il doit prévenir son employeur actuel deux semaines à l'avance.",
+      "Il part en vacances.",
+      "Il n'a pas encore accepté le poste.",
+      "La boulangerie est fermée le lundi."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-19",
+   "kind": "mcq",
+   "audio": "audio/co-19.mp3",
+   "questions": [
+    {
+     "n": 19,
+     "q": "Quel inconvénient de sa voiture cette femme mentionne-t-elle ?",
+     "options": [
+      "L'entretien coûte cher.",
+      "Elle ne trouve pas de station-service.",
+      "La batterie dure moins longtemps quand il fait très froid.",
+      "La voiture est trop petite pour sa famille."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-20",
+   "kind": "mcq",
+   "audio": "audio/co-20.mp3",
+   "questions": [
+    {
+     "n": 20,
+     "q": "Selon le chroniqueur, pourquoi beaucoup de personnes achètent-elles des vinyles ?",
+     "options": [
+      "Parce que le son est meilleur.",
+      "Parce qu'ils coûtent moins cher que la musique en ligne.",
+      "Pour les écouter avec leurs enfants.",
+      "Pour l'objet lui-même, et pas pour l'écouter."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-21",
+   "kind": "mcq",
+   "audio": "audio/co-21.mp3",
+   "questions": [
+    {
+     "n": 21,
+     "q": "Qu'est-ce que l'arrivée des vélos électriques a obligé ce réparateur à faire ?",
+     "options": [
+      "Fermer son atelier.",
+      "Suivre une nouvelle formation.",
+      "Vendre des voitures.",
+      "Augmenter beaucoup ses prix."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-22",
+   "kind": "mcq",
+   "audio": "audio/co-22.mp3",
+   "questions": [
+    {
+     "n": 22,
+     "q": "Quel conseil François donne-t-il à Nadia ?",
+     "options": [
+      "Préparer des résultats concrets et comparer les salaires.",
+      "Attendre la fin de l'année.",
+      "Menacer de quitter l'entreprise.",
+      "Demander l'aide d'un collègue."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-23",
+   "kind": "mcq",
+   "audio": "audio/co-23.mp3",
+   "questions": [
+    {
+     "n": 23,
+     "q": "Qu'est-ce qui va changer pour les acheteurs de billets ?",
+     "options": [
+      "Les billets coûteront trente pour cent de moins.",
+      "Les frais de service seront supprimés.",
+      "Le prix affiché comprendra tous les frais.",
+      "Les spectacles seront gratuits pour les étudiants."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-24",
+   "kind": "mcq",
+   "audio": "audio/co-24.mp3",
+   "questions": [
+    {
+     "n": 24,
+     "q": "Comment l'agriculteur juge-t-il son investissement ?",
+     "options": [
+      "Inutile, car les étés seront moins secs.",
+      "Trop cher pour une petite ferme.",
+      "Facile et peu coûteux.",
+      "Coûteux au départ, mais rentable."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-25",
+   "kind": "mcq",
+   "audio": "audio/co-25.mp3",
+   "questions": [
+    {
+     "n": 25,
+     "q": "Selon la chroniqueuse, quel est l'effet du multitâche ?",
+     "options": [
+      "Il fait perdre du temps et provoque des erreurs.",
+      "Il rend le travail plus rapide.",
+      "Il améliore la mémoire.",
+      "Il est utile seulement en réunion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-26",
+   "kind": "mcq",
+   "audio": "audio/co-26.mp3",
+   "questions": [
+    {
+     "n": 26,
+     "q": "Comment le client réagit-il à la proposition de l'employée ?",
+     "options": [
+      "Il la refuse et demande un remboursement.",
+      "Il l'accepte, à condition que le magasin fasse réparer le canapé.",
+      "Il l'accepte sans condition.",
+      "Il demande un autre canapé."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-27",
+   "kind": "mcq",
+   "audio": "audio/co-27.mp3",
+   "questions": [
+    {
+     "n": 27,
+     "q": "Selon ce reportage, de quoi dépend le succès d'une ruelle verte ?",
+     "options": [
+      "De l'argent donné par la Ville.",
+      "Du nombre d'arbres plantés.",
+      "De la météo de l'été.",
+      "De l'engagement des voisins."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-28",
+   "kind": "mcq",
+   "audio": "audio/co-28.mp3",
+   "questions": [
+    {
+     "n": 28,
+     "q": "Quel problème rencontrent les centres de formation professionnelle ?",
+     "options": [
+      "Les élèves sont de moins en moins nombreux.",
+      "Les métiers enseignés ne recrutent plus.",
+      "Ils ont du mal à trouver des enseignants.",
+      "Les salaires dans ces métiers sont trop bas."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-29",
+   "kind": "mcq",
+   "audio": "audio/co-29.mp3",
+   "questions": [
+    {
+     "n": 29,
+     "q": "Quel bilan cet homme fait-il de son expérience ?",
+     "options": [
+      "Très positif, même si certains trajets sont plus difficiles.",
+      "Négatif, car il a dépensé plus d'argent.",
+      "Il va racheter une voiture le plus vite possible.",
+      "Il a abandonné après trois mois."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-30",
+   "kind": "mcq",
+   "audio": "audio/co-30.mp3",
+   "questions": [
+    {
+     "n": 30,
+     "q": "Quel paradoxe la chroniqueuse souligne-t-elle ?",
+     "options": [
+      "Ces lieux sont trop chers pour la plupart des voyageurs.",
+      "En voulant voir ces lieux menacés, les touristes contribuent à leur disparition.",
+      "Les touristes ne s'intéressent pas vraiment à l'environnement.",
+      "Ces voyages sont interdits dans la plupart des pays."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-31",
+   "kind": "mcq",
+   "audio": "audio/co-31.mp3",
+   "questions": [
+    {
+     "n": 31,
+     "q": "À quelle condition l'économiste accepterait-il cette taxe ?",
+     "options": [
+      "Qu'elle ne concerne que les adultes.",
+      "Qu'elle soit très faible.",
+      "Qu'elle remplace d'autres impôts.",
+      "Que l'argent récolté profite aux ménages modestes."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-32",
+   "kind": "mcq",
+   "audio": "audio/co-32.mp3",
+   "questions": [
+    {
+     "n": 32,
+     "q": "Selon l'architecte, quel est le principal obstacle aux tours en bois ?",
+     "options": [
+      "Le risque d'incendie dans les tours en bois.",
+      "Le prix du bois, plus élevé que celui du béton.",
+      "Les normes de construction et les habitudes du secteur.",
+      "Le manque de forêts pour fournir assez de bois."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-33",
+   "kind": "mcq",
+   "audio": "audio/co-33.mp3",
+   "questions": [
+    {
+     "n": 33,
+     "q": "Selon les responsables, quelle est l'urgence ?",
+     "options": [
+      "Transmettre la langue tant que des aînés la parlent encore.",
+      "Apprendre l'anglais aux enfants plus tôt.",
+      "Construire de nouvelles écoles.",
+      "Traduire les manuels scolaires en français."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-34",
+   "kind": "mcq",
+   "audio": "audio/co-34.mp3",
+   "questions": [
+    {
+     "n": 34,
+     "q": "Quelle critique le chroniqueur formule-t-il ?",
+     "options": [
+      "Les jeunes entreprises échouent de plus en plus souvent.",
+      "Valoriser l'échec oublie que tout le monde n'a pas les moyens de s'en remettre.",
+      "Il ne faut jamais parler de ses échecs.",
+      "Les conférences sur l'échec sont trop chères."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-35",
+   "kind": "mcq",
+   "audio": "audio/co-35.mp3",
+   "questions": [
+    {
+     "n": 35,
+     "q": "Quelle nuance l'économiste apporte-t-elle ?",
+     "options": [
+      "La hausse a provoqué des milliers de pertes d'emplois.",
+      "Le salaire minimum devrait baisser.",
+      "Les grandes entreprises ont fermé leurs portes.",
+      "Les effets sont faibles en moyenne, mais réels pour certaines petites entreprises."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-36",
+   "kind": "mcq",
+   "audio": "audio/co-36.mp3",
+   "questions": [
+    {
+     "n": 36,
+     "q": "Selon le conférencier, qu'est-ce qui explique surtout l'impression que le temps passe vite ?",
+     "options": [
+      "La répétition et le manque d'expériences nouvelles.",
+      "La proportion qu'une année représente dans une vie.",
+      "Le fait que les adultes dorment moins.",
+      "L'usage des écrans."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-37",
+   "kind": "mcq",
+   "audio": "audio/co-37.mp3",
+   "questions": [
+    {
+     "n": 37,
+     "q": "Quelle est la position de l'élu ?",
+     "options": [
+      "Les citoyens tirés au sort ne sont pas assez sérieux.",
+      "Il faut supprimer les élections.",
+      "Ces assemblées peuvent conseiller, mais ne doivent pas décider à la place des élus.",
+      "Les assemblées citoyennes coûtent trop cher."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-38",
+   "kind": "mcq",
+   "audio": "audio/co-38.mp3",
+   "questions": [
+    {
+     "n": 38,
+     "q": "Que défend la chroniqueuse ?",
+     "options": [
+      "Revenir aux lettres et abandonner les téléphones.",
+      "Prendre volontairement le temps de réfléchir avant de répondre.",
+      "Interdire les messages instantanés.",
+      "Écrire des messages plus longs."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "co-39",
+   "kind": "mcq",
+   "audio": "audio/co-39.mp3",
+   "questions": [
+    {
+     "n": 39,
+     "q": "Quelle conclusion le chercheur tire-t-il ?",
+     "options": [
+      "Le placebo est une simple illusion.",
+      "Le placebo peut remplacer la plupart des traitements.",
+      "Le placebo ne fonctionne que si le patient est trompé.",
+      "Le placebo a des effets réels, mais limités à certains symptômes."
+     ]
+    }
+   ]
+  }
+ ],
+ "count": 39,
+ "max": 699
+}

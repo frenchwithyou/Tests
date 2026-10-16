@@ -7,6 +7,14 @@ Usage:
 ce.yaml, ee.yaml and eo.yaml. Those files contain the answers, so they never
 go into this public repository.
 
+Only the mocks found in <private-sources-dir> are rebuilt; the other mocks
+already listed in mocks/catalog.json are kept as they are. So a new mock can
+be built on its own, and its keys file holds only its own keys.
+
+A section file can say `hold: true` at the top: the section is published as
+"coming soon" (for example reading, until its keys are in the Google Sheet).
+A listening section also stays "coming soon" until all its recordings exist.
+
 Writes:
   mocks/catalog.json                  list of exams, mocks and section status
   mocks/<exam>-<n>/<section>.json     what students see (no answers)
@@ -154,9 +162,12 @@ def main():
     out_dir = Path(sys.argv[2])
     out_dir.mkdir(parents=True, exist_ok=True)
     keys, audio_all = [], {}
+    old_path = MOCKS / "catalog.json"
+    old = json.loads(old_path.read_text(encoding="utf-8")) if old_path.exists() else {"exams": []}
+    old_by_id = {e["id"]: e for e in old.get("exams", [])}
     catalog = {"exams": []}
     for exam, info in EXAMS.items():
-        entry = {"id": exam, "name": info["name"], "mocks": []}
+        entry = {"id": exam, "name": info["name"], "mocks": list(old_by_id.get(exam, {}).get("mocks", []))}
         for mock_dir in sorted(src_dir.glob(f"{exam}-*")):
             mock = int(mock_dir.name.split("-")[1])
             target = MOCKS / f"{exam}-{mock}"
@@ -172,14 +183,15 @@ def main():
                 data = {"exam": exam, "mock": mock, "section": section, **meta, **body}
                 target.mkdir(parents=True, exist_ok=True)
                 (target / f"{section}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-                ready = True
+                ready = not src.get("hold", False)
                 if section == "co":
                     missing = [a["file"] for a in audio_list if not (target / "audio" / a["file"]).exists()]
-                    ready = not missing
+                    ready = ready and not missing
                 sections[section] = {"ready": ready, "count": data["count"], "duration": meta["duration"],
                                      "scale": meta["scale"], **({"max": data["max"]} if "max" in data else {})}
             audio_all[f"{exam}-{mock}"] = audio_list
-            entry["mocks"].append({"n": mock, "sections": sections})
+            entry["mocks"] = [m for m in entry["mocks"] if m["n"] != mock] + [{"n": mock, "sections": sections}]
+        entry["mocks"].sort(key=lambda m: m["n"])
         catalog["exams"].append(entry)
     (MOCKS / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1), encoding="utf-8")
 

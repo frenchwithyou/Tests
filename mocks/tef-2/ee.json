@@ -1,0 +1,38 @@
+{
+ "exam": "tef",
+ "mock": 2,
+ "section": "ee",
+ "duration": 3600,
+ "scale": "699",
+ "tasks": [
+  {
+   "n": 1,
+   "title": "Section A — Écrire la suite d'un article",
+   "level": "Section A",
+   "prompt": "Lisez le début de cet article, puis **écrivez la suite** (80 mots minimum).\n\nRacontez ce que contenait la boîte et ce qui s'est passé ensuite. Respectez le style d'un article de journal : faits, lieux, témoignages.\n",
+   "words": [
+    80,
+    null
+   ],
+   "advice_minutes": 25,
+   "docs": [
+    {
+     "title": "Une capsule temporelle retrouvée dans une école",
+     "body": "SHERBROOKE — Lundi matin, des ouvriers qui rénovaient le gymnase de l'école primaire Sainte-Anne ont découvert, derrière un mur, une boîte en métal fermée. Sur le couvercle, une inscription : « À ouvrir dans 50 ans — Classe de 6e année, juin 1976 ». La directrice a aussitôt réuni les élèves pour l'ouvrir devant eux…\n"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Section B — Exprimer et défendre une opinion",
+   "level": "Section B",
+   "prompt": "Vous lisez cette affirmation sur un forum :\n\n**« Apprendre une deuxième langue devrait être obligatoire dès la maternelle. »**\n\nVous écrivez un message sur ce forum pour réagir. Donnez votre opinion et justifiez-la avec **au moins trois arguments**, illustrés d'exemples (200 mots minimum).\n",
+   "words": [
+    200,
+    null
+   ],
+   "advice_minutes": 35
+  }
+ ],
+ "count": 2
+}

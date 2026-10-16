@@ -1,0 +1,840 @@
+{
+ "exam": "tcf",
+ "mock": 2,
+ "section": "ce",
+ "duration": 3600,
+ "scale": "699",
+ "screens": [
+  {
+   "id": "ce-01",
+   "kind": "doc",
+   "doc": {
+    "kind": "sign",
+    "title": "Pharmacie du Parc",
+    "body": "**Ouvert 7 jours sur 7**\n\nde 9 h à 21 h\n"
+   },
+   "questions": [
+    {
+     "n": 1,
+     "q": "Quand la pharmacie est-elle ouverte ?",
+     "options": [
+      "Seulement en semaine.",
+      "Tous les jours.",
+      "Seulement le matin.",
+      "Seulement le dimanche."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-02",
+   "kind": "doc",
+   "doc": {
+    "kind": "sms",
+    "title": "Inès",
+    "body": "Maman, je suis chez Julie pour faire nos devoirs. Je rentre à 18 h. Bisous !\n"
+   },
+   "questions": [
+    {
+     "n": 2,
+     "q": "À quelle heure Inès va-t-elle rentrer ?",
+     "options": [
+      "À 8 h.",
+      "À 16 h.",
+      "À 17 h.",
+      "À 18 h."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-03",
+   "kind": "doc",
+   "doc": {
+    "kind": "sign",
+    "title": "Buanderie",
+    "body": "Laveuses : 3 $ · Sécheuses : 2 $\n\n**Pièces de 1 $ et 2 $ seulement.**\n"
+   },
+   "questions": [
+    {
+     "n": 3,
+     "q": "Comment faut-il payer ?",
+     "options": [
+      "Avec des pièces de monnaie.",
+      "Avec une carte de crédit.",
+      "Avec des billets.",
+      "Par téléphone."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-04",
+   "kind": "doc",
+   "doc": {
+    "kind": "notice",
+    "title": "Noah a 7 ans !",
+    "body": "Viens fêter son anniversaire samedi 9 mai, à 14 h, **au parc Lafontaine**.\n\nApporte ton maillot : il y aura des jeux d'eau !\n"
+   },
+   "questions": [
+    {
+     "n": 4,
+     "q": "Où se passe la fête ?",
+     "options": [
+      "Chez Noah.",
+      "À la piscine.",
+      "Au parc.",
+      "À l'école."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-05",
+   "kind": "doc",
+   "doc": {
+    "kind": "email",
+    "title": "Réunion d'équipe",
+    "meta": "De : Karine · À : Toute l'équipe",
+    "body": "Bonjour à tous,\n\nLa réunion d'équipe prévue lundi est déplacée à **mardi**, à la même heure (10 h), dans la même salle.\n\nMerci !\nKarine\n"
+   },
+   "questions": [
+    {
+     "n": 5,
+     "q": "Qu'est-ce qui change ?",
+     "options": [
+      "Le jour de la réunion.",
+      "L'heure de la réunion.",
+      "La salle de la réunion.",
+      "La personne qui organise la réunion."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-06",
+   "kind": "doc",
+   "doc": {
+    "kind": "ad",
+    "title": "Cours de guitare pour débutants",
+    "body": "À domicile, pour enfants et adultes.\n**Premier cours gratuit !**\nEnsuite : 35 $ le cours.\nAppelez Hugo au 438 555-0129.\n"
+   },
+   "questions": [
+    {
+     "n": 6,
+     "q": "Qu'est-ce qui est gratuit ?",
+     "options": [
+      "La guitare.",
+      "Tous les cours.",
+      "Le premier cours.",
+      "Le cours pour les enfants."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-07",
+   "kind": "doc",
+   "doc": {
+    "kind": "rules",
+    "title": "Patinoire extérieure — Règlement",
+    "body": "- Casque obligatoire pour les enfants de moins de 12 ans.\n- Hockey permis seulement de 18 h à 21 h.\n- Patinoire fermée quand la température dépasse 2 °C.\n"
+   },
+   "questions": [
+    {
+     "n": 7,
+     "q": "Qui doit porter un casque ?",
+     "options": [
+      "Tous les patineurs.",
+      "Les enfants de moins de 12 ans.",
+      "Les joueurs de hockey seulement.",
+      "Les adultes après 18 h."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-08",
+   "kind": "doc",
+   "doc": {
+    "kind": "notice",
+    "title": "Avis aux résidents",
+    "body": "L'eau sera coupée jeudi, de 9 h à 12 h, pour des travaux.\n\n**Pensez à remplir quelques bouteilles d'eau avant jeudi.**\n"
+   },
+   "questions": [
+    {
+     "n": 8,
+     "q": "Que conseille-t-on aux résidents ?",
+     "options": [
+      "De quitter l'immeuble jeudi.",
+      "D'appeler un plombier.",
+      "De ne pas prendre de douche pendant une semaine.",
+      "De garder de l'eau en réserve."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-09",
+   "kind": "doc",
+   "doc": {
+    "kind": "label",
+    "title": "Sauce tomate maison",
+    "body": "Après ouverture, **conserver au réfrigérateur**.\nConsommer dans les 3 jours.\n"
+   },
+   "questions": [
+    {
+     "n": 9,
+     "q": "Que faut-il faire après avoir ouvert le pot ?",
+     "options": [
+      "Le mettre au réfrigérateur.",
+      "Le mettre au congélateur.",
+      "Le chauffer pendant 3 minutes.",
+      "Le garder dans l'armoire."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-10",
+   "kind": "doc",
+   "doc": {
+    "kind": "ad",
+    "title": "Épicerie Le Panier vert recrute",
+    "body": "Caissier ou caissière, les fins de semaine.\nAucune expérience nécessaire : formation offerte.\n**Envoyez votre CV par courriel** à recrutement@courriel.ca.\n"
+   },
+   "questions": [
+    {
+     "n": 10,
+     "q": "Comment faut-il poser sa candidature ?",
+     "options": [
+      "En se présentant au magasin.",
+      "Par téléphone.",
+      "En envoyant son CV par courriel.",
+      "Par la poste."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-11",
+   "kind": "doc",
+   "doc": {
+    "kind": "letter",
+    "title": "Journée pédagogique du vendredi 20 novembre",
+    "meta": "De : La direction de l'école · À : Les parents",
+    "body": "Chers parents,\n\nIl n'y aura pas de classe le vendredi 20 novembre. Le service de garde sera ouvert de 7 h à 18 h, au coût de 15 $.\n\nLes parents intéressés doivent inscrire leur enfant **avant le mercredi 18 novembre**, au secrétariat ou par courriel.\n\nLa direction\n"
+   },
+   "questions": [
+    {
+     "n": 11,
+     "q": "Que doivent faire les parents qui ont besoin du service de garde ?",
+     "options": [
+      "Venir chercher leur enfant à midi.",
+      "Inscrire leur enfant avant mercredi.",
+      "Payer 15 $ le lundi.",
+      "Envoyer leur enfant à l'école comme d'habitude."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-12",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Des arbres gratuits pour les citoyens",
+    "body": "Samedi prochain, la Ville distribuera gratuitement 2 000 jeunes arbres au parc municipal. Chaque foyer pourra en recevoir deux.\n\nL'objectif : augmenter l'ombre dans les quartiers, où les étés sont de plus en plus chauds. Il faudra présenter une preuve d'adresse.\n"
+   },
+   "questions": [
+    {
+     "n": 12,
+     "q": "Pourquoi la Ville distribue-t-elle des arbres ?",
+     "options": [
+      "Pour vendre ses vieux arbres.",
+      "Pour décorer le parc municipal.",
+      "Pour remplacer des arbres malades.",
+      "Pour avoir plus d'ombre dans les quartiers pendant l'été."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-13",
+   "kind": "doc",
+   "doc": {
+    "kind": "forum",
+    "title": "Forum Nouveaux arrivants — Pneus d'hiver ?",
+    "meta": "Message de Rahul",
+    "body": "Bonjour ! J'ai acheté ma première voiture, et ce sera mon premier hiver au Québec. Est-ce que les pneus d'hiver sont obligatoires ? Et à partir de quelle date ? Merci pour vos réponses !\n"
+   },
+   "questions": [
+    {
+     "n": 13,
+     "q": "Qu'est-ce que Rahul veut savoir ?",
+     "options": [
+      "Si les pneus d'hiver sont obligatoires, et à partir de quand.",
+      "Où acheter une voiture d'occasion.",
+      "Comment conduire sur la neige.",
+      "Combien coûte une assurance automobile."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-14",
+   "kind": "doc",
+   "doc": {
+    "kind": "notice",
+    "title": "Club Forme Plus — Suspendre son abonnement",
+    "body": "Vous pouvez suspendre votre abonnement **jusqu'à deux mois par année**, sans frais, en cas de voyage ou de problème de santé (certificat médical demandé).\n\nFaites votre demande à l'accueil au moins 7 jours à l'avance.\n"
+   },
+   "questions": [
+    {
+     "n": 14,
+     "q": "Combien de temps peut-on suspendre son abonnement chaque année ?",
+     "options": [
+      "Sept jours.",
+      "Un mois.",
+      "Deux mois au maximum.",
+      "Aussi longtemps qu'on veut."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-15",
+   "kind": "doc",
+   "doc": {
+    "kind": "review",
+    "title": "Déménagements Côté et fils ★★★★☆",
+    "meta": "Avis publié par Samir K.",
+    "body": "Les déménageurs sont arrivés à l'heure et ont fait très attention à nos meubles. Seul reproche : la facture était plus élevée que le prix prévu, car le déménagement a duré une heure de plus. Je recommande, mais demandez un prix fixe !\n"
+   },
+   "questions": [
+    {
+     "n": 15,
+     "q": "Quel reproche Samir fait-il ?",
+     "options": [
+      "Les déménageurs étaient en retard.",
+      "Le prix final était plus élevé que prévu.",
+      "Des meubles ont été abîmés.",
+      "Les déménageurs étaient impolis."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-16",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Le permis de conduire attire moins les jeunes",
+    "body": "Dans les grandes villes, de moins en moins de jeunes de 18 à 24 ans passent leur permis de conduire. Les cours coûtent cher, et le transport en commun, le vélo et l'autopartage suffisent souvent.\n\nEn région, la situation est différente : sans voiture, il est difficile d'aller étudier ou travailler, car les autobus sont rares.\n"
+   },
+   "questions": [
+    {
+     "n": 16,
+     "q": "Pourquoi la situation est-elle différente en région ?",
+     "options": [
+      "Les cours de conduite y sont gratuits.",
+      "Les jeunes y préfèrent le vélo.",
+      "Il y a plus d'autopartage.",
+      "Le transport en commun y est peu développé."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-17",
+   "kind": "doc",
+   "doc": {
+    "kind": "letter",
+    "title": "Avis de cotisation",
+    "meta": "Service des impôts",
+    "body": "Nous avons traité votre déclaration de revenus. Vous avez droit à un remboursement de 312 $.\n\nCe montant sera **versé par dépôt direct** dans votre compte bancaire d'ici 10 jours ouvrables. Aucune démarche n'est nécessaire de votre part.\n"
+   },
+   "questions": [
+    {
+     "n": 17,
+     "q": "Comment la personne recevra-t-elle son remboursement ?",
+     "options": [
+      "Directement dans son compte bancaire.",
+      "Par chèque, par la poste.",
+      "En argent comptant, au bureau.",
+      "Après avoir rempli un formulaire."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-18",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Une bibliothèque… d'outils !",
+    "body": "Besoin d'une perceuse pour accrocher un cadre ? Inutile d'en acheter une. Le centre communautaire du quartier a ouvert une « outilthèque » : avec une carte de membre à 20 $ par année, on peut emprunter plus de 300 outils, pour une semaine.\n\nLes organisateurs rappellent qu'une perceuse sert en moyenne… 13 minutes dans toute sa vie.\n"
+   },
+   "questions": [
+    {
+     "n": 18,
+     "q": "Comment fonctionne l'outilthèque ?",
+     "options": [
+      "On y achète des outils d'occasion à bas prix.",
+      "On y loue des outils à l'heure.",
+      "On paie un abonnement annuel pour emprunter des outils.",
+      "On y répare ses outils avec des bénévoles."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-19",
+   "kind": "doc",
+   "doc": {
+    "kind": "email",
+    "title": "Échange de quart",
+    "meta": "De : Sofia · À : Karim",
+    "body": "Salut Karim,\n\nEst-ce que tu pourrais faire mon quart de samedi matin ? En échange, je ferais ton quart de mardi soir. Mon frère se marie samedi !\n\nDis-moi vite, je dois prévenir la gérante.\nSofia\n"
+   },
+   "questions": [
+    {
+     "n": 19,
+     "q": "Que propose Sofia à Karim ?",
+     "options": [
+      "De travailler ensemble samedi.",
+      "D'échanger leurs heures de travail.",
+      "De venir au mariage de son frère.",
+      "De parler à la gérante à sa place."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-20",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Les cafés face aux télétravailleurs",
+    "body": "Depuis la généralisation du télétravail, de nombreux cafés sont devenus des bureaux improvisés. Pour les propriétaires, l'affaire n'est pas toujours rentable : un client qui reste quatre heures avec un seul café occupe une table que d'autres auraient payée.\n\nCertains établissements limitent désormais l'accès aux prises électriques, ou réservent les grandes tables aux repas le midi.\n"
+   },
+   "questions": [
+    {
+     "n": 20,
+     "q": "Pourquoi certains cafés imposent-ils des limites aux télétravailleurs ?",
+     "options": [
+      "Parce qu'ils occupent longtemps des tables en consommant peu.",
+      "Parce qu'ils font trop de bruit.",
+      "Parce qu'ils utilisent trop internet.",
+      "Parce qu'ils ne laissent pas de pourboire."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-21",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Apprendre une langue à l'âge adulte",
+    "body": "On répète souvent qu'il est trop tard pour apprendre une langue après l'enfance. Les recherches nuancent cette idée : au début, les adultes progressent souvent plus vite que les enfants, car ils savent organiser leur apprentissage et comprennent les règles de grammaire.\n\nLeur principal désavantage concerne la prononciation : il est rare qu'un adulte perde complètement son accent.\n"
+   },
+   "questions": [
+    {
+     "n": 21,
+     "q": "Selon le texte, quel avantage les adultes ont-ils ?",
+     "options": [
+      "Ils perdent facilement leur accent.",
+      "Ils retiennent mieux le vocabulaire que les enfants.",
+      "Ils n'ont pas besoin de pratiquer.",
+      "Ils savent organiser leur apprentissage."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-22",
+   "kind": "doc",
+   "doc": {
+    "kind": "letter",
+    "title": "Courrier des lecteurs",
+    "meta": "Lettre à la rédactrice du journal local",
+    "body": "Madame la rédactrice,\n\nLa municipalité a annoncé qu'elle fermera la bibliothèque le samedi pour faire des économies. On nous présente cette mesure comme « mineure ». Je ne partage pas cet avis.\n\nLe samedi est le seul jour où les familles qui travaillent peuvent y aller avec leurs enfants. Économiser quelques milliers de dollars en privant ces familles de leur seul accès à la lecture, est-ce vraiment une bonne affaire ?\n\nLouise Bergeron, Lévis\n"
+   },
+   "questions": [
+    {
+     "n": 22,
+     "q": "Que pense l'autrice de la lettre ?",
+     "options": [
+      "Elle approuve la décision de la municipalité.",
+      "Elle conteste l'idée que la fermeture du samedi est sans importance.",
+      "Elle demande l'ouverture d'une nouvelle bibliothèque.",
+      "Elle propose de fermer la bibliothèque le dimanche."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-23",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "La règle des 30 jours",
+    "body": "Pour lutter contre les achats impulsifs, certains conseillers budgétaires recommandent une méthode simple : quand on a envie d'un objet non essentiel, on note son prix et la date, puis on attend 30 jours avant de l'acheter.\n\nSelon eux, la plupart des envies disparaissent avant la fin du délai. Et si l'envie est toujours là, l'achat sera plus réfléchi.\n"
+   },
+   "questions": [
+    {
+     "n": 23,
+     "q": "Quel est le principe de cette méthode ?",
+     "options": [
+      "Acheter seulement les produits en solde.",
+      "Dépenser 30 $ au maximum par achat.",
+      "Attendre un mois avant d'acheter un objet non essentiel.",
+      "Faire ses courses une fois par mois."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-24",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Pas de courriels internes le vendredi",
+    "body": "Une entreprise de logiciels de Sherbrooke a interdit l'envoi de courriels entre collègues le vendredi. Objectif : laisser aux employés une journée pour se concentrer sur leurs projets.\n\nSix mois plus tard, les employés se disent moins stressés et plus productifs. La direction note toutefois un effet secondaire : les réunions du jeudi sont devenues plus nombreuses, chacun voulant régler ses questions avant le vendredi.\n"
+   },
+   "questions": [
+    {
+     "n": 24,
+     "q": "Quel effet inattendu la direction a-t-elle remarqué ?",
+     "options": [
+      "Il y a davantage de réunions le jeudi.",
+      "Les employés sont plus stressés.",
+      "Les employés travaillent moins le vendredi.",
+      "Les clients ne reçoivent plus de réponses."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-25",
+   "kind": "doc",
+   "doc": {
+    "kind": "blog",
+    "title": "Un mois sans réseaux sociaux",
+    "meta": "Blogue « Vivre simplement »",
+    "body": "Le mois dernier, j'ai supprimé toutes mes applications de réseaux sociaux. La première semaine, j'ai ressenti un vrai manque. Ensuite, j'ai retrouvé du temps pour lire et pour dormir.\n\nMais j'ai aussi raté deux fêtes : les invitations circulaient uniquement sur les réseaux. Depuis, j'ai trouvé un compromis : je garde la messagerie pour mes amis, mais je n'ouvre plus jamais le fil d'actualité.\n"
+   },
+   "questions": [
+    {
+     "n": 25,
+     "q": "Quelle décision l'auteur a-t-il prise après son expérience ?",
+     "options": [
+      "Revenir à ses anciennes habitudes.",
+      "Se débarrasser définitivement de son téléphone.",
+      "Ne plus jamais aller à des fêtes.",
+      "Garder seulement la messagerie, sans le fil d'actualité."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-26",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Des études payées par l'employeur",
+    "body": "Pour attirer et garder leurs employés, de plus en plus d'entreprises paient les études universitaires ou professionnelles de leur personnel.\n\nEn contrepartie, l'employé s'engage à rester dans l'entreprise au moins deux ans après la fin de sa formation. S'il part avant, il doit rembourser une partie des frais.\n"
+   },
+   "questions": [
+    {
+     "n": 26,
+     "q": "Que se passe-t-il si l'employé quitte l'entreprise avant deux ans ?",
+     "options": [
+      "Il perd son diplôme.",
+      "Il doit rembourser une partie de ses études.",
+      "Il ne peut plus travailler dans le même domaine.",
+      "Il paie une amende au gouvernement."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-27",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "La consultation par vidéo en région",
+    "body": "Dans les régions éloignées, la consultation médicale par vidéo évite aux patients de longs trajets pour un simple renouvellement d'ordonnance ou un suivi.\n\nLes médecins reconnaissent son utilité, mais rappellent ses limites : écouter un cœur, examiner une gorge ou palper un ventre reste impossible à distance. La vidéo complète la visite en personne ; elle ne la remplace pas.\n"
+   },
+   "questions": [
+    {
+     "n": 27,
+     "q": "Quelle limite de la consultation par vidéo les médecins rappellent-ils ?",
+     "options": [
+      "Elle coûte plus cher qu'une visite en personne.",
+      "Elle est interdite pour les renouvellements d'ordonnance.",
+      "Elle ne permet pas d'examiner physiquement le patient.",
+      "Elle oblige les patients à faire de longs trajets."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-28",
+   "kind": "doc",
+   "doc": {
+    "kind": "rules",
+    "title": "Règlement municipal — Feux à ciel ouvert",
+    "body": "- Un permis gratuit, demandé à la caserne de pompiers, est obligatoire.\n- Les feux sont interdits lorsque l'indice de danger d'incendie est élevé.\n- Le feu doit se trouver à au moins 5 mètres de tout bâtiment et être surveillé en tout temps.\n"
+   },
+   "questions": [
+    {
+     "n": 28,
+     "q": "Dans quelle situation est-il interdit de faire un feu, même avec un permis ?",
+     "options": [
+      "Lorsque le risque d'incendie est élevé.",
+      "Le samedi soir.",
+      "Lorsqu'il y a des enfants.",
+      "Lorsque le feu est à plus de 5 mètres d'un bâtiment."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-29",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Les faux avis en ligne",
+    "body": "Avant de réserver un restaurant ou d'acheter un appareil, la plupart des consommateurs lisent les avis en ligne. Or une partie d'entre eux sont faux, écrits par les entreprises elles-mêmes ou par des concurrents.\n\nLes experts conseillent de se méfier des notes parfaites et des critiques très négatives, et de lire en priorité les avis à trois étoiles : ils sont généralement plus nuancés, donc plus fiables.\n"
+   },
+   "questions": [
+    {
+     "n": 29,
+     "q": "Quel conseil les experts donnent-ils ?",
+     "options": [
+      "Ne jamais lire les avis en ligne.",
+      "Écrire soi-même des avis.",
+      "Faire confiance aux notes parfaites.",
+      "Lire d'abord les avis moyens, plus nuancés."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-30",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "La politesse, une hypocrisie ?",
+    "body": "On reproche parfois à la politesse d'être une forme de mensonge : dire « bonjour » à quelqu'un qu'on n'apprécie pas, remercier sans être reconnaissant. Ce reproche confond la politesse et la sincérité.\n\nLa politesse ne prétend pas exprimer ce que l'on ressent ; elle signale que l'on reconnaît l'autre comme quelqu'un qui mérite des égards. C'est précisément parce que nous ne nous aimons pas tous qu'elle est nécessaire : elle rend la vie commune possible entre des gens qui ne sont pas amis.\n"
+   },
+   "questions": [
+    {
+     "n": 30,
+     "q": "Que défend l'auteur ?",
+     "options": [
+      "La politesse est une forme de mensonge qu'il faut abandonner.",
+      "La politesse exprime le respect, pas les sentiments, et permet de vivre ensemble.",
+      "Il faut être poli seulement avec ses amis.",
+      "La politesse doit toujours être sincère."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-31",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Les « villes éponges »",
+    "body": "Face aux pluies de plus en plus fortes, plusieurs municipalités transforment leurs rues : jardins de pluie, stationnements perméables, parcs capables d'être inondés sans dommage. L'idée est de laisser l'eau s'infiltrer dans le sol plutôt que de l'envoyer dans des égouts saturés.\n\nLes ingénieurs saluent ces aménagements, efficaces lors des averses ordinaires. Ils préviennent toutefois qu'ils ne suffiront pas face aux pluies exceptionnelles, qui exigent toujours des infrastructures plus lourdes.\n"
+   },
+   "questions": [
+    {
+     "n": 31,
+     "q": "Quelle réserve les ingénieurs expriment-ils ?",
+     "options": [
+      "Ces aménagements coûtent beaucoup trop cher.",
+      "Ces aménagements sont inutiles lors des averses ordinaires.",
+      "Ces aménagements ne suffiront pas lors des pluies exceptionnelles.",
+      "Ces aménagements augmentent les inondations."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-32",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Le mérite, une idée juste ?",
+    "body": "Qui pourrait s'opposer au principe selon lequel chacun doit être récompensé selon ses efforts et ses talents ? Le problème n'est pas l'idéal, mais l'usage qu'on en fait. Dans une course où certains partent avec plusieurs kilomètres d'avance, proclamer que le vainqueur a « mérité » sa victoire revient à ignorer le point de départ.\n\nPire : convaincus d'avoir tout gagné par eux-mêmes, les gagnants se sentent dispensés de toute solidarité envers ceux qui ont échoué.\n"
+   },
+   "questions": [
+    {
+     "n": 32,
+     "q": "Selon l'auteur, quel est le principal problème de l'idéal du mérite ?",
+     "options": [
+      "Il oublie que les gens ne partent pas tous avec les mêmes chances.",
+      "Il récompense trop les efforts au détriment du talent.",
+      "Il décourage ceux qui gagnent de continuer à travailler.",
+      "Il pousse chacun à se comparer sans cesse aux autres."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-33",
+   "kind": "doc",
+   "doc": {
+    "kind": "literary",
+    "title": "Le diplôme",
+    "meta": "Extrait d'un récit",
+    "body": "Mon père a travaillé vingt ans de nuit, dans une usine de pièces d'avion. Il ne parlait jamais de son pays, ni de ce qu'il y faisait avant.\n\nC'est en vidant son appartement, après son départ en résidence, que j'ai trouvé l'enveloppe : un diplôme d'ingénieur, plié en quatre, avec son nom écrit dans une langue que je ne lis pas. J'ai compris, ce jour-là, que ses silences n'étaient pas de l'indifférence, mais le prix qu'il avait payé pour que nous ne manquions de rien.\n"
+   },
+   "questions": [
+    {
+     "n": 33,
+     "q": "Que comprend la personne qui raconte, en découvrant le diplôme ?",
+     "options": [
+      "Que son père lui avait menti sur son métier.",
+      "Que son père n'aimait pas son pays.",
+      "Que son père avait toujours voulu travailler de nuit.",
+      "Que son père avait renoncé à sa carrière pour sa famille."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-34",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Compenser ses émissions : une fausse bonne idée ?",
+    "body": "Pour quelques dollars, de nombreux sites proposent de « compenser » les émissions d'un vol en finançant la plantation d'arbres ou la protection d'une forêt. Plusieurs enquêtes ont montré que les bénéfices de ces projets étaient souvent surestimés.\n\nMais le risque principal est ailleurs : en offrant une bonne conscience à bas prix, la compensation peut dispenser de l'essentiel, c'est-à-dire réduire ses propres émissions.\n"
+   },
+   "questions": [
+    {
+     "n": 34,
+     "q": "Selon l'auteur, quel est le principal risque de la compensation ?",
+     "options": [
+      "Elle coûte beaucoup trop cher aux voyageurs qui l'achètent.",
+      "Elle donne bonne conscience au lieu de pousser à réduire ses émissions.",
+      "Les bénéfices des projets financés sont souvent surestimés.",
+      "Elle finance des projets qui détruisent des forêts."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-35",
+   "kind": "doc",
+   "doc": {
+    "kind": "article",
+    "title": "Trop de choix tue le choix",
+    "body": "Cinquante sortes de yogourt, une centaine de séries à regarder, des menus de restaurant de douze pages : l'abondance est présentée comme une liberté. Pourtant, les chercheurs observent que, face à un trop grand nombre d'options, beaucoup de consommateurs choisissent moins bien, regrettent davantage leur choix, ou renoncent à choisir.\n\nCertains restaurants l'ont compris : en réduisant leur carte, ils constatent des clients plus satisfaits, et moins de gaspillage.\n"
+   },
+   "questions": [
+    {
+     "n": 35,
+     "q": "Pourquoi réduire le nombre de choix peut-il augmenter la satisfaction des clients ?",
+     "options": [
+      "Parce que les clients préfèrent payer moins cher.",
+      "Parce que les produits sont de meilleure qualité.",
+      "Parce qu'un choix trop large rend la décision difficile et provoque des regrets.",
+      "Parce que les clients n'aiment pas la nouveauté."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-36",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Qu'est-ce que le courage ?",
+    "body": "On définit volontiers le courage comme l'absence de peur. C'est confondre le courage avec l'inconscience. Celui qui ne voit pas le danger n'a aucun mérite à l'affronter : il est simplement téméraire.\n\nLe courageux, lui, mesure le danger, éprouve la peur, et agit malgré elle, parce qu'il juge que quelque chose vaut ce risque. Le courage n'est donc pas un tempérament, mais un jugement suivi d'un acte.\n"
+   },
+   "questions": [
+    {
+     "n": 36,
+     "q": "Selon l'auteur, qu'est-ce que le courage ?",
+     "options": [
+      "Agir malgré la peur, après avoir mesuré le danger.",
+      "Ne jamais avoir peur.",
+      "Ignorer le danger.",
+      "Un trait de caractère que l'on possède dès la naissance."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-37",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Le temps libre promis",
+    "body": "Il y a près d'un siècle, un économiste célèbre prédisait que, grâce au progrès technique, ses petits-enfants ne travailleraient plus que quinze heures par semaine. La productivité a bien augmenté dans les proportions annoncées ; la semaine de quinze heures, elle, n'est jamais venue.\n\nC'est que les gains de productivité n'ont pas été convertis en temps libre, mais en consommation : nous produisons davantage pour acheter davantage. La prophétie n'était pas fausse sur les moyens ; elle se trompait sur nos désirs.\n"
+   },
+   "questions": [
+    {
+     "n": 37,
+     "q": "Selon l'auteur, pourquoi la semaine de quinze heures n'est-elle jamais arrivée ?",
+     "options": [
+      "Parce que la productivité n'a pas augmenté.",
+      "Parce que les machines ont détruit des emplois.",
+      "Parce que la prédiction reposait sur de faux calculs.",
+      "Parce que nous avons préféré consommer plus plutôt que travailler moins."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-38",
+   "kind": "doc",
+   "doc": {
+    "kind": "review",
+    "title": "Critique — La Tempête, version moderne",
+    "meta": "Chronique de théâtre",
+    "body": "La metteuse en scène a transposé la pièce dans un centre de données, et le moins qu'on puisse dire est que le pari divise. Visuellement, le résultat est saisissant ; les comédiens, d'une justesse remarquable, portent le texte avec une évidence rare.\n\nOn ne peut en dire autant de la transposition elle-même : à force de vouloir actualiser chaque réplique, le spectacle finit par expliquer ce que la pièce suggérait. Il ne trahit pas l'œuvre ; il la rétrécit.\n"
+   },
+   "questions": [
+    {
+     "n": 38,
+     "q": "Quel est le jugement du critique sur ce spectacle ?",
+     "options": [
+      "Il trouve tout le spectacle raté.",
+      "Il trouve que les comédiens jouent mal.",
+      "Il admire le jeu des comédiens, mais juge que l'adaptation appauvrit la pièce.",
+      "Il pense que la metteuse en scène a trahi l'œuvre."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ce-39",
+   "kind": "doc",
+   "doc": {
+    "kind": "essay",
+    "title": "Informés, ou inquiets ?",
+    "body": "Jamais nous n'avons eu accès à autant d'informations, et jamais, semble-t-il, nous n'avons eu une image aussi sombre du monde. Le paradoxe n'est qu'apparent. L'information en continu sélectionne ce qui frappe : catastrophes, crimes, crises. Répétés à toute heure, ces événements finissent par nous paraître plus fréquents qu'ils ne le sont.\n\nÊtre bien informé ne consiste donc pas à en savoir plus, mais à replacer ce que l'on sait dans ses justes proportions.\n"
+   },
+   "questions": [
+    {
+     "n": 39,
+     "q": "Quelle est la thèse de l'auteur ?",
+     "options": [
+      "Pour être bien informé, il faut cesser de suivre l'actualité.",
+      "Être bien informé, c'est remettre ce qu'on sait dans ses justes proportions.",
+      "Le monde est réellement de plus en plus dangereux.",
+      "Les médias inventent des catastrophes pour attirer le public."
+     ]
+    }
+   ]
+  }
+ ],
+ "count": 39,
+ "max": 699
+}
