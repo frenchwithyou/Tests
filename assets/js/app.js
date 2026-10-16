@@ -458,18 +458,25 @@
       a.cefr ? h("span", { class: "chip", text: a.cefr }) : null];
   }
 
-  /* which mock exam the home page shows for an exam: the student's last choice,
-     else the first one not yet finished, else the newest */
-  function pickedMock(ex) {
-    var mocks = ex.mocks || [];
-    if (!mocks.length) return null;
-    var saved = store.get("fwy.mock." + ex.id);
-    var hit = mocks.filter(function (m) { return m.n === saved; })[0];
-    if (hit) return hit;
-    var open = mocks.filter(function (m) {
-      return SECS.some(function (s) { return !finished(attemptOf(ex.id, m.n, s)); });
-    })[0];
-    return open || mocks[mocks.length - 1];
+  var ICON_CHECK = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 10.5 3.5 3.5 7.5-8"/></svg>';
+  var ICON_CHEV = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 5 5 5-5 5"/></svg>';
+  function mockStatus(d) { return d === SECS.length ? t("mockDoneLabel") : d ? t("mockProgress", { d: d, n: SECS.length }) : t("mockNew"); }
+  function progressBar(d) { return h("span", { class: "mini-bar", "aria-hidden": "true" }, h("i", { style: "width:" + (d / SECS.length * 100) + "%" })); }
+
+  /* one mock exam on its own page (#/m/tcf-2): its four tests */
+  function viewMock(examId, n) {
+    var ex = catalog.exams.filter(function (e) { return e.id === examId; })[0];
+    var m = ex && ex.mocks.filter(function (x) { return x.n === n; })[0];
+    if (!m) return viewHome();
+    var d = mockDone(ex, m), total = SECS.reduce(function (a, s) { return a + m.sections[s].duration; }, 0);
+    show(h("div", { class: "wrap mock-page" },
+      h("a", { class: "back-link", href: "#/" }, h("span", { "aria-hidden": "true", text: "←" }), t("allMocks")),
+      h("section", { class: "exam", "aria-labelledby": "h-mock" },
+        h("div", { class: "exam-head" },
+          h("div", null, h("span", { class: "mp-kicker", text: ex.name }), h("h1", { id: "h-mock", text: t("mockTitle", { n: n }) })),
+          h("span", { class: "meta", text: t("examTotal", { n: 4, t: fmtTotal(total) }) })),
+        h("div", { class: "mock-line" }, h("span", { class: "mock-prog", text: t("mockProgress", { d: d, n: SECS.length }) }), progressBar(d)),
+        mockTiles(ex, m))));
   }
 
   function mockDone(ex, m) { return SECS.filter(function (s) { return finished(attemptOf(ex.id, m.n, s)); }).length; }
@@ -490,50 +497,19 @@
       h("div", null, h("h1", { text: t("heroTitle") }), h("p", { text: t("heroText") }),
         !user ? h("div", { class: "btn-row" }, h("button", { class: "btn btn-primary", type: "button", text: t("enterCode"), onclick: function () { askCode(function () { route(); }); } })) : null),
       levelStairs()));
-    var CHECK = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 10.5 3.5 3.5 7.5-8"/></svg>';
     var panels = catalog.exams.map(function (ex) {
       var total = 0, mocks = ex.mocks;
       if (mocks[0]) SECS.forEach(function (s) { total += mocks[0].sections[s].duration; });
-      var pick = pickedMock(ex);
-      var body = h("div", { class: "mock" });
-      function progress(m) {
-        var d = mockDone(ex, m);
-        return h("div", { class: "mock-line" },
-          h("span", { class: "mock-prog", text: t("mockProgress", { d: d, n: SECS.length }) }),
-          h("span", { class: "mini-bar", "aria-hidden": "true" }, h("i", { style: "width:" + (d / SECS.length * 100) + "%" })));
-      }
-      function choose(m, focus) {
-        store.set("fwy.mock." + ex.id, m.n); pick = m; fill();
-        if (focus) { var b = $("#tab-" + ex.id + "-" + m.n); if (b) b.focus(); }
-      }
-      function fill() {
-        body.textContent = "";
-        if (mocks.length < 2) {
-          append(body, [h("div", { class: "mock-head" }, h("h3", { text: t("mockTitle", { n: pick.n }) }), progress(pick)), mockTiles(ex, pick)]);
-          return;
-        }
-        var tabs = h("div", { class: "mock-tabs", role: "tablist", "aria-label": t("chooseMock") }, mocks.map(function (m, i) {
-          var d = mockDone(ex, m), on = m.n === pick.n;
-          return h("button", {
-            type: "button", role: "tab", class: "mock-tab", id: "tab-" + ex.id + "-" + m.n,
-            "aria-selected": on ? "true" : "false", "aria-controls": "panel-" + ex.id, tabindex: on ? "0" : "-1",
-            onclick: function () { if (!on) choose(m); },
-            onkeydown: function (e) {
-              var k = e.key, j = k === "ArrowRight" ? i + 1 : k === "ArrowLeft" ? i - 1 : k === "Home" ? 0 : k === "End" ? mocks.length - 1 : null;
-              if (j == null) return;
-              e.preventDefault(); choose(mocks[(j + mocks.length) % mocks.length], true);
-            }
-          },
-            h("span", { text: t("mockTitle", { n: m.n }) }),
-            d === SECS.length ? h("span", { class: "tab-ok", svg: CHECK, role: "img", "aria-label": t("mockDoneTag") })
-              : d ? h("span", { class: "tab-count", text: d + "/" + SECS.length }) : null);
-        }));
-        append(body, [tabs, h("div", { id: "panel-" + ex.id, role: "tabpanel", "aria-labelledby": "tab-" + ex.id + "-" + pick.n }, progress(pick), mockTiles(ex, pick))]);
-      }
-      if (pick) fill();
       return h("section", { class: "exam", "aria-labelledby": "h-" + ex.id },
         h("div", { class: "exam-head" }, h("h2", { id: "h-" + ex.id, text: ex.name }), h("span", { class: "meta", text: t("examTotal", { n: 4, t: fmtTotal(total) }) })),
-        body,
+        h("ul", { class: "mock-rows" }, mocks.map(function (m) {
+          var d = mockDone(ex, m), all = d === SECS.length;
+          return h("li", null, h("a", { class: "mock-row", href: "#/m/" + ex.id + "-" + m.n },
+            h("span", { class: "mr-num" + (all ? " is-done" : ""), svg: all ? ICON_CHECK : null, text: all ? null : String(m.n), "aria-hidden": "true" }),
+            h("span", { class: "mr-text" }, h("b", { text: t("mockTitle", { n: m.n }) }), h("span", { class: "mr-sub", text: mockStatus(d) })),
+            progressBar(d),
+            h("span", { class: "mr-chev", svg: ICON_CHEV, "aria-hidden": "true" })));
+        })),
         h("p", { class: "more-soon", text: t("moreSoon") }));
     });
     show([hero, h("div", { class: "wrap" }, h("div", { class: "exams" }, panels))]);
@@ -576,7 +552,7 @@
     }
 
     show(h("div", { class: "wrap page narrow acc-" + sec },
-      crumbs([{ href: "#/", text: t("home") }, { text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }]),
+      crumbs([{ href: "#/", text: t("home") }, { href: "#/m/" + exam + "-" + mock, text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }]),
       h("div", { class: "sec-band" },
         h("span", { class: "ico", svg: ICONS[sec] }),
         h("div", { class: "exam-name", text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }),
@@ -1251,7 +1227,7 @@
 
   function viewResult(exam, mock, sec) {
     var k = key(exam, mock, sec);
-    var head = crumbs([{ href: "#/", text: t("home") }, { href: "#/m/" + exam + "-" + mock + "/" + sec, text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }, { text: secName(sec) }]);
+    var head = crumbs([{ href: "#/", text: t("home") }, { href: "#/m/" + exam + "-" + mock, text: examName(exam) + ", " + t("mockTitle", { n: mock }).toLowerCase() }, { href: "#/m/" + exam + "-" + mock + "/" + sec, text: secName(sec) }]);
     var r = lastResult[k];
     if (r) return drawResult(r);
     if (PREVIEW || !user) { location.hash = "#/m/" + exam + "-" + mock + "/" + sec; return; }
@@ -1384,8 +1360,8 @@
       if (parts[0] === "privacy" || parts[0] === "terms") return viewLegal(parts[0]);
       if (parts[0] === "m" && parts[1]) {
         var em = parts[1].split("-"), exam = em[0], mock = parseInt(em[1], 10), sec = parts[2];
+        if (!sec && mock > 0) return viewMock(exam, mock);
         if (SECS.indexOf(sec) < 0) return viewHome();
-        if (mock > 0) store.set("fwy.mock." + exam, mock);
         if (parts[3] === "test") return viewTest(exam, mock, sec);
         if (parts[3] === "result") return viewResult(exam, mock, sec);
         return viewIntro(exam, mock, sec);
